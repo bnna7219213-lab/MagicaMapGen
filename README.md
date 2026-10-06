@@ -39,7 +39,10 @@ python -m mapgen --config configs/snow_north_taiga.json --out out/
 # 查看主题会产出什么（GUI 的参数表单也由它驱动）
 python -m mapgen --describe-theme snow
 
-# 运行测试（80 项）
+# 增量重生成：在基准地图上应用实例级编辑（add / move / delete / paint）
+python -m mapgen --overlay out/snow_20261002_map.json --edits edits.json --out out/
+
+# 运行测试（87 项）
 python tests/test_mapgen.py
 ```
 
@@ -85,17 +88,33 @@ mapgen/                     生成器内核（纯标准库 Python，无第三方
   regions.py                区域掩码与优先级归属
   export/                   产物写出 + map.schema.json
 tools/MagicaMapGen/         PyQt6 桌面工具（界面即规格）
-  app/                      bridge / param_form / region_editor / preview / skin
+  app/                      bridge / param_form / region_editor / edits_panel / preview / skin
   assets/skins/             程序化生成的九宫格边框
 LowPolyCity/                Unity 包（可选消费端）
-tests/test_mapgen.py        80 项测试
+tests/test_mapgen.py        87 项测试
 ```
 
 ## 当前状态与已知局限
 
 - 两套主题（雪地 / 岛屿），32–1024 全尺寸区间契约零失败。
 - 岛屿主题在部分 seed 会被契约拦下（如 seed 88 的 `min_biome_coverage`）——这是契约在正常工作，不是缺陷。
-- 编辑反馈闭环（`edits.json` + 增量重生成）尚未实现，见 `path_b_baseline.md` 阶段 2。
+- 编辑反馈闭环的 **Python 半边已实现**：`--overlay` 增量重生成 + GUI Edit 面板；**Unity 半边（`SceneDiffer` / `OverlayReceiver`）待做**。
+- 已知缺口：overlay 产生的用户实例在 map.json 里**没有标记**，消费端无法区分「可重建」与「人工锁定」——这是 schema v4 的 0 号切片待办。
+
+## 路线图
+
+阶段 2 之后的规划（Unity 编辑回环 / GUI 深化 / schema v4，含依赖关系、优先级与下一步）见 [`path_b_baseline.md`](path_b_baseline.md) §4；[`plan.md`](plan.md) §0.1 是同一套口径的摘要。
+
+| 阶段 | 名称 | 状态 | 依赖 | 优先级 |
+|---|---|---|---|---|
+| 0 | 契约冻结 + 双端跑通 | ✅ 完成 | — | 已交付 |
+| 1 | Unity 端表现力 | 🟡 部分（`regions[].priority` 已落地） | 0 | P1（余项并入阶段 3） |
+| 2 | 编辑-反馈闭环（Python 半边） | ✅ 完成 | 0 | 已交付 |
+| 3 | Unity 编辑回环贯通 | ⬜ 待做 | 2 + 5-0 | P1 |
+| 4 | GUI 编辑器深化 | ⬜ 待做 | 2（仅需 Python 半边） | **P0** |
+| 5 | schema v4 演进 | ⬜ 待做 | 3 / 4 的真实反馈 | P1（0 号切片可插队） |
+
+**下一步**：GUI 预览点选实例回填 id → 「设为新基线」累积编辑 → schema v4 的 `instances[].source` + `lineage`。
 
 ## 许可
 

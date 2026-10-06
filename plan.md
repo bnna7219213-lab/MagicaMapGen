@@ -21,13 +21,45 @@
 
 **主交付产物**：`*_map.json`（RA2 式瓦片网格 RLE + 物体实例 + biome 图例，含 walkable/movement_cost/buildable 引擎提示），以及 Houdini 可导入的 `*_scene.obj`/`.mtl` 作为 3D 场景副产品。
 
-**当前状态**：`mapgen/` 已实现并通过验证——2 个主题（雪地 / 岛屿）契约零警告、50 项测试实跑通过、同 seed 下 10 个产物跨目录逐字节一致。详见 `mapgen/README.md`。
+**当前状态**：`mapgen/` 已实现并通过验证——2 个主题（雪地 / 岛屿）契约零警告、87 项测试（另含 36 个子测试）实跑通过、同 seed 下 10 个产物跨目录逐字节一致；**编辑-反馈闭环的 Python 半边（`--overlay` 增量重生成 + GUI Edit 面板）已落地**。详见 `mapgen/README.md`。
 
 **下方 Unity 计划（§1 起）的现状**：`LowPolyCity/` 包仍保留，审计发现的 C1–C4 四个缺陷均已修复（C2 地块重叠、C4 锁定绕过经 `audit_sim/` 位级仿真对账验证）；但该包不再是主交付。审计结论与修复状态见 `审计报告.md` 的"修复状态补记"。
 
 > **更正（2026-10-06）**：本节原称"Unity 未安装于本环境，其 C# 仅能靠人工审查 + 仿真验证，无法实机编译"——该结论**已过期**。经核实 Unity 6000.0.0f1 安装于 `C:\Program Files\Unity 6000.0.0f1\Editor\Unity.exe`，`UnityEngine.dll` 齐备、许可证存在，且 `LowPolyCity/ProjectSettings/ProjectVersion.txt` 精确匹配 `6000.0.0f1 (4ff56b3ea44c)`。因此 C# **可以**用 `-batchmode -executeMethod` 真机编译与跑端到端冒烟。注意 `dotnet` 仅有 6.0.5 runtime、无 SDK，不能用 `dotnet build`，编译须走 Unity 自带 Roslyn。当前主线已转向 `mapgen/` 产出通用契约、Unity 仅作消费端，路线与优先级见 `path_b_baseline.md`。
 
 ---
+
+
+### 0.1 当前进度与「阶段 2 之后」路线（摘要）
+
+> 完整版（依赖链图、Unity 集成方案、schema v4 字段全表）见 `path_b_baseline.md` §4。此处只放状态与优先级，**三份文档口径一致**。
+
+| 阶段 | 名称 | 状态 | 依赖 | 优先级 |
+|---|---|---|---|---|
+| 0 | 契约冻结 + 双端跑通 | ✅ 完成 | — | 已交付 |
+| 1 | Unity 端表现力 | 🟡 部分（`regions[].priority` 已落地） | 0 | P1（余项并入阶段 3） |
+| 2 | 编辑-反馈闭环（Python 半边） | ✅ 完成 | 0 | 已交付 |
+| 3 | Unity 编辑回环贯通 | ⬜ 待做 | 2 + 5-0 | P1 |
+| 4 | GUI 编辑器深化 | ⬜ 待做 | 2（仅需 Python 半边） | **P0** |
+| 5 | schema v4 演进 | ⬜ 待做 | 3 / 4 的真实反馈 | P1（0 号切片可插队） |
+
+**优先级口径**：P0 = 直接增强主交付（`mapgen` + GUI）或被其阻塞；P1 = 提升引擎侧完整性与契约表达力；P2 = 远期调研。阶段 3（Unity C#）与阶段 4（Python GUI）属**不同轨道，可并行**。
+
+**阶段 3 · Unity 编辑回环（P1）**：`SceneDiffer` 只对带 `MapInstanceId` 标记的对象生效，事务监听增/删/移 → `edits.json`（`move` 用 `floor(world_x / tile_size)` 反算格坐标）；`OverlayReceiver` 调 `--overlay`（必开 `--validate`），退出码语义与 GUI 一致，经 `SceneAssembler.FromJson` 刷新。因需 `instances[].source` 才能识别人工锁定对象，排在 5-0 之后。
+
+**阶段 4 · GUI 编辑器深化（P0）**：预览点选实例回填 id → 预览拖拽移动 → "设为新基线"以累积编辑 → 脏区高亮 → 多方案并排 → 区域可视化 → 操作级撤销。仅依赖已具备的 `--overlay`，**可立即开工**。
+
+**阶段 5 · schema v4（P1）**：0 号切片（`instances[].source` + 顶层 `lineage`）对应当前真实缺口——overlay 已能产生 user 实例却无任何标记，成本极小可插队先做；`cluster_hierarchy` / `scatter_density` / `regions[].mask_rle` 待阶段 3/4 反馈后冻结。全程只做加性变更，保持 v3 消费端可读。
+
+**下一步可执行（有序）**：
+
+1. [P0·GUI] 预览点选实例 → 回填 Edit 面板 id
+2. [P0·GUI] "设为新基线"动作，允许以 overlay 产物累积编辑
+3. [P0·schema] 5-0 号切片（`instances[].source` + `lineage`）
+4. [P1·Unity] `SceneDiffer`（先用手工 `edits.json` 打通回路，再上事务监听）
+5. [P1·Unity] `OverlayReceiver`
+6. [P1·schema] 依据阶段 3/4 反馈冻结 v4 其余字段
+7. [P2] 阶段 1 余项并入阶段 3：triplanar 湿度混合、`cluster_hierarchy`、`MapImportWindow`、`scatter_density`
 
 
 ## 1. 产品定义与可行性结论

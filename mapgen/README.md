@@ -226,7 +226,7 @@ python -m mapgen --version
 ## 测试与验证
 
 ```bash
-python tests/test_mapgen.py        # 50 项，全部实跑通过
+python tests/test_mapgen.py        # 87 项，全部实跑通过
 node audit_sim/sim_c2.js           # Unity 侧 CarveEdge 重叠对账（历史遗留包）
 ```
 
