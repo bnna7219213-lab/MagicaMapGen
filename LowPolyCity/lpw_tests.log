@@ -1,0 +1,337 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Connection attempt to the License Client on channel: "LicenseClient-bnna7" failed because channel doesn't exist; code: "0x80000002"
+[Licensing::Module] Successfully launched the LicensingClient (PId: 21156)
+[Licensing::IpcConnector] Successfully connected to the License Client on channel: "LicenseClient-bnna7" at "2026-10-02T04:28:56.5214194Z"
+[Licensing::Client] Error: Code 10 while verifying Licensing Client signature (process Id: 21156, path: "C:/Program Files/Unity 6000.0.0f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::Module] Error: LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.15.4+eee609c
+  Session Id:              ea32304327954c129cfe64d7f20ff9aa
+  Correlation Id:          4782dc44b1d4d02c0dfd7c16da536f91
+  External correlation Id: 3787618632934710666
+  Machine Id:              W+EtGLg0MsTmx7QQf553hFe27bs=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-bnna7" (connect: 0.56s, validation: 0.04s, handshake: 0.06s)
+[Licensing::IpcConnector] Successfully connected to the License Notification on channel: "LicenseClient-bnna7-notifications" at "2026-10-02T04:28:56.6152771Z"
+[Licensing::Module] Connected to LicensingClient (PId: 21156, launch time: 0.00, total connection time: 0.66s)
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Error: Code 500 while processing request (status: Unable to update licenses. Errors: Internal Client Error: The delegate executed asynchronously through TimeoutPolicy did not complete within the timeout.,Token not found in cache)
+[Licensing::Client] Error: Code 500 while updating license in client (status: Unable to update licenses. Errors: Internal Client Error: The delegate executed asynchronously through TimeoutPolicy did not complete within the timeout.,Token not found in cache)
+Built from '6000.0/release' branch; Version is '6000.0.0f1 (4ff56b3ea44c) revision 5240171'; Using compiler version '193933522'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26200) 64bit ProfessionalWorkstation' Language: 'zh' Physical Memory: 23844 MB
+[Licensing::Client] Successfully resolved entitlements
+[Licensing::Module] Serial number assigned to: "F4-B33G-4WN5-WM8A-SSQ9-XXXX"
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity 6000.0.0f1\Editor\Unity.exe
+-batchmode
+-projectPath
+C:\Users\bnna7\workspace\Houdini\LowPolyCity
+-runTests
+-testPlatform
+EditMode
+-testResults
+C:\Users\bnna7\workspace\Houdini\LowPolyCity\lpw_tests.xml
+-logFile
+C:\Users\bnna7\workspace\Houdini\LowPolyCity\lpw_tests.log
+Successfully changed project path to: C:\Users\bnna7\workspace\Houdini\LowPolyCity
+C:/Users/bnna7/workspace/Houdini/LowPolyCity
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [18696]  Target information:
+
+Player connection [18696]  * "[IP] 172.29.240.1 [Port] 55504 [Flags] 2 [Guid] 481973208 [EditorId] 481973208 [Version] 1048832 [Id] WindowsEditor(7,desktop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [18696]  * "[IP] 192.168.255.126 [Port] 55504 [Flags] 2 [Guid] 481973208 [EditorId] 481973208 [Version] 1048832 [Id] WindowsEditor(7,desktop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [18696]  * "[IP] 192.168.1.13 [Port] 55504 [Flags] 2 [Guid] 481973208 [EditorId] 481973208 [Version] 1048832 [Id] WindowsEditor(7,desktop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [18696] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [18696] Host joined alternative multi-casting on [225.0.0.222:34997]...
+[Package Manager] Connected to IPC stream "Upm-21540" after 0.2 seconds.
+Library Redirect Path: Library/
+[Licensing::Client] Successfully resolved entitlements
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 14 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.test-framework@1.4.5 (location: C:\Users\bnna7\workspace\Houdini\LowPolyCity\Library\PackageCache\com.unity.test-framework)
+    com.unity.ext.nunit@2.0.5 (location: C:\Users\bnna7\workspace\Houdini\LowPolyCity\Library\PackageCache\com.unity.ext.nunit)
+  Built-in packages:
+    com.unity.modules.audio@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\LowPolyCity\Library\PackageCache\com.unity.modules.audio)
+    com.unity.modules.imgui@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\LowPolyCity\Library\PackageCache\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\LowPolyCity\Library\PackageCache\com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\LowPolyCity\Library\PackageCache\com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\LowPolyCity\Library\PackageCache\com.unity.modules.physics)
+    com.unity.modules.screencapture@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\LowPolyCity\Library\PackageCache\com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\LowPolyCity\Library\PackageCache\com.unity.modules.terrain)
+    com.unity.modules.ui@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\LowPolyCity\Library\PackageCache\com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\LowPolyCity\Library\PackageCache\com.unity.modules.uielements)
+    com.unity.modules.hierarchycore@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\LowPolyCity\Library\PackageCache\com.unity.modules.hierarchycore)
+    com.unity.modules.imageconversion@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\LowPolyCity\Library\PackageCache\com.unity.modules.imageconversion)
+  Embedded packages:
+    com.studio.lowpoly-world-builder@file:C:\Users\bnna7\workspace\Houdini\LowPolyCity\Packages\com.studio.lowpoly-world-builder (location: C:\Users\bnna7\workspace\Houdini\LowPolyCity\Packages\com.studio.lowpoly-world-builder)
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[Subsystems] No new subsystems found in resolved package list.
+Package Manager log level set to [2]
+[Package Manager] Done registering packages in 0.36 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.0.0f1 (4ff56b3ea44c)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity 6000.0.0f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/bnna7/workspace/Houdini/LowPolyCity/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 4050 Laptop GPU (ID=0x28a1)
+    Vendor:   NVIDIA
+    VRAM:     5921 MB
+    Driver:   32.0.15.8088
+[Licensing::Client] Successfully resolved entitlements
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity 6000.0.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity 6000.0.0f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56540
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity 6000.0.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.004235 seconds.
+- Loaded All Assemblies, in  0.313 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.268 seconds
+Domain Reload Profiling: 576ms
+	BeginReloadAssembly (117ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (47ms)
+	LoadAllAssembliesAndSetupDomain (108ms)
+		LoadAssemblies (112ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (106ms)
+			TypeCache.Refresh (104ms)
+				TypeCache.ScanAssembly (94ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (268ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (233ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (14ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (3ms)
+			ProcessInitializeOnLoadAttributes (102ms)
+			ProcessInitializeOnLoadMethodAttributes (110ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlements
+Application.AssetDatabase Initial Refresh Start
+Starting: C:\Program Files\Unity 6000.0.0f1\Editor\Data\bee_backend.exe --dont-print-to-structured-log --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/bnna7/workspace/Houdini/LowPolyCity
+DisplayProgressbar: Compiling Scripts
+ExitCode: 0 Duration: 0s83ms
+*** Tundra build success (0.05 seconds), 0 items updated, 161 evaluated
+AssetDatabase: script compilation time: 0.426847s
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.551 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.390 seconds
+Domain Reload Profiling: 935ms
+	BeginReloadAssembly (389ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (9ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (32ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (25ms)
+	LoadAllAssembliesAndSetupDomain (96ms)
+		LoadAssemblies (178ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (13ms)
+			TypeCache.Refresh (9ms)
+				TypeCache.ScanAssembly (6ms)
+			BuildScriptInfoCaches (3ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (390ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (242ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (10ms)
+			SetLoadedEditorAssemblies (2ms)
+			BeforeProcessingInitializeOnLoad (40ms)
+			ProcessInitializeOnLoadAttributes (86ms)
+			ProcessInitializeOnLoadMethodAttributes (92ms)
+			AfterProcessingInitializeOnLoad (12ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (13ms)
+Asset Pipeline Refresh (id=5d6350a6b288b32429cca5f3371d3af5): Total: 1.552 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=0 (actual=0, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=522 ms
+		Asset DB Callback time: managed=10 ms, native=0 ms
+		Scripting: domain reloads=1, domain reload time=570 ms, compile time=429 ms, other=18 ms
+		Project Asset Count: scripts=131, non-scripts=108
+		Asset File Changes: new=0, changed=0, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 4.685ms
+	ApplyChangesToAssetFolders: 0.300ms
+	Scan: 48.143ms
+	OnSourceAssetsModified: 0.002ms
+	CategorizeAssetsWithTransientArtifact: 7.314ms
+	ProcessAssetsWithTransientArtifactChanges: 3.726ms
+	CategorizeAssets: 1.407ms
+	ImportOutOfDateAssets: 391.989ms (-37.440ms without children)
+		CompileScripts: 428.571ms
+		ReloadNativeAssets: 0.000ms
+		UnloadImportedAssets: 0.707ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.029ms
+		InitializingProgressBar: 0.000ms
+		OnDemandSchedulerStart: 0.121ms
+	PostProcessAllAssets: 10.768ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.000ms
+	UnloadStreamsBegin: 0.221ms
+	PersistCurrentRevisions: 0.005ms
+	UnloadStreamsEnd: 0.001ms
+	GenerateScriptTypeHashes: 0.018ms
+	Untracked: 1083.011ms
+
+Application.AssetDatabase Initial Refresh End
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Scanning for USB devices : 2.534ms
+Initializing Unity extensions:
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-LowPolyCity
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 427 unused Assets / (0.6 MB). Loaded Objects now: 1057.
+Memory consumption went from 102.2 MB to 101.6 MB.
+Total: 5.842400 ms (FindLiveObjects: 0.114000 ms CreateObjectMapping: 0.019500 ms MarkObjects: 5.322400 ms  DeleteObjects: 0.385700 ms)
+
+[Project] Loading completed in 23.406 seconds
+	Project init time: 				3.332 seconds
+		Template init time: 		0.000 seconds
+		Package Manager init time: 		0.240 seconds
+		Asset Database init time: 		0.485 seconds
+		Global illumination init time: 	0.002 seconds
+		Assemblies load time: 			0.594 seconds
+		Unity extensions init time: 	0.002 seconds
+		Asset Database refresh time: 	1.552 seconds
+	Scene opening time: 			0.237 seconds
+##utp:{"type":"ProjectInfo","version":2,"phase":"Immediate","time":1790915359342,"processId":21540,"projectLoad":23.4061223,"projectInit":3.3320634,"templateInit":0.0,"packageManagerInit":0.2401296,"assetDatabaseInit":0.4845965,"globalIlluminationInit":0.0023481,"assembliesLoad":0.5944301,"unityExtensionsInit":0.0022051,"assetDatabaseRefresh":1.5516854,"sceneOpening":0.2373004}
+##utp:{"type":"EditorInfo","version":2,"phase":"Immediate","time":1790915359343,"processId":21540,"editorVersion":"6000.0.0f1 (4ff56b3ea44c)","branch":"6000.0/release","buildType":"Release","platform":"Windows"}
+Running tests for ExecutionSettings with details:
+targetPlatform = 
+playerHeartbeatTimeout = 600
+filters[0] = 
+   Filter with settings:
+   testMode = EditMode
+   targetPlatform = 
+   testNames = null
+   groupNames = null
+   categoryNames = null
+   assemblyNames = null
+ignoreTests = {}
+featureFlags = null
+
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEditor.TestTools.TestRunner.CommandLineTest.Executer:InitializeAndExecuteRun (string[]) (at ./Library/PackageCache/com.unity.test-framework/UnityEditor.TestRunner/CommandLineTest/Executer.cs:53)
+UnityEditor.TestTools.TestRunner.CommandLineTest.TestStarter:InitializeAndExecuteRun () (at ./Library/PackageCache/com.unity.test-framework/UnityEditor.TestRunner/CommandLineTest/TestStarter.cs:64)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: ./Library/PackageCache/com.unity.test-framework/UnityEditor.TestRunner/CommandLineTest/Executer.cs Line: 53)
+
+[UnityConnectServicesConfig] config is NOT valid, switching to default
+Created GICache directory at C:/Users/bnna7/AppData/LocalLow/Unity/Caches/GiCache. Took: 0.024s, timestamps: [23.417 - 23.441]
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 0 unused Assets / (33.6 KB). Loaded Objects now: 1095.
+Memory consumption went from 102.2 MB to 102.1 MB.
+Total: 4.770500 ms (FindLiveObjects: 0.061400 ms CreateObjectMapping: 0.007700 ms MarkObjects: 4.697000 ms  DeleteObjects: 0.003800 ms)
+
+Saving results to: C:\Users\bnna7\workspace\Houdini\LowPolyCity\lpw_tests.xml
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 0 unused Assets / (0 B). Loaded Objects now: 1095.
+Memory consumption went from 100.4 MB to 100.4 MB.
+Total: 5.366800 ms (FindLiveObjects: 0.060800 ms CreateObjectMapping: 0.010400 ms MarkObjects: 5.292000 ms  DeleteObjects: 0.003200 ms)
+
+DisplayProgressbar: Undo
+Test run completed. Exiting with code 2 (Failed). One or more tests failed.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+UnityEditor.TestTools.TestRunner.CommandLineTest.Executer:ExitApplication (UnityEditor.TestTools.TestRunner.CommandLineTest.Executer/ReturnCodes,string) (at ./Library/PackageCache/com.unity.test-framework/UnityEditor.TestRunner/CommandLineTest/Executer.cs:81)
+UnityEditor.TestTools.TestRunner.CommandLineTest.Executer:ExitIfRunIsCompleted () (at ./Library/PackageCache/com.unity.test-framework/UnityEditor.TestRunner/CommandLineTest/Executer.cs:74)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: ./Library/PackageCache/com.unity.test-framework/UnityEditor.TestRunner/CommandLineTest/Executer.cs Line: 81)
+
+Request timed out while processing request "https://public-cdn.cloud.unity3d.com/config/production", HTTP error code 0
+.[UnityConnect] Request timed out.
+[Licensing::IpcConnector] License Notification channel disconnected successfully.
+[Licensing::IpcConnector] License Client channel disconnected successfully.
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+Checking for leaked weakptr:
+  Found no leaked weakptrs.
+[Package Manager] Server process was shutdown
+##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1790915361421,"processId":21540,"allocatedMemory":10067176,"memoryLabels":[{"Default":14237},{"Permanent":15300},{"NewDelete":81353},{"Thread":4230384},{"Manager":29754},{"VertexData":8},{"Geometry":816},{"Texture":160},{"Shader":78771},{"Material":24},{"GfxDevice":55392},{"Animation":328},{"Audio":4040},{"FontEngine":256},{"Physics":929},{"Serialization":968},{"Input":14816},{"JobScheduler":33024},{"TextLib":32},{"Mono":32},{"ScriptingNativeRuntime":155060},{"BaseObject":1619920},{"Resource":1304},{"Renderer":2880},{"Transform":4646},{"File":976},{"WebCam":752},{"Culling":32},{"Terrain":11394},{"Wind":24},{"STL":80},{"String":9202},{"DynamicArray":78291},{"HashMap":63792},{"Utility":2664222},{"Curl":48},{"PoolAlloc":1768},{"AI":104},{"TypeTree":4493},{"ScriptManager":512},{"RuntimeInitializeOnLoadManager":64},{"SpriteAtlas":112},{"GI":7888},{"Director":8240},{"WebRequest":848},{"VR":45953},{"SceneManager":496},{"Video":64},{"LazyScriptCache":32},{"NativeArray":8},{"Camera":17},{"Secure":1},{"SerializationCache":1576},{"APIUpdating":10320},{"Subsystems":336},{"VirtualTexturing":57888},{"StaticSafetyDebugInfo":278528},{"Analytics":256},{"Hierarchy":16},{"Gui":80},{"EditorUtility":49879},{"VersionControl":4},{"Undo":624},{"AssetDatabase":380031},{"EditorGi":328},{"UnityConnect":24208},{"Upm":1880},{"DrivenProperties":72},{"LocalIPC":260},{"ProfilerEditor":9738},{"CoreBusinessMetrics":3697},{"Licensing":3544},{"AssetReference":32},{"IPCStream":32}]}

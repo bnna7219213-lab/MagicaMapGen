@@ -1,0 +1,610 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Connection attempt to the License Client on channel: "LicenseClient-bnna7" failed because channel doesn't exist; code: "0x80000002"
+[Licensing::Module] Successfully launched the LicensingClient (PId: 32108)
+[Licensing::IpcConnector] Successfully connected to the License Client on channel: "LicenseClient-bnna7" at "2026-10-02T02:40:32.7269626Z"
+[Licensing::Client] Error: Code 10 while verifying Licensing Client signature (process Id: 32108, path: "C:/Program Files/Unity 6000.0.0f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::Module] Error: LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.15.4+eee609c
+  Session Id:              d54609fe1ec64b54bbcd2df6d9406cdb
+  Correlation Id:          ce6087716b2aa58bfe90bba12422a11e
+  External correlation Id: 7623698328690790287
+  Machine Id:              W+EtGLg0MsTmx7QQf553hFe27bs=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-bnna7" (connect: 0.52s, validation: 0.04s, handshake: 0.07s)
+[Licensing::IpcConnector] Successfully connected to the License Notification on channel: "LicenseClient-bnna7-notifications" at "2026-10-02T02:40:32.8308693Z"
+[Licensing::Module] Connected to LicensingClient (PId: 32108, launch time: 0.01, total connection time: 0.62s)
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully updated license
+Built from '6000.0/release' branch; Version is '6000.0.0f1 (4ff56b3ea44c) revision 5240171'; Using compiler version '193933522'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26200) 64bit ProfessionalWorkstation' Language: 'zh' Physical Memory: 23844 MB
+[Licensing::Client] Successfully resolved entitlements
+[Licensing::Module] Serial number assigned to: "F4-B33G-4WN5-WM8A-SSQ9-XXXX"
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity 6000.0.0f1\Editor\Unity.exe
+-batchmode
+-quit
+-projectPath
+C:\Users\bnna7\workspace\Houdini\testproj3
+-logFile
+C:\Users\bnna7\workspace\Houdini\testproj3\lpw_dependency_check.log
+Successfully changed project path to: C:\Users\bnna7\workspace\Houdini\testproj3
+C:/Users/bnna7/workspace/Houdini/testproj3
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [36960]  Target information:
+
+Player connection [36960]  * "[IP] 172.29.240.1 [Port] 55504 [Flags] 2 [Guid] 3752395244 [EditorId] 3752395244 [Version] 1048832 [Id] WindowsEditor(7,desktop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [36960]  * "[IP] 192.168.255.126 [Port] 55504 [Flags] 2 [Guid] 3752395244 [EditorId] 3752395244 [Version] 1048832 [Id] WindowsEditor(7,desktop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [36960]  * "[IP] 192.168.1.13 [Port] 55504 [Flags] 2 [Guid] 3752395244 [EditorId] 3752395244 [Version] 1048832 [Id] WindowsEditor(7,desktop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [36960] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [36960] Host joined alternative multi-casting on [225.0.0.222:34997]...
+[Package Manager] Connected to IPC stream "Upm-32944" after 0.2 seconds.
+Library Redirect Path: Library/
+[Licensing::Client] Successfully resolved entitlements
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 34 packages:
+  Built-in packages:
+    com.unity.modules.accessibility@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.accessibility)
+    com.unity.modules.ai@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.ai)
+    com.unity.modules.androidjni@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.androidjni)
+    com.unity.modules.animation@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.animation)
+    com.unity.modules.assetbundle@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.assetbundle)
+    com.unity.modules.audio@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.audio)
+    com.unity.modules.cloth@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.cloth)
+    com.unity.modules.director@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.physics)
+    com.unity.modules.physics2d@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.physics2d)
+    com.unity.modules.screencapture@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.terrainphysics)
+    com.unity.modules.tilemap@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.tilemap)
+    com.unity.modules.ui@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.uielements)
+    com.unity.modules.umbra@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.umbra)
+    com.unity.modules.unityanalytics@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.unityanalytics)
+    com.unity.modules.unitywebrequest@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vehicles@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.vehicles)
+    com.unity.modules.video@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.video)
+    com.unity.modules.vr@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.vr)
+    com.unity.modules.wind@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.wind)
+    com.unity.modules.xr@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.xr)
+    com.unity.modules.subsystems@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.subsystems)
+    com.unity.modules.hierarchycore@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.hierarchycore)
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[Subsystems] No new subsystems found in resolved package list.
+Package Manager log level set to [2]
+[Package Manager] Done registering packages in 0.35 seconds
+[Package Manager] Done resolving packages in 3.22 seconds
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Lock file was modified
+[Package Manager] Registered 36 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.test-framework@1.4.5 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.test-framework)
+    com.unity.ext.nunit@2.0.5 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.ext.nunit)
+  Built-in packages:
+    com.unity.modules.accessibility@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.accessibility)
+    com.unity.modules.ai@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.ai)
+    com.unity.modules.androidjni@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.androidjni)
+    com.unity.modules.animation@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.animation)
+    com.unity.modules.assetbundle@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.assetbundle)
+    com.unity.modules.audio@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.audio)
+    com.unity.modules.cloth@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.cloth)
+    com.unity.modules.director@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.physics)
+    com.unity.modules.physics2d@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.physics2d)
+    com.unity.modules.screencapture@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.terrainphysics)
+    com.unity.modules.tilemap@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.tilemap)
+    com.unity.modules.ui@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.uielements)
+    com.unity.modules.umbra@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.umbra)
+    com.unity.modules.unityanalytics@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.unityanalytics)
+    com.unity.modules.unitywebrequest@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vehicles@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.vehicles)
+    com.unity.modules.video@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.video)
+    com.unity.modules.vr@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.vr)
+    com.unity.modules.wind@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.wind)
+    com.unity.modules.xr@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.xr)
+    com.unity.modules.subsystems@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.subsystems)
+    com.unity.modules.hierarchycore@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\testproj3\Library\PackageCache\com.unity.modules.hierarchycore)
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.00 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.0.0f1 (4ff56b3ea44c)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity 6000.0.0f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/bnna7/workspace/Houdini/testproj3/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 4050 Laptop GPU (ID=0x28a1)
+    Vendor:   NVIDIA
+    VRAM:     5921 MB
+    Driver:   32.0.15.8088
+[Licensing::Client] Successfully resolved entitlements
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity 6000.0.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity 6000.0.0f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56944
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity 6000.0.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.004345 seconds.
+- Loaded All Assemblies, in  0.302 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.262 seconds
+Domain Reload Profiling: 558ms
+	BeginReloadAssembly (111ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (26ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (45ms)
+	LoadAllAssembliesAndSetupDomain (105ms)
+		LoadAssemblies (106ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (103ms)
+			TypeCache.Refresh (102ms)
+				TypeCache.ScanAssembly (92ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (262ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (228ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (13ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (4ms)
+			ProcessInitializeOnLoadAttributes (99ms)
+			ProcessInitializeOnLoadMethodAttributes (110ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlements
+Application.AssetDatabase Initial Refresh Start
+[API Updater] Processing imported assemblies took 34 ms (0/0 assembly(ies)).
+Assembly Updater Post Process Assets time: 0.036754s
+[ScriptCompilation] Requested script compilation because: Assembly Definition File(s) changed
+[ScriptCompilation] Requested script compilation because: Assetdatabase observed changes in script compilation related files
+Starting: C:\Program Files\Unity 6000.0.0f1\Editor\Data\bee_backend.exe --dont-print-to-structured-log --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/bnna7/workspace/Houdini/testproj3
+DisplayProgressbar: Compiling Scripts
+ExitCode: 4 Duration: 0s68ms
+Rebuilding DAG because FileSignature timestamp changed: Library/Bee/1900b0aE-inputdata.json
+*** Tundra requires additional run (0.03 seconds), 0 items updated, 1 evaluated
+Starting: C:\Program Files\Unity 6000.0.0f1\Editor\Data\Tools\netcorerun\netcorerun.exe "C:\Program Files\Unity 6000.0.0f1\Editor\Data\Tools\BuildPipeline\ScriptCompilationBuildProgram.exe" "Library/Bee/1900b0aE.dag.json" "Library/Bee/1900b0aE-inputdata.json" "Library\Bee\buildprogram0.traceevents"
+WorkingDir: C:/Users/bnna7/workspace/Houdini/testproj3
+ExitCode: 0 Duration: 0s204ms
+Starting: C:\Program Files\Unity 6000.0.0f1\Editor\Data\bee_backend.exe --dont-print-to-structured-log --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --dagfilejson="Library\Bee\1900b0aE.dag.json" --profile="Library/Bee/backend2.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/bnna7/workspace/Houdini/testproj3
+ExitCode: 0 Duration: 4s100ms
+Finished compiling graph: 139 nodes, 525 flattened edges (513 ToBuild, 4 ToUse), maximum node priority 24
+[  1/136    0s] WriteText Library/Bee/artifacts/1900b0aE.dag/UnityEngine.TestRunner.rsp2
+[  2/136    0s] WriteText Library/Bee/artifacts/1900b0aE.dag/UnityEngine.TestRunner.UnityAdditionalFile.txt
+[  3/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.WindModule.dll_1702B34A6B17F71B.mvfrm
+[  4/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.GIModule.dll_58DC23A5D288A54A.mvfrm
+[  5/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.EditorToolbarModule.dll_2484852FAB231C7A.mvfrm
+[  6/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.VideoModule.dll_AF2F10403E30C88C.mvfrm
+[  7/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.BuildProfileModule.dll_BF42A95FA5149AA3.mvfrm
+[  8/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.DiagnosticsModule.dll_1A47B0030480EFB8.mvfrm
+[  9/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.CoreBusinessMetricsModule.dll_C7BBAC292AC2ECB0.mvfrm
+[ 10/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.UIModule.dll_FA820A54FE9DF6A7.mvfrm
+[ 11/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.DeviceSimulatorModule.dll_E8E8B3FBDF7BC7EA.mvfrm
+[ 12/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.VFXModule.dll_FEA3E8D2C9705ED9.mvfrm
+[ 13/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.CoreModule.dll_7D9304CF31DC0D87.mvfrm
+[ 14/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.XRModule.dll_8012F3DF2992C97D.mvfrm
+[ 15/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.AdaptivePerformanceModule.dll_47D0B2AF047BBDB6.mvfrm
+[ 16/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.dll_40E5C56DCF91855E.mvfrm
+[ 17/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.VirtualTexturingModule.dll_13FAD54F73E278D0.mvfrm
+[ 18/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.VRModule.dll_4D5430DAA0587C1F.mvfrm
+[ 19/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.UnityWebRequestWWWModule.dll_057C5F7AD1C70F7A.mvfrm
+[ 20/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.UnityWebRequestAudioModule.dll_7FDD633A69050A09.mvfrm
+[ 21/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.UnityWebRequestTextureModule.dll_C6D70DE584122AFE.mvfrm
+[ 22/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.VehiclesModule.dll_7545BB3B20C932EA.mvfrm
+[ 23/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.UnityWebRequestModule.dll_6C267BC7DC5027E1.mvfrm
+[ 24/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.UnityWebRequestAssetBundleModule.dll_2C4F4E0BF4421EE5.mvfrm
+[ 25/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.UnityTestProtocolModule.dll_695CC293657BB890.mvfrm
+[ 26/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.UnityAnalyticsModule.dll_A6EEE39EE97A4D14.mvfrm
+[ 27/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.UnityCurlModule.dll_5181344615A01322.mvfrm
+[ 28/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.UmbraModule.dll_04FA37EE08C5585A.mvfrm
+[ 29/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.UnityAnalyticsCommonModule.dll_A31FCC9FFC82DDCF.mvfrm
+[ 30/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.UnityConnectModule.dll_A7DC3AE4C4808068.mvfrm
+[ 31/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.TilemapModule.dll_F9A66805E84C348F.mvfrm
+[ 32/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.TLSModule.dll_7DC55063F302F56C.mvfrm
+[ 33/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.AccessibilityModule.dll_EE886F5D318D6B2A.mvfrm
+[ 34/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.UIElementsModule.dll_76DD40063A4FDEAE.mvfrm
+[ 35/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.TextCoreTextEngineModule.dll_3ABA1A1EE207530E.mvfrm
+[ 36/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.TerrainPhysicsModule.dll_87CA1BA85695F5A5.mvfrm
+[ 37/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.SubsystemsModule.dll_729EDE9E3723A2B7.mvfrm
+[ 38/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.TextRenderingModule.dll_1E080A507564FB30.mvfrm
+[ 39/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.TextCoreFontEngineModule.dll_F2D1E3AD528399F0.mvfrm
+[ 40/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.SubstanceModule.dll_AFA494AE4066D681.mvfrm
+[ 41/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.SharedInternalsModule.dll_DE98B2F3488988B2.mvfrm
+[ 42/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.SpriteMaskModule.dll_07F1783C68DBBAA4.mvfrm
+[ 43/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.PropertiesModule.dll_4C0044EABA578966.mvfrm
+[ 44/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.SpriteShapeModule.dll_02A1915C7560D90D.mvfrm
+[ 45/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll_6AB0C3EC97571D93.mvfrm
+[ 46/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.TerrainModule.dll_5AAA0084D08F5386.mvfrm
+[ 47/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.ScreenCaptureModule.dll_F4C89845BE2D7B3B.mvfrm
+[ 48/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.StreamingModule.dll_D2F98064F513D873.mvfrm
+[ 49/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.Physics2DModule.dll_6B0A8305468918CA.mvfrm
+[ 50/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.PhysicsModule.dll_40638515FAD10A98.mvfrm
+[ 51/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.PerformanceReportingModule.dll_07E10F5BE29A3F71.mvfrm
+[ 52/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.ParticleSystemModule.dll_874F72D53D52FB18.mvfrm
+[ 53/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.MarshallingModule.dll_91A90296A3E6CE55.mvfrm
+[ 54/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.MultiplayerModule.dll_68E8808E78862E7B.mvfrm
+[ 55/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.LocalizationModule.dll_7865F63E12FC457C.mvfrm
+[ 56/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.InputLegacyModule.dll_7A857F2057B056F4.mvfrm
+[ 57/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.InputModule.dll_F09B5385F1D6D18B.mvfrm
+[ 58/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.InputForUIModule.dll_21775FC5A78CC1E6.mvfrm
+[ 59/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.IMGUIModule.dll_C2852B3C41D040C8.mvfrm
+[ 60/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.HierarchyCoreModule.dll_F1E3FE5F19334745.mvfrm
+[ 61/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.GridModule.dll_7E24F40FF2360EA9.mvfrm
+[ 62/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.HotReloadModule.dll_9FAD511A80BF3CB7.mvfrm
+[ 63/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.JSONSerializeModule.dll_DAE0EAC0A9C14ED9.mvfrm
+[ 64/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.GraphicsStateCollectionSerializerModule.dll_1F56621476859B37.mvfrm
+[ 65/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.ImageConversionModule.dll_5A87741DD15B8D62.mvfrm
+[ 66/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.GIModule.dll_974AB5353E05D915.mvfrm
+[ 67/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.GameCenterModule.dll_1EC505AC476C252A.mvfrm
+[ 68/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.DSPGraphModule.dll_02D4232519003470.mvfrm
+[ 69/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.ContentLoadModule.dll_8256BD428E4148F0.mvfrm
+[ 70/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.CrashReportingModule.dll_343D2988CF416F8A.mvfrm
+[ 71/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.DirectorModule.dll_FD82C1BBA69F634F.mvfrm
+[ 72/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.CoreModule.dll_A0B3D821D9E178B2.mvfrm
+[ 73/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.dll_738A0C462E051243.mvfrm
+[ 74/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.AudioModule.dll_8A258BD57B9EACE7.mvfrm
+[ 75/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.ClusterRendererModule.dll_EE95766D4F36D56E.mvfrm
+[ 76/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.ARModule.dll_B881312AFF744FC4.mvfrm
+[ 77/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.ClothModule.dll_F10DE8D055BB8BCB.mvfrm
+[ 78/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.ClusterInputModule.dll_3A192BEB7B805283.mvfrm
+[ 79/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.AnimationModule.dll_1E649314A58C2135.mvfrm
+[ 80/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.AssetBundleModule.dll_E9406401BFBEA103.mvfrm
+[ 81/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.AccessibilityModule.dll_7AC96184AA85EE4F.mvfrm
+[ 82/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.AIModule.dll_FF0E6C27A256F0FB.mvfrm
+[ 83/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.AndroidJNIModule.dll_F477BB91812B3439.mvfrm
+[ 84/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.UIElementsModule.dll_762ED2BE380BC563.mvfrm
+[ 85/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.VideoModule.dll_E90253DC0CB397E7.mvfrm
+[ 86/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.UmbraModule.dll_3ECD7B89D74827B5.mvfrm
+[ 87/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.UIElementsSamplesModule.dll_AD9A0CA10B80633A.mvfrm
+[ 88/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.UnityConnectModule.dll_BA7CB6D5C9F87FBD.mvfrm
+[ 89/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.XRModule.dll_41A4624FBE1595B2.mvfrm
+[ 90/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.VFXModule.dll_F282467F59C050D4.mvfrm
+[ 91/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.UIBuilderModule.dll_A467C4083DE7C5C3.mvfrm
+[ 92/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.UIAutomationModule.dll_6FE3985041886363.mvfrm
+[ 93/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.TreeModule.dll_DB3EF9DDB9A1A2C6.mvfrm
+[ 94/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.TilemapModule.dll_072BAF5B833D4D4A.mvfrm
+[ 95/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.TextRenderingModule.dll_91C71828FC6C780B.mvfrm
+[ 96/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.TextCoreTextEngineModule.dll_BC5A9ECBCF099443.mvfrm
+[ 97/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.TextCoreFontEngineModule.dll_7472685A3F85DB25.mvfrm
+[ 98/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.SubstanceModule.dll_F9BEA3C55AE7249C.mvfrm
+[ 99/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.SpriteMaskModule.dll_07430AF46697A159.mvfrm
+[100/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.SpriteShapeModule.dll_FCDBC1CD6326C888.mvfrm
+[101/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.SceneViewModule.dll_8E8EF9F3C052199D.mvfrm
+[102/136    0s] WriteText Library/Bee/artifacts/1900b0aE.dag/UnityEngine.TestRunner.dll.mvfrm.rsp
+[103/136    0s] WriteText Library/Bee/artifacts/1900b0aE.dag/UnityEngine.TestRunner.rsp
+[104/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.SketchUpModule.dll_EA80E48B6E0627DF.mvfrm
+[105/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.SceneTemplateModule.dll_4823F5EDAA0FC6B2.mvfrm
+[106/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.TerrainModule.dll_682F47DA6B806C41.mvfrm
+[107/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.SafeModeModule.dll_026BFF3B22D48BC8.mvfrm
+[108/136    0s] WriteText Library/Bee/artifacts/1900b0aE.dag/UnityEditor.TestRunner.rsp2
+[109/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.PhysicsModule.dll_4DE8CC6B95C22353.mvfrm
+[110/136    0s] WriteText Library/Bee/artifacts/1900b0aE.dag/UnityEditor.TestRunner.UnityAdditionalFile.txt
+[111/136    0s] WriteText Library/Bee/artifacts/1900b0aE.dag/UnityEditor.TestRunner.dll.mvfrm.rsp
+[112/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.PresetsUIModule.dll_0B454FCDCD87A494.mvfrm
+[113/136    0s] WriteText Library/Bee/artifacts/1900b0aE.dag/UnityEditor.TestRunner.rsp
+[114/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.ShaderFoundryModule.dll_8703C630CCBF4340.mvfrm
+[115/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.PropertiesModule.dll_4B51D7A2B813701B.mvfrm
+[116/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.QuickSearchModule.dll_A55731105D57EC11.mvfrm
+[117/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.Physics2DModule.dll_B524921C610966E5.mvfrm
+[118/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.MultiplayerModule.dll_6322B0FF664C1DF6.mvfrm
+[119/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.GridModule.dll_5B0420BD4A30A37E.mvfrm
+[120/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.GraphViewModule.dll_4FDF16EBCB2F4C8F.mvfrm
+[121/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.GridAndSnapModule.dll_2400968487E5ACA7.mvfrm
+[122/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.GraphicsStateCollectionSerializerModule.dll_16629524A98651D2.mvfrm
+[123/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.WindowsStandalone.Extensions.dll_E7A3CEB45A130B89.mvfrm
+[124/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.NVIDIAModule.dll_9A7567F83646975E.mvfrm
+[125/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.AMDModule.dll_7F358CFECBD27A19.mvfrm
+[126/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEditor.Graphs.dll_9D2A3291D10C50B9.mvfrm
+[127/136    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1900b0aE.dag/UnityEngine.TestRunner.dll.mvfrm
+[128/136    1s] Csc Library/Bee/artifacts/1900b0aE.dag/UnityEngine.TestRunner.dll (+2 others)
+[           0s] Csc Library/Bee/artifacts/1900b0aE.dag/UnityEngine.TestRunner.dll (+2 others) [CacheWrite 00000000000000000000000000000003]
+[129/136    0s] CopyFiles Library/ScriptAssemblies/UnityEngine.TestRunner.dll
+[130/136    0s] CopyFiles Library/ScriptAssemblies/UnityEngine.TestRunner.pdb
+[131/136    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/UnityEngine.TestRunner.ref.dll_E55D0F7C63F01D9E.mvfrm
+[132/136    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1900b0aE.dag/UnityEditor.TestRunner.dll.mvfrm
+[132/136    0s] Csc Library/Bee/artifacts/1900b0aE.dag/UnityEditor.TestRunner.dll (+2 others) [CacheHit c01af1375bac28327df5973a443d52d300000000000000000000000000000003]
+[133/136   1790908852s] Csc Library/Bee/artifacts/1900b0aE.dag/UnityEditor.TestRunner.dll (+2 others)
+[135/136    0s] CopyFiles Library/ScriptAssemblies/UnityEditor.TestRunner.pdb
+[136/136    0s] CopyFiles Library/ScriptAssemblies/UnityEditor.TestRunner.dll
+*** Tundra build success (4.07 seconds), 134 items updated, 136 evaluated
+AssetDatabase: script compilation time: 4.705014s
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.718 seconds
+Start importing Packages/com.unity.ext.nunit using Guid(0d12b5e71a9f2fbd5925dc0f3150b707) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '5bf347219020a8b1135f4c418d46453b') in 0.0130612 seconds
+Start importing Packages/com.unity.test-framework using Guid(4f67b639702c1492f57c9d0bd47d3ede) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c6f36b06421807c6245ca2d5e33a838d') in 0.0007132 seconds
+Start importing Packages/com.unity.test-framework/UnityEngine.TestRunner using Guid(950890083f4907541a6ed06d70959e49) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '933d8bbe9ed68ee1ae4f920f2abf78a7') in 0.0007213 seconds
+Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner using Guid(95cdf27b47eb82747ba9e51f41e72a35) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0ae588e9675c84bcce22bba5a4931cc1') in 0.0007344 seconds
+Start importing Packages/com.unity.ext.nunit/net40 using Guid(af19581c6078849139e0671f575e4b7c) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0a407c2b4d3b6ef6f97e5bda79b10c1f') in 0.0005439 seconds
+Start importing Packages/com.unity.ext.nunit/net40/unity-custom using Guid(c0673f99c7a5d42e081a6f88c5a37862) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '72d20f78bb408d556811b60641e231dc') in 0.0005822 seconds
+Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/UnityTestProtocol using Guid(936c6340f3468444ebb1785b4c311126) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2a8a2c2ae13f5fa64b9b63434607c813') in 0.0005692 seconds
+Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/CommandLineTest using Guid(b477d1f29b65a674e9d5cdab4eb72b01) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'bff82d4eb392bf1c108168705d318a2e') in 0.0005522 seconds
+Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/TestSettings using Guid(95b719082a664ea45bb56759eed1f271) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b4b5719bbfd3abf069d2fcf8aa2efbff') in 0.0005208 seconds
+Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/CommandLineParser using Guid(7602252bdb82b8d45ae3483c3a00d3e1) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f2ba57329e215438209b442d0414038f') in 0.0005416 seconds
+Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/TestLaunchers using Guid(d64d92e4f04a13e4b99ea8d48e9e8ae9) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '5e2f6a8e5a8c810e274d2621e9b56214') in 0.0005099 seconds
+Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/TestRun using Guid(8721cb2237d4a564a94a51f56243bdac) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '77b9ddf66e9ea1b1ba1fcca23b43222f') in 0.0005413 seconds
+Start importing Packages/com.unity.test-framework/UnityEngine.TestRunner/UnityTestProtocol using Guid(19e1940646874613a076c6b01d1f3404) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '16f6171dcd451a7816557e45b5145821') in 0.0005177 seconds
+Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/TestRunner using Guid(49d4c2ab7ff0f4442af256bad7c9d57c) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b7f85523df93b0857a856ff9c0947ae2') in 0.0005083 seconds
+Start importing Packages/com.unity.test-framework/UnityEngine.TestRunner/Assertions using Guid(1ad55f5ad04d1d045a1f287409c650dd) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'dd53949c1b0c8fd186dcf51ca02b8627') in 0.0004976 seconds
+Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/Api using Guid(fa423365b1ce06a4dbdc6fb4a8597bfa) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c1733adc9c63d54db7a0f13dc61db792') in 0.0005028 seconds
+Start importing Packages/com.unity.test-framework/UnityEngine.TestRunner/Utils using Guid(bb32bccaf32a6db448d1c0cc99c78688) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '3894ed826520962aea78f484a948e51a') in 0.0005281 seconds
+Start importing Packages/com.unity.test-framework/UnityEngine.TestRunner/TestRunner using Guid(1ddb9e1c877ea80479d1eab4ddaa5d0d) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7797474053659bb1535c7dbce89167ca') in 0.0005014 seconds
+Start importing Packages/com.unity.test-framework/UnityEngine.TestRunner/NUnitExtensions using Guid(3e8d6af343b383544ba5743d119f4062) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'd5066aaaf73827bb5d04f566a5e67ea6') in 0.0005073 seconds
+Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/GUI using Guid(7e609b27ad2caa14c83dd9951b6c13c6) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'd232e2fe410319fb66d7630b83bc82e9') in 0.000519 seconds
+Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/NUnitExtension using Guid(3f9202a39620f51418046c7754f215f0) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c71f7f18fb73a280bd4a9d06e4a83680') in 0.0004961 seconds
+Start importing Packages/com.unity.test-framework/UnityEngine.TestRunner/Utils/AssemblyProvider using Guid(51557afa652635743b264a309f0a5c60) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0329c141b1a0df096e14ffea5434f6e3') in 0.000513 seconds
+Start importing Packages/com.unity.test-framework/UnityEngine.TestRunner/TestRunner/Callbacks using Guid(61e236e8570a95e4eb754fb291e102e0) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2ceece5727a3fb16f32822e781d49c52') in 0.0005066 seconds
+Start importing Packages/com.unity.test-framework/UnityEngine.TestRunner/TestRunner/RemoteHelpers using Guid(91c20d2c22b8b3a4cb6c816bd225591a) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b974536c4a5dc4261f14e4a0331d3b41') in 0.000515 seconds
+Start importing Packages/com.unity.test-framework/UnityEngine.TestRunner/Assertions/LogScope using Guid(b1d8465ba1376b148bdab58965101f47) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1ad5ac4f33e6f2defdb31f86ddbc5e19') in 0.0005117 seconds
+Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/GUI/TestAssets using Guid(92e3104769da143888a712cdea27d950) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'daa5dadeb07a63a252760b4cc443e5c5') in 0.0005426 seconds
+Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/TestLaunchers/Helpers using Guid(a3cb89150b8a4060b89a32725a8e267e) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6ff6e9b708ea9543e9b595a90b79a3b7') in 0.0005411 seconds
+Start importing Packages/com.unity.test-framework/UnityEngine.TestRunner/NUnitExtensions/Filters using Guid(c3de99f9efc582a48995bc8e8c2df418) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'bb4747ccf0ce30aff2c6fedfbae4da2f') in 0.000549 seconds
+Start importing Packages/com.unity.test-framework/UnityEngine.TestRunner/TestRunner/Messages using Guid(256a0ca37fa972840bce7fca446e75e7) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '575ecfb851c2326c7a6c0114ca0fbf65') in 0.0005077 seconds
+Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/GUI/Views using Guid(c5535d742ea2e4941850b421f9c70a1f) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '526bd794a7ca063c10bcb5a53977bb14') in 0.0005349 seconds
+Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/UnityTestProtocol/Data using Guid(3610673068254436ac90019f46e09f01) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '438e75aaf74514055cbc529cb7ae0281') in 0.0005381 seconds
+Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/NUnitExtension/Attributes using Guid(96c503bf059df984c86eecf572370347) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '840df8bf2e83e51927f647e2a10667e5') in 0.000576 seconds
+Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/GUI/TestListBuilder using Guid(07ea0326ed848fb4489187cb58f96113) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '786f38d7b5aa342b14c9bb8355682f1f') in 0.0005344 seconds
+Start importing Packages/com.unity.test-framework/UnityEngine.TestRunner/NUnitExtensions/Runner using Guid(37888acc09d9ee848bf9559f06645c45) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '51009a883d320135fdc337899f9e9a49') in 0.0005747 seconds
+Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/GUI/TestListTreeView using Guid(68cb547af0187634aad591a09c01cd5b) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2f4a1e72fbe0463b9c1d6cfe98d327d5') in 0.0005603 seconds
+Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/GUI/Controls using Guid(e88eef57957d4440c8a7ff2ef9dd3d97) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'cfe54661202f48bad2b836361bfe4549') in 0.0005174 seconds
+Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/TestRun/Data using Guid(4926c06156894939ba0a2680f1b0aa7a) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1c06749a3419dc93d5cd2bd141b29ec3') in 0.0005157 seconds
+Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/Api/Analytics using Guid(891bb6b9f5094c36b59c3788e21c8213) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '04fb4b56b274834298f0d5f3c07617ba') in 0.0005205 seconds
+Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/TestRunner/Messages using Guid(d9682e749d3efc642af54d789d9090a6) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1e1bd35b52aee09ea8a9683f40f58b04') in 0.0005162 seconds
+Start importing Packages/com.unity.test-framework/UnityEngine.TestRunner/NUnitExtensions/Commands using Guid(6b72875690e0f7343911e06af3145bd5) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0f69b7c99bde14865069bc387127606e') in 0.0006025 seconds
+Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/TestLaunchers/PlatformSetup using Guid(ebc4d20cc106cea49b1df1153f0b3b5e) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '731e482110b0bdbd96f55265dbc14484') in 0.0005113 seconds
+Start importing Packages/com.unity.test-framework/UnityEngine.TestRunner/NUnitExtensions/Attributes using Guid(0cb14878543cf3d4f8472b15f7ecf0e3) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7138fce59569744364f6a558c7925798') in 0.0005139 seconds
+Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/TestRunner/Callbacks using Guid(5d7f0d6acfced954682a89e7002c04d9) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2d907a824301e1eec55f8073f66fe538') in 0.0005223 seconds
+Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/TestRun/Tasks using Guid(6dba53789da15814387fa5b1445e81e0) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0b17d2cef1c7b3e4e4f54bd1e36375f0') in 0.0005158 seconds
+Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/UnityTestProtocol/Messages using Guid(9ea154c33fd8466f973f004e5c962df7) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '9a502a5e9dc16692d7cd58c8850222f5') in 0.0005067 seconds
+Start importing Packages/com.unity.test-framework/UnityEngine.TestRunner/Utils/MonoBehaviourTest using Guid(ce8da628f68c7594b8b9a597fa52db7b) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2ed6f408bd41966d3c9aae049df752b9') in 0.0005123 seconds
+Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/TestRunner/Utils using Guid(1f5bbb88ca730434483440cbc0278ef6) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2896bfb3536d93260ebbf69c06d124aa') in 0.0005179 seconds
+Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/TestRun/Tasks/Player using Guid(94a6220ee1a442249702c9df66e0fe1b) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2d8609b691ffab0650ff838c59385ae1') in 0.0005186 seconds
+Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/TestRun/Tasks/Scene using Guid(692476ac695e7b74a8d9eabd48862009) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '97253de18c7082f43153acf41a1b4f71') in 0.0005133 seconds
+Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/TestRun/Tasks/Platform using Guid(d973b7805df545bdae3986ab72a6c2e8) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '73b72f520bf0c36ce83601c481692761') in 0.0005293 seconds
+Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/TestRun/Tasks/Events using Guid(cca5935142d6c754f9ecdce1294f7079) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '63fffb8bc8add2ba014c691f944078ec') in 0.0005126 seconds
+Start importing Packages/com.unity.test-framework/UnityEngine.TestRunner/UnityEngine.TestRunner.asmdef using Guid(27619889b8ba8c24980f49ee34dbb44a) (AssemblyDefinitionImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '9861ce52564cdc64f0cdcb88b23769c3') in 0.0020585 seconds
+Start importing Packages/com.unity.test-framework/UnityEditor.TestRunner/UnityEditor.TestRunner.asmdef using Guid(0acc523941302664db1f4e527237feb3) (AssemblyDefinitionImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1c21d8ca4847a711855e126fdb1ca594') in 0.001818 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.353 seconds
+Domain Reload Profiling: 1066ms
+	BeginReloadAssembly (397ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (8ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (33ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (26ms)
+	LoadAllAssembliesAndSetupDomain (254ms)
+		LoadAssemblies (343ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (12ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (6ms)
+			BuildScriptInfoCaches (2ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (353ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (219ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (9ms)
+			SetLoadedEditorAssemblies (1ms)
+			BeforeProcessingInitializeOnLoad (40ms)
+			ProcessInitializeOnLoadAttributes (78ms)
+			ProcessInitializeOnLoadMethodAttributes (79ms)
+			AfterProcessingInitializeOnLoad (11ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (13ms)
+Start importing Packages/com.unity.ext.nunit/package.json using Guid(8143d3a8390f2c64685e3bc272bd9e90) (PackageManifestImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a61b977c99798503e5dbf9ff22584933') in 0.0024396 seconds
+Start importing Packages/com.unity.ext.nunit/CHANGELOG.md using Guid(f49bbe06ffa5ae24abe32abdab430c24) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '25e7e92c125b86cb99f6240b8ae08502') in 0.0022193 seconds
+Start importing Packages/com.unity.test-framework/CHANGELOG.md using Guid(d691174143fd3774ba63d7c493633b99) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'fa233999b6a19cc039031aa3de865bdc') in 0.0065901 seconds
+Start importing Packages/com.unity.test-framework/package.json using Guid(d6a2e6e4803de7b43baacdc355fc144d) (PackageManifestImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c5ec7f42fa3fb79de00b21f8cba5e891') in 0.0018853 seconds
+Start importing Packages/com.unity.test-framework/CONTRIBUTING.md using Guid(57d2ac5c7d5786e499d4794973fe0d4e) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '90adc6acde0224536db814fdf3b97846') in 0.0018899 seconds
+Start importing Packages/com.unity.ext.nunit/LICENSE.md using Guid(f91a00d2dca52b843b2d50ccf750737d) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f0ce62dee15deaac7ea17a7fdb3a16a3') in 0.0019887 seconds
+Start importing Packages/com.unity.ext.nunit/README.md using Guid(5da62a0c1c5218c4aa16b74546a7822d) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b0cfe21abe18afe8e0fa9b921ffc9332') in 0.0019197 seconds
+Start importing Packages/com.unity.test-framework/LICENSE.md using Guid(3ec7596410385054a9e0bc90377fbe63) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'cd51c2511f49a39c618b7500d6471b07') in 0.0018116 seconds
+Start importing Packages/com.unity.ext.nunit/Third Party Notices.md using Guid(bfcb3ba499f7d452b92d9a9cc3378788) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'bf0c881410451464f6396b8426d2d5cf') in 0.0022046 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=3496cb82d58c6d54bb51e3ed8dda7e68): Total: 6.217 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=62 (actual=62, local cache=0, cache server=0)
+		Asset DB Process Time: managed=3 ms, native=668 ms
+		Asset DB Callback time: managed=44 ms, native=10 ms
+		Scripting: domain reloads=1, domain reload time=733 ms, compile time=4744 ms, other=13 ms
+		Project Asset Count: scripts=142, non-scripts=44
+		Asset File Changes: new=432, changed=432, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 2.871ms
+	ApplyChangesToAssetFolders: 0.386ms
+	Scan: 170.757ms
+	OnSourceAssetsModified: 1.569ms
+	CategorizeAssetsWithTransientArtifact: 8.229ms
+	ProcessAssetsWithTransientArtifactChanges: 3.327ms
+	CategorizeAssets: 1.166ms
+	ImportOutOfDateAssets: 434.151ms (-4386.416ms without children)
+		ImportManagerImport: 76.082ms (4.325ms without children)
+			ImportInProcess: 71.588ms
+			UpdateCategorizedAssets: 0.170ms
+		CompileScripts: 4743.554ms
+		ReloadNativeAssets: 0.001ms
+		UnloadImportedAssets: 0.763ms
+		ReloadImportedAssets: 0.005ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.022ms
+		InitializingProgressBar: 0.005ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 0.134ms
+	PostProcessAllAssets: 51.624ms
+	Hotreload: 1.394ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.000ms
+	UnloadStreamsBegin: 0.198ms
+	PersistCurrentRevisions: 0.065ms
+	UnloadStreamsEnd: 0.001ms
+	GenerateScriptTypeHashes: 0.005ms
+	Untracked: 5541.058ms
+
+Application.AssetDatabase Initial Refresh End
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Scanning for USB devices : 3.320ms
+Initializing Unity extensions:
+[Licensing::Client] Successfully resolved entitlements
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-testproj3
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 384 unused Assets / (0.6 MB). Loaded Objects now: 1015.
+Memory consumption went from 106.5 MB to 105.9 MB.
+Total: 4.693600 ms (FindLiveObjects: 0.072100 ms CreateObjectMapping: 0.013900 ms MarkObjects: 4.315200 ms  DeleteObjects: 0.291700 ms)
+
+Batchmode quit successfully invoked - shutting down!
+Curl error 42: Callback aborted
+[Licensing::IpcConnector] License Notification channel disconnected successfully.
+[Licensing::IpcConnector] License Client channel disconnected successfully.
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+Exiting batchmode successfully now!
+Exiting without the bug reporter. Application will terminate with return code 0

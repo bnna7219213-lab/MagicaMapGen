@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb840157f8fd8f34a83a159d314c699f, type: 3}
+  m_Name: Metro_4x4
+  m_EditorClassIdentifier: 
+  schemaVersion: 1
+  worldName: Metro_4x4
+  seed: 20281006
+  theme: 2
+  blockCount: {x: 4, y: 4}
+  blockSize: 80
+  roadWidth: 12
+  sidewalkWidth: 3
+  lotFillRatio: 0.82
+  minBuildingHeight: 8
+  maxBuildingHeight: 40
+  lotSizeRange: {x: 16, y: 30}
+  zones:
+  - {fileID: 11400000, guid: 03b1d14baddaa6e45ac4f4024500dc72, type: 2}
+  - {fileID: 11400000, guid: f0b6a46c607e2a34aa746d42d335673a, type: 2}
+  - {fileID: 11400000, guid: bce91144a0fbbab43ad35b41904bfef8, type: 2}
+  - {fileID: 11400000, guid: afde6ee28068fe44b867643412e7d88d, type: 2}
+  palette: {fileID: 11400000, guid: 0123d4e71dbeb0b4294a1e0cfc20f6c7, type: 2}
+  catalog: {fileID: 11400000, guid: 4358890d06f0a7f46aa8ed748c57d662, type: 2}
+  outputFolder: Assets/LowPolyWorldOutput/Expansion/4x4/Metro

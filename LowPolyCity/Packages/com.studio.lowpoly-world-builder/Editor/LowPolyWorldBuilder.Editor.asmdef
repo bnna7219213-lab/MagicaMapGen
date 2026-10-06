@@ -1,0 +1,14 @@
+{
+    "name": "LowPolyWorldBuilder.Editor",
+    "rootNamespace": "LowPolyWorldBuilder.Editor",
+    "references": [
+        "LowPolyWorldBuilder.Runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "autoReferenced": true,
+    "noEngineReferences": false
+}

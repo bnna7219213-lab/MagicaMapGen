@@ -1,0 +1,33 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Connection attempt to the License Client on channel: "LicenseClient-bnna7" failed because channel doesn't exist; code: "0x80000002"
+[Licensing::Module] Successfully launched the LicensingClient (PId: 24780)
+[Licensing::IpcConnector] Successfully connected to the License Client on channel: "LicenseClient-bnna7" at "2026-10-02T02:12:17.9659784Z"
+[Licensing::Client] Error: Code 10 while verifying Licensing Client signature (process Id: 24780, path: "C:/Program Files/Unity 6000.0.0f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::Module] Error: LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.15.4+eee609c
+  Session Id:              ff843a600b0743b0a11ae9e889469b75
+  Correlation Id:          be91271b72d273e2c39ccd79221b6aca
+  External correlation Id: 5008528732311912283
+  Machine Id:              W+EtGLg0MsTmx7QQf553hFe27bs=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-bnna7" (connect: 0.46s, validation: 0.03s, handshake: 0.05s)
+[Licensing::IpcConnector] Successfully connected to the License Notification on channel: "LicenseClient-bnna7-notifications" at "2026-10-02T02:12:18.0506751Z"
+[Licensing::Module] Connected to LicensingClient (PId: 24780, launch time: 0.00, total connection time: 0.55s)
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully updated license
+Built from '6000.0/release' branch; Version is '6000.0.0f1 (4ff56b3ea44c) revision 5240171'; Using compiler version '193933522'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26200) 64bit ProfessionalWorkstation' Language: 'zh' Physical Memory: 23844 MB
+[Licensing::Client] Successfully resolved entitlements
+[Licensing::Module] Serial number assigned to: "F4-B33G-4WN5-WM8A-SSQ9-XXXX"
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity 6000.0.0f1\Editor\Unity.exe
+-batchmode
+-quit
+-projectPath
+C:\Users\bnna7\workspace\Houdini\LowPolyCity
+-logFile
+C:\Users\bnna7\workspace\Houdini\LowPolyCity\lpw_openonly.log
+Couldn't set project path to: C:/Users/bnna7/workspace/Houdini/LowPolyCity/C:/Users/bnna7/workspace/Houdini/LowPolyCity
+Exiting without the bug reporter. Application will terminate with return code 1

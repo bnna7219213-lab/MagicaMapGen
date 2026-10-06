@@ -1,0 +1,62 @@
+{
+  "label": "island_harbour_bay",
+  "theme": "island",
+  "seed": 20261002,
+  "width": 256,
+  "height": 256,
+  "formats": ["map", "csv", "pgm", "report", "obj"],
+
+  "terrain": {
+    "lake_count": 8,
+    "river_count": 5,
+    "island_radius": 0.42,
+    "sea_level": 0.22
+  },
+
+  "features": {
+    "mountains": { "distribution": "normal_clusters", "cluster_count": 2,
+                   "spread": 40.0, "min_cluster_spacing": 46.0 },
+    "lakes":     { "distribution": "poisson_disk", "min_spacing": 26.0 },
+    "rivers":    { "distribution": "uniform" }
+  },
+
+  "categories": {
+    "trees_dense":  { "count": 420, "distribution": "normal_clusters",
+                      "cluster_count": 18, "spread": 3.1 },
+    "trees_sparse": { "count": 90,  "distribution": "poisson_disk",
+                      "min_spacing": 5.0 },
+    "trees_other":  { "count": 45,  "distribution": "uniform" },
+    "rocks":        { "count": 70,  "distribution": "poisson_disk",
+                      "min_spacing": 4.5 }
+  },
+
+  "regions": [
+    {
+      "id": "west_forest_belt",
+      "shape": "rect",
+      "bounds": { "x0": 0.28, "y0": 0.30, "x1": 0.52, "y1": 0.70 },
+      "overrides": {
+        "trees_dense": { "count": 200, "distribution": "normal_clusters",
+                         "cluster_count": 6, "spread": 4.0 }
+      }
+    },
+    {
+      "id": "east_palm_shore",
+      "shape": "circle",
+      "bounds": { "cx": 0.68, "cy": 0.52, "r": 0.13 },
+      "overrides": {
+        "trees_other": { "count": 40, "distribution": "grid_jitter",
+                         "spacing": 6.0, "jitter": 0.4 }
+      }
+    },
+    {
+      "id": "central_highland",
+      "shape": "circle",
+      "bounds": { "cx": 0.507, "cy": 0.569, "r": 0.11 },
+      "overrides": {
+        "rocks": { "count": 80, "distribution": "poisson_disk",
+                   "min_spacing": 4.0 }
+      }
+    }
+  ]
+}

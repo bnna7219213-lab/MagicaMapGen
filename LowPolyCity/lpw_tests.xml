@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="13" result="Failed(Child)" total="13" passed="12" failed="1" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-02 04:29:19Z" end-time="2026-10-02 04:29:19Z" duration="0.0533579">
+  <test-suite type="TestSuite" id="1000" name="LowPolyCity" fullname="LowPolyCity" runstate="Runnable" testcasecount="13" result="Failed" site="Child" start-time="2026-10-02 04:29:19Z" end-time="2026-10-02 04:29:19Z" duration="0.053358" total="13" passed="12" failed="1" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1017" name="LowPolyWorldBuilder.EditorTests.dll" fullname="C:/Users/bnna7/workspace/Houdini/LowPolyCity/Library/ScriptAssemblies/LowPolyWorldBuilder.EditorTests.dll" runstate="Runnable" testcasecount="13" result="Failed" site="Child" start-time="2026-10-02 04:29:19Z" end-time="2026-10-02 04:29:19Z" duration="0.049554" total="13" passed="12" failed="1" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="21540" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestSuite" id="1018" name="LowPolyWorldBuilder" fullname="LowPolyWorldBuilder" runstate="Runnable" testcasecount="13" result="Failed" site="Child" start-time="2026-10-02 04:29:19Z" end-time="2026-10-02 04:29:19Z" duration="0.049382" total="13" passed="12" failed="1" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-suite type="TestSuite" id="1019" name="EditorTests" fullname="LowPolyWorldBuilder.EditorTests" runstate="Runnable" testcasecount="13" result="Failed" site="Child" start-time="2026-10-02 04:29:19Z" end-time="2026-10-02 04:29:19Z" duration="0.049306" total="13" passed="12" failed="1" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <failure>
+            <message><![CDATA[One or more child tests had errors]]></message>
+          </failure>
+          <test-suite type="TestFixture" id="1001" name="DeterminismTests" fullname="LowPolyWorldBuilder.EditorTests.DeterminismTests" classname="LowPolyWorldBuilder.EditorTests.DeterminismTests" runstate="Runnable" testcasecount="7" result="Failed" site="Child" start-time="2026-10-02 04:29:19Z" end-time="2026-10-02 04:29:19Z" duration="0.040552" total="7" passed="6" failed="1" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <failure>
+              <message><![CDATA[One or more child tests had errors]]></message>
+            </failure>
+            <test-case id="1006" name="DeterministicRandom_IsPlatformStable" fullname="LowPolyWorldBuilder.EditorTests.DeterminismTests.DeterministicRandom_IsPlatformStable" methodname="DeterministicRandom_IsPlatformStable" classname="LowPolyWorldBuilder.EditorTests.DeterminismTests" runstate="Runnable" seed="841412467" result="Passed" start-time="2026-10-02 04:29:19Z" end-time="2026-10-02 04:29:19Z" duration="0.010030" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1003" name="DifferentSeed_ProducesDifferentLayout" fullname="LowPolyWorldBuilder.EditorTests.DeterminismTests.DifferentSeed_ProducesDifferentLayout" methodname="DifferentSeed_ProducesDifferentLayout" classname="LowPolyWorldBuilder.EditorTests.DeterminismTests" runstate="Runnable" seed="1941320051" result="Passed" start-time="2026-10-02 04:29:19Z" end-time="2026-10-02 04:29:19Z" duration="0.007210" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1005" name="Lots_StayInsideBlockAndDoNotOverlap" fullname="LowPolyWorldBuilder.EditorTests.DeterminismTests.Lots_StayInsideBlockAndDoNotOverlap" methodname="Lots_StayInsideBlockAndDoNotOverlap" classname="LowPolyWorldBuilder.EditorTests.DeterminismTests" runstate="Runnable" seed="455104312" result="Failed" start-time="2026-10-02 04:29:19Z" end-time="2026-10-02 04:29:19Z" duration="0.006175" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <failure>
+                <message><![CDATA[  lot 0 escapes block block_0_0
+  Expected: True
+  But was:  False
+]]></message>
+                <stack-trace><![CDATA[at LowPolyWorldBuilder.EditorTests.DeterminismTests.Lots_StayInsideBlockAndDoNotOverlap () [0x00073] in .\Packages\com.studio.lowpoly-world-builder\Tests\Editor\DeterminismTests.cs:84
+]]></stack-trace>
+              </failure>
+            </test-case>
+            <test-case id="1004" name="RoadGraph_IsFullyConnected" fullname="LowPolyWorldBuilder.EditorTests.DeterminismTests.RoadGraph_IsFullyConnected" methodname="RoadGraph_IsFullyConnected" classname="LowPolyWorldBuilder.EditorTests.DeterminismTests" runstate="Runnable" seed="355615215" result="Passed" start-time="2026-10-02 04:29:19Z" end-time="2026-10-02 04:29:19Z" duration="0.000370" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1002" name="SameSeed_ProducesIdenticalPlan" fullname="LowPolyWorldBuilder.EditorTests.DeterminismTests.SameSeed_ProducesIdenticalPlan" methodname="SameSeed_ProducesIdenticalPlan" classname="LowPolyWorldBuilder.EditorTests.DeterminismTests" runstate="Runnable" seed="1207685419" result="Passed" start-time="2026-10-02 04:29:19Z" end-time="2026-10-02 04:29:19Z" duration="0.004583" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1008" name="ThemeThemes_ReserveDifferentInfrastructureBlocks" fullname="LowPolyWorldBuilder.EditorTests.DeterminismTests.ThemeThemes_ReserveDifferentInfrastructureBlocks" methodname="ThemeThemes_ReserveDifferentInfrastructureBlocks" classname="LowPolyWorldBuilder.EditorTests.DeterminismTests" runstate="Runnable" seed="719291927" result="Passed" start-time="2026-10-02 04:29:19Z" end-time="2026-10-02 04:29:19Z" duration="0.001313" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1007" name="Zones_ProduceDistinctArchetypes" fullname="LowPolyWorldBuilder.EditorTests.DeterminismTests.Zones_ProduceDistinctArchetypes" methodname="Zones_ProduceDistinctArchetypes" classname="LowPolyWorldBuilder.EditorTests.DeterminismTests" runstate="Runnable" seed="2090996776" result="Passed" start-time="2026-10-02 04:29:19Z" end-time="2026-10-02 04:29:19Z" duration="0.002762" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1009" name="ThemeRegressionTests" fullname="LowPolyWorldBuilder.EditorTests.ThemeRegressionTests" classname="LowPolyWorldBuilder.EditorTests.ThemeRegressionTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-10-02 04:29:19Z" end-time="2026-10-02 04:29:19Z" duration="0.008074" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1016" name="CityTheme_StillFallsBackToHouse_WhenZonesMissing" fullname="LowPolyWorldBuilder.EditorTests.ThemeRegressionTests.CityTheme_StillFallsBackToHouse_WhenZonesMissing" methodname="CityTheme_StillFallsBackToHouse_WhenZonesMissing" classname="LowPolyWorldBuilder.EditorTests.ThemeRegressionTests" runstate="Runnable" seed="329375551" result="Passed" start-time="2026-10-02 04:29:19Z" end-time="2026-10-02 04:29:19Z" duration="0.000536" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1014" name="TransportThemes_NeverCollapseToHouse_WhenZonesMissing" fullname="LowPolyWorldBuilder.EditorTests.ThemeRegressionTests.TransportThemes_NeverCollapseToHouse_WhenZonesMissing" classname="LowPolyWorldBuilder.EditorTests.ThemeRegressionTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-02 04:29:19Z" end-time="2026-10-02 04:29:19Z" duration="0.003127" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1010" name="TransportThemes_NeverCollapseToHouse_WhenZonesMissing(Railway)" fullname="LowPolyWorldBuilder.EditorTests.ThemeRegressionTests.TransportThemes_NeverCollapseToHouse_WhenZonesMissing(Railway)" methodname="TransportThemes_NeverCollapseToHouse_WhenZonesMissing" classname="LowPolyWorldBuilder.EditorTests.ThemeRegressionTests" runstate="Runnable" seed="1769882733" result="Passed" start-time="2026-10-02 04:29:19Z" end-time="2026-10-02 04:29:19Z" duration="0.001964" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1011" name="TransportThemes_NeverCollapseToHouse_WhenZonesMissing(Metro)" fullname="LowPolyWorldBuilder.EditorTests.ThemeRegressionTests.TransportThemes_NeverCollapseToHouse_WhenZonesMissing(Metro)" methodname="TransportThemes_NeverCollapseToHouse_WhenZonesMissing" classname="LowPolyWorldBuilder.EditorTests.ThemeRegressionTests" runstate="Runnable" seed="968223114" result="Passed" start-time="2026-10-02 04:29:19Z" end-time="2026-10-02 04:29:19Z" duration="0.000254" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1012" name="TransportThemes_NeverCollapseToHouse_WhenZonesMissing(Harbor)" fullname="LowPolyWorldBuilder.EditorTests.ThemeRegressionTests.TransportThemes_NeverCollapseToHouse_WhenZonesMissing(Harbor)" methodname="TransportThemes_NeverCollapseToHouse_WhenZonesMissing" classname="LowPolyWorldBuilder.EditorTests.ThemeRegressionTests" runstate="Runnable" seed="1015915417" result="Passed" start-time="2026-10-02 04:29:19Z" end-time="2026-10-02 04:29:19Z" duration="0.000196" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1013" name="TransportThemes_NeverCollapseToHouse_WhenZonesMissing(Airport)" fullname="LowPolyWorldBuilder.EditorTests.ThemeRegressionTests.TransportThemes_NeverCollapseToHouse_WhenZonesMissing(Airport)" methodname="TransportThemes_NeverCollapseToHouse_WhenZonesMissing" classname="LowPolyWorldBuilder.EditorTests.ThemeRegressionTests" runstate="Runnable" seed="1518610507" result="Passed" start-time="2026-10-02 04:29:19Z" end-time="2026-10-02 04:29:19Z" duration="0.000172" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1015" name="TransportThemes_UseMultipleSignatureBuildings" fullname="LowPolyWorldBuilder.EditorTests.ThemeRegressionTests.TransportThemes_UseMultipleSignatureBuildings" methodname="TransportThemes_UseMultipleSignatureBuildings" classname="LowPolyWorldBuilder.EditorTests.ThemeRegressionTests" runstate="Runnable" seed="555263390" result="Passed" start-time="2026-10-02 04:29:19Z" end-time="2026-10-02 04:29:19Z" duration="0.002395" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Saving results to: C:\Users\bnna7\workspace\Houdini\LowPolyCity\lpw_tests.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

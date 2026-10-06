@@ -1,0 +1,23 @@
+{
+    "name": "LowPolyWorldBuilder.EditorTests",
+    "rootNamespace": "LowPolyWorldBuilder.EditorTests",
+    "references": [
+        "LowPolyWorldBuilder.Runtime",
+        "LowPolyWorldBuilder.Editor",
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_INCLUDE_TESTS"
+    ]
+}

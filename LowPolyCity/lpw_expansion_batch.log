@@ -1,0 +1,1280 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Connection attempt to the License Client on channel: "LicenseClient-bnna7" failed because channel doesn't exist; code: "0x80000002"
+[Licensing::Module] Successfully launched the LicensingClient (PId: 25848)
+[Licensing::IpcConnector] Successfully connected to the License Client on channel: "LicenseClient-bnna7" at "2026-10-02T03:04:10.5188573Z"
+[Licensing::Client] Error: Code 10 while verifying Licensing Client signature (process Id: 25848, path: "C:/Program Files/Unity 6000.0.0f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::Module] Error: LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.15.4+eee609c
+  Session Id:              444bccef6a9649c78396166582f2b518
+  Correlation Id:          8698bdf594446486f4f07d1c134d16b2
+  External correlation Id: 1570908979860410553
+  Machine Id:              W+EtGLg0MsTmx7QQf553hFe27bs=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-bnna7" (connect: 0.59s, validation: 0.04s, handshake: 0.06s)
+[Licensing::IpcConnector] Successfully connected to the License Notification on channel: "LicenseClient-bnna7-notifications" at "2026-10-02T03:04:10.6170882Z"
+[Licensing::Module] Connected to LicensingClient (PId: 25848, launch time: 0.01, total connection time: 0.69s)
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully updated license
+Built from '6000.0/release' branch; Version is '6000.0.0f1 (4ff56b3ea44c) revision 5240171'; Using compiler version '193933522'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26200) 64bit ProfessionalWorkstation' Language: 'zh' Physical Memory: 23844 MB
+[Licensing::Client] Successfully resolved entitlements
+[Licensing::Module] Serial number assigned to: "F4-B33G-4WN5-WM8A-SSQ9-XXXX"
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity 6000.0.0f1\Editor\Unity.exe
+-batchmode
+-quit
+-projectPath
+C:\Users\bnna7\workspace\Houdini\.lpw-expansion-runner-20261002
+-executeMethod
+LowPolyWorldBuilder.Editor.Batch.ExpansionBatchEntryPoint.GenerateExpansionPack
+-logFile
+C:\Users\bnna7\workspace\Houdini\LowPolyCity\lpw_expansion_batch.log
+Successfully changed project path to: C:\Users\bnna7\workspace\Houdini\.lpw-expansion-runner-20261002
+C:/Users/bnna7/workspace/Houdini/.lpw-expansion-runner-20261002
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [19484]  Target information:
+
+Player connection [19484]  * "[IP] 172.29.240.1 [Port] 55504 [Flags] 2 [Guid] 1307995358 [EditorId] 1307995358 [Version] 1048832 [Id] WindowsEditor(7,desktop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [19484]  * "[IP] 192.168.255.126 [Port] 55504 [Flags] 2 [Guid] 1307995358 [EditorId] 1307995358 [Version] 1048832 [Id] WindowsEditor(7,desktop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [19484]  * "[IP] 192.168.1.13 [Port] 55504 [Flags] 2 [Guid] 1307995358 [EditorId] 1307995358 [Version] 1048832 [Id] WindowsEditor(7,desktop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [19484] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [19484] Host joined alternative multi-casting on [225.0.0.222:34997]...
+[Package Manager] Connected to IPC stream "Upm-23272" after 0.2 seconds.
+Library Redirect Path: Library/
+[Licensing::Client] Successfully resolved entitlements
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 14 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.test-framework@1.4.5 (location: C:\Users\bnna7\workspace\Houdini\.lpw-expansion-runner-20261002\Library\PackageCache\com.unity.test-framework)
+    com.unity.ext.nunit@2.0.5 (location: C:\Users\bnna7\workspace\Houdini\.lpw-expansion-runner-20261002\Library\PackageCache\com.unity.ext.nunit)
+  Built-in packages:
+    com.unity.modules.audio@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\.lpw-expansion-runner-20261002\Library\PackageCache\com.unity.modules.audio)
+    com.unity.modules.imgui@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\.lpw-expansion-runner-20261002\Library\PackageCache\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\.lpw-expansion-runner-20261002\Library\PackageCache\com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\.lpw-expansion-runner-20261002\Library\PackageCache\com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\.lpw-expansion-runner-20261002\Library\PackageCache\com.unity.modules.physics)
+    com.unity.modules.screencapture@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\.lpw-expansion-runner-20261002\Library\PackageCache\com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\.lpw-expansion-runner-20261002\Library\PackageCache\com.unity.modules.terrain)
+    com.unity.modules.ui@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\.lpw-expansion-runner-20261002\Library\PackageCache\com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\.lpw-expansion-runner-20261002\Library\PackageCache\com.unity.modules.uielements)
+    com.unity.modules.hierarchycore@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\.lpw-expansion-runner-20261002\Library\PackageCache\com.unity.modules.hierarchycore)
+    com.unity.modules.imageconversion@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\.lpw-expansion-runner-20261002\Library\PackageCache\com.unity.modules.imageconversion)
+  Embedded packages:
+    com.studio.lowpoly-world-builder@file:C:\Users\bnna7\workspace\Houdini\.lpw-expansion-runner-20261002\Packages\com.studio.lowpoly-world-builder (location: C:\Users\bnna7\workspace\Houdini\.lpw-expansion-runner-20261002\Packages\com.studio.lowpoly-world-builder)
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[Subsystems] No new subsystems found in resolved package list.
+Package Manager log level set to [2]
+[Package Manager] Done registering packages in 0.35 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.0.0f1 (4ff56b3ea44c)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity 6000.0.0f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/bnna7/workspace/Houdini/.lpw-expansion-runner-20261002/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 4050 Laptop GPU (ID=0x28a1)
+    Vendor:   NVIDIA
+    VRAM:     5921 MB
+    Driver:   32.0.15.8088
+[Licensing::Client] Successfully resolved entitlements
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity 6000.0.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity 6000.0.0f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56272
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity 6000.0.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.004575 seconds.
+- Loaded All Assemblies, in  0.308 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.263 seconds
+Domain Reload Profiling: 565ms
+	BeginReloadAssembly (116ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (46ms)
+	LoadAllAssembliesAndSetupDomain (104ms)
+		LoadAssemblies (111ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (102ms)
+			TypeCache.Refresh (101ms)
+				TypeCache.ScanAssembly (91ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (263ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (229ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (15ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (3ms)
+			ProcessInitializeOnLoadAttributes (99ms)
+			ProcessInitializeOnLoadMethodAttributes (109ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlements
+Application.AssetDatabase Initial Refresh Start
+[ScriptCompilation] Requested script compilation because: Assetdatabase observed changes in script compilation related files
+Starting: C:\Program Files\Unity 6000.0.0f1\Editor\Data\bee_backend.exe --dont-print-to-structured-log --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/bnna7/workspace/Houdini/.lpw-expansion-runner-20261002
+DisplayProgressbar: Compiling Scripts
+ExitCode: 0 Duration: 1s212ms
+[155/161    1s] Csc Library/Bee/artifacts/1900b0aE.dag/LowPolyWorldBuilder.Editor.dll (+2 others)
+[           0s] Csc Library/Bee/artifacts/1900b0aE.dag/LowPolyWorldBuilder.Editor.dll (+2 others) [CacheWrite 00000000000000000000000000000003]
+[159/161    0s] CopyFiles Library/ScriptAssemblies/LowPolyWorldBuilder.Editor.pdb
+[160/161    0s] CopyFiles Library/ScriptAssemblies/LowPolyWorldBuilder.Editor.dll
+*** Tundra build success (1.17 seconds), 3 items updated, 161 evaluated
+AssetDatabase: script compilation time: 1.552279s
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.633 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.412 seconds
+Domain Reload Profiling: 1040ms
+	BeginReloadAssembly (384ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (9ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (32ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (26ms)
+	LoadAllAssembliesAndSetupDomain (181ms)
+		LoadAssemblies (260ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (15ms)
+			TypeCache.Refresh (10ms)
+				TypeCache.ScanAssembly (7ms)
+			BuildScriptInfoCaches (3ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (413ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (265ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (13ms)
+			SetLoadedEditorAssemblies (2ms)
+			BeforeProcessingInitializeOnLoad (48ms)
+			ProcessInitializeOnLoadAttributes (101ms)
+			ProcessInitializeOnLoadMethodAttributes (90ms)
+			AfterProcessingInitializeOnLoad (11ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (13ms)
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=e8b66b3b6efbc2249b46beb108b4ad6a): Total: 2.789 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=0 (actual=0, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=520 ms
+		Asset DB Callback time: managed=40 ms, native=3 ms
+		Scripting: domain reloads=1, domain reload time=655 ms, compile time=1554 ms, other=14 ms
+		Project Asset Count: scripts=121, non-scripts=64
+		Asset File Changes: new=0, changed=1, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 5.620ms
+	ApplyChangesToAssetFolders: 0.299ms
+	Scan: 36.742ms
+	OnSourceAssetsModified: 0.811ms
+	CategorizeAssetsWithTransientArtifact: 4.360ms
+	ProcessAssetsWithTransientArtifactChanges: 4.646ms
+	CategorizeAssets: 1.192ms
+	ImportOutOfDateAssets: 414.159ms (-1140.719ms without children)
+		CompileScripts: 1554.054ms
+		ReloadNativeAssets: 0.000ms
+		UnloadImportedAssets: 0.676ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.021ms
+		InitializingProgressBar: 0.000ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.000ms
+		OnDemandSchedulerStart: 0.126ms
+	PostProcessAllAssets: 41.256ms
+	Hotreload: 1.111ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.000ms
+	UnloadStreamsBegin: 0.197ms
+	PersistCurrentRevisions: 0.004ms
+	UnloadStreamsEnd: 0.001ms
+	GenerateScriptTypeHashes: 0.016ms
+	Untracked: 2278.583ms
+
+Application.AssetDatabase Initial Refresh End
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Scanning for USB devices : 3.185ms
+Initializing Unity extensions:
+[Licensing::Client] Successfully resolved entitlements
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-LowPolyCity
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 425 unused Assets / (0.5 MB). Loaded Objects now: 1054.
+Memory consumption went from 105.4 MB to 104.9 MB.
+Total: 4.556700 ms (FindLiveObjects: 0.084900 ms CreateObjectMapping: 0.013400 ms MarkObjects: 4.172400 ms  DeleteObjects: 0.285500 ms)
+
+Start importing Assets/LowPolyWorldBuilder/Config/CartoonCity_4x4.asset using Guid(9f3623583cc501446bc034f74c24ab5d) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c43127b8f440a58653c1caed7081699b') in 0.0058315 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=695402f37e520214cb3ca3c51ceaf303): Total: 0.026 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[LPW] Default profile created at Assets/LowPolyWorldBuilder/Config/CartoonCity_4x4.asset
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+LowPolyWorldBuilder.Editor.UI.SampleAssetFactory:CreateDefaultProfileWithZones () (at ./Packages/com.studio.lowpoly-world-builder/Editor/UI/SampleAssetFactory.cs:59)
+LowPolyWorldBuilder.Editor.UI.ExpansionScenarioFactory:CreateProfiles () (at ./Packages/com.studio.lowpoly-world-builder/Editor/UI/ExpansionScenarioFactory.cs:15)
+LowPolyWorldBuilder.Editor.Batch.ExpansionBatchEntryPoint:GenerateExpansionPack () (at ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs:25)
+
+(Filename: ./Packages/com.studio.lowpoly-world-builder/Editor/UI/SampleAssetFactory.cs Line: 59)
+
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Railway_16x16.asset using Guid(b035c30c12ddc75499a86a20cfff9b82) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ccd68d13dfa570d364f2188afbd8053c') in 0.0023368 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Zone_Metro_Office.asset using Guid(f0b6a46c607e2a34aa746d42d335673a) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7902e85d67a6ed9b27a5c38c110160d7') in 0.0016414 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Palette_Metro.asset using Guid(0123d4e71dbeb0b4294a1e0cfc20f6c7) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b184f964f4546b0af9a6a6b9d45b391f') in 0.0018243 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Airport_4x4.asset using Guid(01194ed9ff0ab0248b2beac2d7515a2c) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '598f23616395d037d5b2a225530a5f17') in 0.0017353 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Zone_Railway_Rail.asset using Guid(81d5700059354b343bc4b71649480288) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7eedc82fc9fd9c51ea713372eae0b121') in 0.0016553 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Zone_Airport_Office.asset using Guid(622ef756406528e4eaccdbd35828e070) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '501045a644071670f120290426070ceb') in 0.0016637 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Zone_Airport_Commercial.asset using Guid(92d896724c97692418abab3a958c48f7) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '8f69261945df0b8852c3ff0c950e0872') in 0.0017937 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Zone_Harbor_Commercial.asset using Guid(f443b661223b32e49bb2b3fce3c1d5e1) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '4cc630dd846f79f00798a4623e93b972') in 0.0018515 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Zone_City_Commercial.asset using Guid(754629f5804cea9408dddb92c59466c3) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '063c1fe028910fa20f022e8033df55af') in 0.0017189 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Palette_Railway.asset using Guid(8504b0eb55a6edd438fbb08b8efcf7ce) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '5bf1f0fa4c6a1d154d7463a64da1b10d') in 0.0016055 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Zone_City_Park.asset using Guid(954fdcb293c1d474baac1afbbe2c3888) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '140bcf7c3328e7871b509b49ab689bc3') in 0.0015565 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Zone_Railway_Commercial.asset using Guid(b69e69c03412f3441b19f72e0aa4a00e) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ffc3f4a82f1f2b5c4f1f11c040ffbf03') in 0.0016052 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Airport_16x16.asset using Guid(57be0d8a4a7c50f46bb5f536cd423f8a) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'bf7191acdd15d4182312861b4025cb3a') in 0.001765 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Harbor_16x16.asset using Guid(58d3eb1c6ce832743b130c667c47e9f8) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6491dd64ead188bbf99ad15512ace7ce') in 0.0018482 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Zone_Harbor_Industrial.asset using Guid(a811765ec58ddcf45a10bf6c718f2e51) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '310ad5ae9409135e01df465d5a59c57b') in 0.0015275 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/City_16x16.asset using Guid(f8e6d38dd17264a419ea9d2d7f3ebacb) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '44bfd803ff042325c68871231b69ae51') in 0.0016891 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Zone_Airport_Park.asset using Guid(696e3e9ce2d6be5458677e1f405e8dff) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0dd47e95aa01b72f734b60a63c94eed1') in 0.00152 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Railway_4x4.asset using Guid(a9e4fed555f830a43bc1623616e3f83d) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'dce65eaf7aa13bc87c5a6f42b0c5e731') in 0.0015252 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Metro_16x16.asset using Guid(e933ae52d91d45f42832891ba4b4dd4a) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'bbda33122b229b52535b6748d9b2853a') in 0.0015879 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Palette_Harbor.asset using Guid(daa861e5eb4e4d840a0d18b123b4a4e4) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a66811577b65dd13a6cc1214f3fb7df8') in 0.0014628 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Zone_City_Residential.asset using Guid(7cd4d93ac7d983947beebff6d36f1237) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '12ba361ad7ae918f0b8e6a8741680e3c') in 0.0014764 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Zone_Metro_Residential.asset using Guid(bce91144a0fbbab43ad35b41904bfef8) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a503b9531f677392b1b925bdded06432') in 0.0015177 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Zone_Harbor_Park.asset using Guid(8d6fa3c675cd5ab429c654c21f0d9d68) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'cb8ef663440d43caf6e67574f722b054') in 0.001545 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Palette_City.asset using Guid(5e8964ec9ce3139448f8e4ba77d7c528) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e64657e0bb2b65dd6df20a97f0909e3e') in 0.0016144 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Harbor_4x4.asset using Guid(4ff303f27c5f6fc4089779ac2c4b01ac) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f63e3e91cfd782872a68f2e1b3e74d72') in 0.0015866 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Palette_Airport.asset using Guid(7fec95c781e4a5c4a88531efade4e1cb) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a347feed93d563018632a7ec257d06a2') in 0.0017082 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Metro_4x4.asset using Guid(9fbbc067fba4bfe4eaab2c30e88ba885) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ad09e52a422a201022e730e93b8df9f2') in 0.0014818 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Zone_Railway_Park.asset using Guid(bfd3f1af2ae606743b50f3593b069330) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b4b63763b37be90e170dcca706842bfb') in 0.0015044 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/City_4x4.asset using Guid(dffd8d34824e28543826f965eb6ddf6e) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1d3919537f672ccf523ad5c762df21ef') in 0.0017469 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Zone_Metro_Commercial.asset using Guid(ff7e2bce1c4036d4d9f19c4e36c49374) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7423dfbaaa36ed2877e2e2eb3eccc34e') in 0.0016582 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=52e8f2c27a21ac84ebd163b1958787ac): Total: 0.081 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=661585ec80376a0409100f65fd50d70e): Total: 0.013 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 38 unused Assets / (20.0 KB). Loaded Objects now: 1063.
+Memory consumption went from 103.4 MB to 103.4 MB.
+Total: 4.764900 ms (FindLiveObjects: 0.048000 ms CreateObjectMapping: 0.007900 ms MarkObjects: 4.660000 ms  DeleteObjects: 0.048500 ms)
+
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/City/City_4x4.prefab using Guid(b2ffe2deefce6a1428145a78ff4c0756) (PrefabImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0386da67cab73c4bd20bec753abeec3f') in 0.0159524 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=643ce66b3eab52f42944b3278240a8e6): Total: 0.048 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/City/City_4x4.unity using Guid(21c30578ed54ea64eb4a80fa95b53e69) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '9589d92b48e6081a853fba39359826fa') in 0.0013343 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=c1d001a83cd9ccd418448041eacd37ab): Total: 0.019 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=2a989c83254e7c9439c49daac3860f28): Total: 0.002 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/City/City_4x4.report.json using Guid(b109cc52fd4ff934ca48886e44075445) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '4456c7f15ecac9d3f51b34fe00f05324') in 0.0024728 seconds
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/City/City_4x4.report.txt using Guid(47e74c0bead26bd498aeee7d6819e44c) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '64886fe15a821b273539b287f11124f1') in 0.0018533 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=c4f2b39ae7e3e7546877d75f9b21e5ed): Total: 0.033 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+[LPW] Expansion scene complete:
+WorldBuildReport seed=20261006 version=0.2.0 time=2026-10-02 03:04:23Z
+theme=City grid=4x4 buildMs=290
+roads=40 blocks=16 lots=157 buildings=157 scatter=56 prefabs=0
+[Info] (RoadNetwork) 40 road segments, 25 intersections
+[Info] (Blocks) 16 blocks, 157 lots
+[Info] (Scatter) 56 scatter items (trees/lamps)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+LowPolyWorldBuilder.Editor.Batch.ExpansionBatchEntryPoint:GenerateExpansionPack () (at ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs:67)
+
+(Filename: ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs Line: 67)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 920 unused Assets / (240.8 KB). Loaded Objects now: 1056.
+Memory consumption went from 105.0 MB to 104.8 MB.
+Total: 4.794300 ms (FindLiveObjects: 0.066100 ms CreateObjectMapping: 0.018000 ms MarkObjects: 4.398500 ms  DeleteObjects: 0.311400 ms)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 0 unused Assets / (0 B). Loaded Objects now: 1056.
+Memory consumption went from 104.7 MB to 104.7 MB.
+Total: 3.921400 ms (FindLiveObjects: 0.035400 ms CreateObjectMapping: 0.006900 ms MarkObjects: 3.877300 ms  DeleteObjects: 0.001600 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6 unused Assets / (16.2 KB). Loaded Objects now: 1063.
+Memory consumption went from 104.5 MB to 104.5 MB.
+Total: 3.377800 ms (FindLiveObjects: 0.033400 ms CreateObjectMapping: 0.006700 ms MarkObjects: 3.317900 ms  DeleteObjects: 0.019200 ms)
+
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16 using Guid(d63ce6fd2f1066f41aebbbd71615cf34) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '150e036b16cce772f6c484a59eb44560') in 0.0063365 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=8c87bb5b9c358b248916cf7332f604fb): Total: 0.031 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/City using Guid(b19544b4b13b3344abe117938f5414b7) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '890dab1fa54398b8e77c23cbb74cbe0c') in 0.009299 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=338a31d637f572545b2949e876354492): Total: 0.024 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/City/City_16x16.prefab using Guid(3213a045130e59544826f22396d08405) (PrefabImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2b3d4ca9d06899160c3735daa3bb6881') in 1.0407111 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=64576930b283dc24c9a81988c213d6ed): Total: 1.106 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=1101 ms
+		Asset DB Callback time: managed=0 ms, native=3 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=123, non-scripts=65
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.000ms
+	InvokePackagesCallback: 0.000ms
+	ApplyChangesToAssetFolders: 0.026ms
+	Scan: 12.162ms
+	OnSourceAssetsModified: 0.036ms
+	CategorizeAssetsWithTransientArtifact: 0.002ms
+	ProcessAssetsWithTransientArtifactChanges: 0.003ms
+	CategorizeAssets: 0.065ms
+	ImportOutOfDateAssets: 1088.611ms (0.185ms without children)
+		ImportManagerImport: 1088.100ms (47.149ms without children)
+			ImportInProcess: 1040.933ms
+			UpdateCategorizedAssets: 0.018ms
+		ReloadNativeAssets: 0.011ms
+		UnloadImportedAssets: 0.131ms
+		ReloadImportedAssets: 0.001ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.014ms
+		InitializingProgressBar: 0.004ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.000ms
+		OnDemandSchedulerStart: 0.166ms
+	PostProcessAllAssets: 0.434ms
+	Hotreload: 4.058ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.008ms
+	UnloadStreamsBegin: 0.002ms
+	PersistCurrentRevisions: 0.026ms
+	UnloadStreamsEnd: 0.001ms
+	Untracked: 1.025ms
+
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/City/City_16x16.unity using Guid(a49f1f85d298fad4d85da4ce9496ace3) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a6ca3e920f4feb8c20b681a35528fcce') in 0.0011807 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=d927227aedd69eb47ac355abc2df14a8): Total: 0.372 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=365 ms
+		Asset DB Callback time: managed=0 ms, native=5 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=123, non-scripts=66
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.000ms
+	InvokePackagesCallback: 0.000ms
+	ApplyChangesToAssetFolders: 0.067ms
+	Scan: 47.086ms
+	OnSourceAssetsModified: 0.055ms
+	CategorizeAssetsWithTransientArtifact: 0.004ms
+	ProcessAssetsWithTransientArtifactChanges: 0.006ms
+	CategorizeAssets: 0.070ms
+	ImportOutOfDateAssets: 315.051ms (313.371ms without children)
+		ImportManagerImport: 1.389ms (0.043ms without children)
+			ImportInProcess: 1.339ms
+			UpdateCategorizedAssets: 0.006ms
+		ReloadNativeAssets: 0.012ms
+		UnloadImportedAssets: 0.126ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.018ms
+		InitializingProgressBar: 0.007ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.000ms
+		OnDemandSchedulerStart: 0.129ms
+	PostProcessAllAssets: 0.469ms
+	Hotreload: 5.478ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.009ms
+	UnloadStreamsBegin: 1.824ms
+	PersistCurrentRevisions: 0.036ms
+	UnloadStreamsEnd: 0.705ms
+	Untracked: 0.646ms
+
+Asset Pipeline Refresh (id=dfbc02f5df4ff8840841ff6c8f0a562d): Total: 0.002 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/City/City_16x16.report.txt using Guid(7051cf7904b201842a53f94d7b2b0504) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '896f4df4234f644a06052fcedf79aff5') in 0.0084589 seconds
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/City/City_16x16.report.json using Guid(ed23e34d217275d4fb15fa108d602db1) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '49c82ca7f8525852253d4784e6905d88') in 0.0072106 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=c8e544c0d31fe5b48979b14e522d56af): Total: 0.063 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+[LPW] Expansion scene complete:
+WorldBuildReport seed=20261018 version=0.2.0 time=2026-10-02 03:04:24Z
+theme=City grid=16x16 buildMs=4048
+roads=544 blocks=256 lots=2560 buildings=2560 scatter=711 prefabs=0
+[Info] (RoadNetwork) 544 road segments, 289 intersections
+[Info] (Blocks) 256 blocks, 2560 lots
+[Info] (Scatter) 711 scatter items (trees/lamps)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+LowPolyWorldBuilder.Editor.Batch.ExpansionBatchEntryPoint:GenerateExpansionPack () (at ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs:67)
+
+(Filename: ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs Line: 67)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13871 unused Assets / (3.7 MB). Loaded Objects now: 1056.
+Memory consumption went from 119.5 MB to 115.8 MB.
+Total: 9.268700 ms (FindLiveObjects: 0.719400 ms CreateObjectMapping: 0.316200 ms MarkObjects: 4.179800 ms  DeleteObjects: 4.052800 ms)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 0 unused Assets / (58.7 KB). Loaded Objects now: 1056.
+Memory consumption went from 115.7 MB to 115.6 MB.
+Total: 3.464000 ms (FindLiveObjects: 0.044200 ms CreateObjectMapping: 0.007300 ms MarkObjects: 3.410300 ms  DeleteObjects: 0.001900 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6 unused Assets / (16.2 KB). Loaded Objects now: 1063.
+Memory consumption went from 111.4 MB to 111.4 MB.
+Total: 3.237800 ms (FindLiveObjects: 0.038900 ms CreateObjectMapping: 0.006600 ms MarkObjects: 3.179900 ms  DeleteObjects: 0.012000 ms)
+
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Railway using Guid(0a8e3ff0933aa0d4a80bec85f40b00bb) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a9263669284abc5395317065c129bc7a') in 0.0062317 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=91cccd9d50ff7de48a3427bfbd5c5d8c): Total: 0.027 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Railway/Railway_4x4.prefab using Guid(8d5fc5bd8a852ff40b9fa1e3d569d7ae) (PrefabImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '72388993aebe11369df8dd833871e7ae') in 0.0214162 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=bece51ca4f1f8de4cbe7ae2ed68d43a8): Total: 0.041 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Railway/Railway_4x4.unity using Guid(7f7197c653b65bd429b5fe33340f9a92) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '36ddac6382ffbed82b98e0627640d07e') in 0.0011127 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=d2d0320bb94d56340a3f15b297a96374): Total: 0.036 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=dd10ae2e36efe5f47ad36035e1bd7a40): Total: 0.002 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Railway/Railway_4x4.report.json using Guid(c419d39c34ea1ee4e9d963f9a19d6226) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '4d50746dff1672878bfbcf554b3e7e53') in 0.0092679 seconds
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Railway/Railway_4x4.report.txt using Guid(8fec0db66428391498ba9f8fb288c4db) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f0730bd5527d63dd1c83f3298f523dec') in 0.0067402 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=2b8b889ecb75ab44bbb1fb8678b6d3cc): Total: 0.049 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+[LPW] Expansion scene complete:
+WorldBuildReport seed=20271006 version=0.2.0 time=2026-10-02 03:04:28Z
+theme=Railway grid=4x4 buildMs=269
+roads=40 blocks=16 lots=167 buildings=167 scatter=59 prefabs=0
+[Info] (RoadNetwork) 40 road segments, 25 intersections
+[Info] (Blocks) 16 blocks, 167 lots
+[Info] (Scatter) 59 scatter items (trees/lamps)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+LowPolyWorldBuilder.Editor.Batch.ExpansionBatchEntryPoint:GenerateExpansionPack () (at ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs:67)
+
+(Filename: ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs Line: 67)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 975 unused Assets / (242.2 KB). Loaded Objects now: 1056.
+Memory consumption went from 112.0 MB to 111.7 MB.
+Total: 4.774400 ms (FindLiveObjects: 0.068300 ms CreateObjectMapping: 0.018900 ms MarkObjects: 4.321500 ms  DeleteObjects: 0.364900 ms)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 0 unused Assets / (0 B). Loaded Objects now: 1056.
+Memory consumption went from 111.7 MB to 111.7 MB.
+Total: 4.046200 ms (FindLiveObjects: 0.035600 ms CreateObjectMapping: 0.007500 ms MarkObjects: 4.001200 ms  DeleteObjects: 0.001700 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6 unused Assets / (16.2 KB). Loaded Objects now: 1063.
+Memory consumption went from 111.5 MB to 111.5 MB.
+Total: 3.307900 ms (FindLiveObjects: 0.033200 ms CreateObjectMapping: 0.006600 ms MarkObjects: 3.254400 ms  DeleteObjects: 0.013400 ms)
+
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Railway using Guid(929434d66ce5b80488c1abd50cd876d2) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'cd422434c82d61144d6aa603e5f5042c') in 0.0065818 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=cc4a70bf198817045b097d75a93e1c0a): Total: 0.032 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Railway/Railway_16x16.prefab using Guid(cb55e367def904b44b806272373dae65) (PrefabImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '37dac1648230b7a12cd15b77041426a0') in 0.9383311 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=fea0023a2b9268e4ab7de2d9d0f99f46): Total: 1.003 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=999 ms
+		Asset DB Callback time: managed=0 ms, native=3 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=125, non-scripts=73
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.000ms
+	ApplyChangesToAssetFolders: 0.028ms
+	Scan: 12.579ms
+	OnSourceAssetsModified: 0.035ms
+	CategorizeAssetsWithTransientArtifact: 0.002ms
+	ProcessAssetsWithTransientArtifactChanges: 0.004ms
+	CategorizeAssets: 0.069ms
+	ImportOutOfDateAssets: 985.777ms (0.233ms without children)
+		ImportManagerImport: 985.234ms (46.700ms without children)
+			ImportInProcess: 938.518ms
+			UpdateCategorizedAssets: 0.017ms
+		ReloadNativeAssets: 0.013ms
+		UnloadImportedAssets: 0.115ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.015ms
+		InitializingProgressBar: 0.004ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.000ms
+		OnDemandSchedulerStart: 0.163ms
+	PostProcessAllAssets: 0.440ms
+	Hotreload: 3.333ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.008ms
+	UnloadStreamsBegin: 0.002ms
+	PersistCurrentRevisions: 0.031ms
+	UnloadStreamsEnd: 0.001ms
+	Untracked: 0.953ms
+
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Railway/Railway_16x16.unity using Guid(378adc079b42e06428881cc6a7cd1e62) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c9606412740e30f9d5805cc86f8bf751') in 0.0011832 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=57104e56db3f80a4a8cffb5735d25167): Total: 0.371 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=364 ms
+		Asset DB Callback time: managed=0 ms, native=5 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=125, non-scripts=74
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.000ms
+	InvokePackagesCallback: 0.001ms
+	ApplyChangesToAssetFolders: 0.036ms
+	Scan: 44.971ms
+	OnSourceAssetsModified: 0.051ms
+	CategorizeAssetsWithTransientArtifact: 0.003ms
+	ProcessAssetsWithTransientArtifactChanges: 0.004ms
+	CategorizeAssets: 0.066ms
+	ImportOutOfDateAssets: 315.976ms (314.216ms without children)
+		ImportManagerImport: 1.437ms (0.054ms without children)
+			ImportInProcess: 1.373ms
+			UpdateCategorizedAssets: 0.010ms
+		ReloadNativeAssets: 0.012ms
+		UnloadImportedAssets: 0.121ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.016ms
+		InitializingProgressBar: 0.006ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 0.166ms
+	PostProcessAllAssets: 0.459ms
+	Hotreload: 5.381ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.009ms
+	UnloadStreamsBegin: 1.762ms
+	PersistCurrentRevisions: 0.037ms
+	UnloadStreamsEnd: 1.138ms
+	Untracked: 0.646ms
+
+Asset Pipeline Refresh (id=b54203e3237badc4aacefb088a3447e2): Total: 0.002 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Railway/Railway_16x16.report.txt using Guid(257935604022175488dad5918d93221b) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '16890099137c0f88266a86ee1c952ba0') in 0.0099233 seconds
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Railway/Railway_16x16.report.json using Guid(2c1e181862d80e84f866b80e6c28c91a) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'dafafa9778972683a1f4e417488f7a55') in 0.0073757 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=01bd0f75c4d9a4847b717d38ffc179d9): Total: 0.070 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+[LPW] Expansion scene complete:
+WorldBuildReport seed=20271018 version=0.2.0 time=2026-10-02 03:04:28Z
+theme=Railway grid=16x16 buildMs=3940
+roads=544 blocks=256 lots=2555 buildings=2555 scatter=698 prefabs=0
+[Info] (RoadNetwork) 544 road segments, 289 intersections
+[Info] (Blocks) 256 blocks, 2555 lots
+[Info] (Scatter) 698 scatter items (trees/lamps)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+LowPolyWorldBuilder.Editor.Batch.ExpansionBatchEntryPoint:GenerateExpansionPack () (at ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs:67)
+
+(Filename: ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs Line: 67)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13803 unused Assets / (3.8 MB). Loaded Objects now: 1056.
+Memory consumption went from 124.0 MB to 120.2 MB.
+Total: 9.637600 ms (FindLiveObjects: 0.506100 ms CreateObjectMapping: 0.208200 ms MarkObjects: 4.448000 ms  DeleteObjects: 4.474600 ms)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 0 unused Assets / (0 B). Loaded Objects now: 1056.
+Memory consumption went from 120.1 MB to 120.1 MB.
+Total: 3.861600 ms (FindLiveObjects: 0.041300 ms CreateObjectMapping: 0.006900 ms MarkObjects: 3.810000 ms  DeleteObjects: 0.002900 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6 unused Assets / (16.2 KB). Loaded Objects now: 1063.
+Memory consumption went from 115.9 MB to 115.9 MB.
+Total: 3.575100 ms (FindLiveObjects: 0.045600 ms CreateObjectMapping: 0.010300 ms MarkObjects: 3.502600 ms  DeleteObjects: 0.016200 ms)
+
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Metro using Guid(9c13a7cadb7bad44393b5a9e51f772ac) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c7fd0962fa0d00164fea232a54112618') in 0.0059381 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=48b4ac3500e09ae4ca6b524be433d6f8): Total: 0.026 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Metro/Metro_4x4.prefab using Guid(948930e5fbb89ae4e838b06265386dad) (PrefabImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '27ec294f552174eba048546a46da1538') in 0.0206852 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=b5f03761cf6402e47a98a7dfed28961f): Total: 0.040 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Metro/Metro_4x4.unity using Guid(8cd83b55fa7f81143a549116b9c15fbf) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '097299925d8012744c75826cd1143879') in 0.0009891 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=37d3616d6313ab64bbe1ce5de0b0eba9): Total: 0.034 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=8625f235f2bc87f458caf4bb4f87726e): Total: 0.002 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Metro/Metro_4x4.report.json using Guid(5b662223570cbf8409c4eeee7f41e88d) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '9f630a7dd6987ff7536962d17055b410') in 0.0091473 seconds
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Metro/Metro_4x4.report.txt using Guid(8fcf29a1152928047af6ee4c2921951e) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '360bcc10e4e61b4156a0951f36290dbd') in 0.0067744 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=ff38e4aa612c0d34b8f3c59d095d08d3): Total: 0.054 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+[LPW] Expansion scene complete:
+WorldBuildReport seed=20281006 version=0.2.0 time=2026-10-02 03:04:32Z
+theme=Metro grid=4x4 buildMs=259
+roads=40 blocks=16 lots=152 buildings=152 scatter=53 prefabs=0
+[Info] (RoadNetwork) 40 road segments, 25 intersections
+[Info] (Blocks) 16 blocks, 152 lots
+[Info] (Scatter) 53 scatter items (trees/lamps)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+LowPolyWorldBuilder.Editor.Batch.ExpansionBatchEntryPoint:GenerateExpansionPack () (at ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs:67)
+
+(Filename: ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs Line: 67)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 891 unused Assets / (240.0 KB). Loaded Objects now: 1056.
+Memory consumption went from 116.5 MB to 116.2 MB.
+Total: 4.834100 ms (FindLiveObjects: 0.066700 ms CreateObjectMapping: 0.017400 ms MarkObjects: 4.417200 ms  DeleteObjects: 0.332400 ms)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 0 unused Assets / (0 B). Loaded Objects now: 1056.
+Memory consumption went from 116.2 MB to 116.2 MB.
+Total: 3.532900 ms (FindLiveObjects: 0.033900 ms CreateObjectMapping: 0.006900 ms MarkObjects: 3.490300 ms  DeleteObjects: 0.001600 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6 unused Assets / (16.2 KB). Loaded Objects now: 1063.
+Memory consumption went from 116.0 MB to 116.0 MB.
+Total: 3.802000 ms (FindLiveObjects: 0.035200 ms CreateObjectMapping: 0.007100 ms MarkObjects: 3.744500 ms  DeleteObjects: 0.014700 ms)
+
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Metro using Guid(53a54bce581bb8546ab74eeb95eaf75c) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '227f43928ac1728c2d77a786200b3090') in 0.00594 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=574b102b99c78b547ae419d0581383df): Total: 0.032 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Metro/Metro_16x16.prefab using Guid(48b76b0c6183ae2439d27ae947629200) (PrefabImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6d99f571fdc5e6c440e49b3df2dc2fc5') in 0.9981966 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=d52768d42b27c894e8e5c68d429f75fb): Total: 1.064 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=1060 ms
+		Asset DB Callback time: managed=0 ms, native=3 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=127, non-scripts=81
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.000ms
+	InvokePackagesCallback: 0.000ms
+	ApplyChangesToAssetFolders: 0.029ms
+	Scan: 12.504ms
+	OnSourceAssetsModified: 0.048ms
+	CategorizeAssetsWithTransientArtifact: 0.003ms
+	ProcessAssetsWithTransientArtifactChanges: 0.005ms
+	CategorizeAssets: 0.093ms
+	ImportOutOfDateAssets: 1046.492ms (0.226ms without children)
+		ImportManagerImport: 1045.860ms (47.435ms without children)
+			ImportInProcess: 998.405ms
+			UpdateCategorizedAssets: 0.019ms
+		ReloadNativeAssets: 0.012ms
+		UnloadImportedAssets: 0.176ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.023ms
+		InitializingProgressBar: 0.005ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 0.189ms
+	PostProcessAllAssets: 0.413ms
+	Hotreload: 3.186ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.008ms
+	UnloadStreamsBegin: 0.002ms
+	PersistCurrentRevisions: 0.028ms
+	UnloadStreamsEnd: 0.000ms
+	Untracked: 0.986ms
+
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Metro/Metro_16x16.unity using Guid(29a5fbb622349544d84a7df70d4de9d1) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '45a6f01b3645319d0fb9b194184e0f4a') in 0.0010474 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=0a4dfb1630dc3fb4bb7e1dfb08be6a4c): Total: 0.371 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=364 ms
+		Asset DB Callback time: managed=0 ms, native=5 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=127, non-scripts=82
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.000ms
+	InvokePackagesCallback: 0.001ms
+	ApplyChangesToAssetFolders: 0.035ms
+	Scan: 43.519ms
+	OnSourceAssetsModified: 0.047ms
+	CategorizeAssetsWithTransientArtifact: 0.002ms
+	ProcessAssetsWithTransientArtifactChanges: 0.004ms
+	CategorizeAssets: 0.062ms
+	ImportOutOfDateAssets: 317.498ms (315.983ms without children)
+		ImportManagerImport: 1.231ms (0.041ms without children)
+			ImportInProcess: 1.183ms
+			UpdateCategorizedAssets: 0.007ms
+		ReloadNativeAssets: 0.012ms
+		UnloadImportedAssets: 0.105ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.015ms
+		InitializingProgressBar: 0.006ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.000ms
+		OnDemandSchedulerStart: 0.146ms
+	PostProcessAllAssets: 0.499ms
+	Hotreload: 5.949ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.009ms
+	UnloadStreamsBegin: 1.905ms
+	PersistCurrentRevisions: 0.045ms
+	UnloadStreamsEnd: 1.066ms
+	Untracked: 0.658ms
+
+Asset Pipeline Refresh (id=8013a8c9c489b404891a493fed3ed6b7): Total: 0.002 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Metro/Metro_16x16.report.txt using Guid(05e1c87e38fea914d88d4fafd3f9faf2) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'da15ef488422d5e1a9732d06a216e6fc') in 0.0091421 seconds
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Metro/Metro_16x16.report.json using Guid(a6b00c91e5e19b040828f8773760305f) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a56547f9dbe49728066f130279d26a9f') in 0.0095735 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=196cb72ec2d62ed429d088f636c059db): Total: 0.065 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+[LPW] Expansion scene complete:
+WorldBuildReport seed=20281018 version=0.2.0 time=2026-10-02 03:04:33Z
+theme=Metro grid=16x16 buildMs=4028
+roads=544 blocks=256 lots=2546 buildings=2546 scatter=680 prefabs=0
+[Info] (RoadNetwork) 544 road segments, 289 intersections
+[Info] (Blocks) 256 blocks, 2546 lots
+[Info] (Scatter) 680 scatter items (trees/lamps)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+LowPolyWorldBuilder.Editor.Batch.ExpansionBatchEntryPoint:GenerateExpansionPack () (at ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs:67)
+
+(Filename: ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs Line: 67)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13695 unused Assets / (3.8 MB). Loaded Objects now: 1056.
+Memory consumption went from 124.9 MB to 121.1 MB.
+Total: 10.693200 ms (FindLiveObjects: 0.534100 ms CreateObjectMapping: 0.210100 ms MarkObjects: 4.519100 ms  DeleteObjects: 5.428900 ms)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 0 unused Assets / (0 B). Loaded Objects now: 1056.
+Memory consumption went from 121.1 MB to 121.1 MB.
+Total: 3.989800 ms (FindLiveObjects: 0.061100 ms CreateObjectMapping: 0.008000 ms MarkObjects: 3.917700 ms  DeleteObjects: 0.002600 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6 unused Assets / (16.2 KB). Loaded Objects now: 1063.
+Memory consumption went from 116.9 MB to 116.9 MB.
+Total: 3.729500 ms (FindLiveObjects: 0.040700 ms CreateObjectMapping: 0.006900 ms MarkObjects: 3.664600 ms  DeleteObjects: 0.016600 ms)
+
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Harbor using Guid(45afb2ebe891be949b248954190a6bfa) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '892b70d03eb22605717d61ba01e458b3') in 0.0054218 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=51636741bcda29941a24d7c088e463bb): Total: 0.025 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Harbor/Harbor_4x4.prefab using Guid(351c32080f511d1449cc0dce93f12fdf) (PrefabImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f3db9dc36c8153243eeff316f9f2a913') in 0.0176357 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=9ef16c46a1eab334f9b72d9ebed7dab4): Total: 0.036 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Harbor/Harbor_4x4.unity using Guid(fead4cfd05ebb014aaf02368836b9f0b) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ab15654c4a875caccdd1ba96bc6ed08d') in 0.0009622 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=c7ae8e4afe4c249478fb8708f731e16d): Total: 0.030 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=557f25191a94cf74ba9d2bd401e2dda9): Total: 0.002 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Harbor/Harbor_4x4.report.json using Guid(02eb83c1c74f9734ba843c201c989e0e) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7b477ef4537214597d0d0ae43bd7172c') in 0.0090647 seconds
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Harbor/Harbor_4x4.report.txt using Guid(bec0fa050cf505744bc4e4e9b09d1db2) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '97370fcfa3b2eb2e4ae7b45a78c9c31d') in 0.0064215 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=bb946474e21724148b8cc381be14478b): Total: 0.056 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+[LPW] Expansion scene complete:
+WorldBuildReport seed=20291006 version=0.2.0 time=2026-10-02 03:04:37Z
+theme=Harbor grid=4x4 buildMs=224
+roads=40 blocks=16 lots=117 buildings=117 scatter=46 prefabs=0
+[Info] (RoadNetwork) 40 road segments, 25 intersections
+[Info] (Blocks) 16 blocks, 117 lots
+[Info] (Scatter) 46 scatter items (trees/lamps)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+LowPolyWorldBuilder.Editor.Batch.ExpansionBatchEntryPoint:GenerateExpansionPack () (at ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs:67)
+
+(Filename: ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs Line: 67)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 723 unused Assets / (210.5 KB). Loaded Objects now: 1056.
+Memory consumption went from 117.4 MB to 117.2 MB.
+Total: 4.807200 ms (FindLiveObjects: 0.061400 ms CreateObjectMapping: 0.015200 ms MarkObjects: 4.381800 ms  DeleteObjects: 0.348200 ms)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 0 unused Assets / (0 B). Loaded Objects now: 1056.
+Memory consumption went from 117.1 MB to 117.1 MB.
+Total: 3.584000 ms (FindLiveObjects: 0.034900 ms CreateObjectMapping: 0.006600 ms MarkObjects: 3.540800 ms  DeleteObjects: 0.001600 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6 unused Assets / (16.2 KB). Loaded Objects now: 1063.
+Memory consumption went from 117.0 MB to 117.0 MB.
+Total: 3.678400 ms (FindLiveObjects: 0.046300 ms CreateObjectMapping: 0.007600 ms MarkObjects: 3.610600 ms  DeleteObjects: 0.013600 ms)
+
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Harbor using Guid(55eee8c28799a8642a0b34babe234b1b) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '4fc68901605824274ca9e50c8701a295') in 0.0067957 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=7701b6cf26aa7804381909dfcdfc208f): Total: 0.032 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Harbor/Harbor_16x16.prefab using Guid(7d9f3e537390cbd48aa816de05410afd) (PrefabImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '304ef91d4d08842b477df12e9454c6ef') in 0.8681755 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=ad9f4b4349a19c7418e6897db3f74319): Total: 0.931 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=926 ms
+		Asset DB Callback time: managed=0 ms, native=3 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=129, non-scripts=89
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.000ms
+	InvokePackagesCallback: 0.000ms
+	ApplyChangesToAssetFolders: 0.029ms
+	Scan: 12.535ms
+	OnSourceAssetsModified: 0.041ms
+	CategorizeAssetsWithTransientArtifact: 0.003ms
+	ProcessAssetsWithTransientArtifactChanges: 0.004ms
+	CategorizeAssets: 0.072ms
+	ImportOutOfDateAssets: 912.733ms (0.242ms without children)
+		ImportManagerImport: 912.155ms (43.774ms without children)
+			ImportInProcess: 868.364ms
+			UpdateCategorizedAssets: 0.017ms
+		ReloadNativeAssets: 0.012ms
+		UnloadImportedAssets: 0.131ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.016ms
+		InitializingProgressBar: 0.005ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 0.171ms
+	PostProcessAllAssets: 0.547ms
+	Hotreload: 3.664ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.010ms
+	UnloadStreamsBegin: 0.002ms
+	PersistCurrentRevisions: 0.037ms
+	UnloadStreamsEnd: 0.001ms
+	Untracked: 1.092ms
+
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Harbor/Harbor_16x16.unity using Guid(0ef5a00fc26be4340a4114d4bfac6e56) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '855fab920d0775f0b397c13428a5c096') in 0.0010245 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=a5b8aec823927db42b8446a4f20ff6ad): Total: 0.346 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=339 ms
+		Asset DB Callback time: managed=0 ms, native=5 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=129, non-scripts=90
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.000ms
+	InvokePackagesCallback: 0.001ms
+	ApplyChangesToAssetFolders: 0.035ms
+	Scan: 41.374ms
+	OnSourceAssetsModified: 0.059ms
+	CategorizeAssetsWithTransientArtifact: 0.003ms
+	ProcessAssetsWithTransientArtifactChanges: 0.004ms
+	CategorizeAssets: 0.065ms
+	ImportOutOfDateAssets: 294.435ms (292.936ms without children)
+		ImportManagerImport: 1.205ms (0.037ms without children)
+			ImportInProcess: 1.160ms
+			UpdateCategorizedAssets: 0.007ms
+		ReloadNativeAssets: 0.013ms
+		UnloadImportedAssets: 0.123ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.016ms
+		InitializingProgressBar: 0.005ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.000ms
+		OnDemandSchedulerStart: 0.137ms
+	PostProcessAllAssets: 0.524ms
+	Hotreload: 5.544ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.010ms
+	UnloadStreamsBegin: 1.777ms
+	PersistCurrentRevisions: 0.038ms
+	UnloadStreamsEnd: 1.240ms
+	Untracked: 0.834ms
+
+Asset Pipeline Refresh (id=71caf461002f06f4998e4239e9f827c8): Total: 0.002 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Harbor/Harbor_16x16.report.txt using Guid(c5f75fcffcc34864dbf794eb190cc9df) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0ebab5204594d9de4555a89bd149c81f') in 0.0095797 seconds
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Harbor/Harbor_16x16.report.json using Guid(ae2833e5f95598144bfbf4f2d73c0cf6) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '64c7f21078f60ed01a330994c3bf910e') in 0.0071889 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=2c15860a054958945bcde05a015152a5): Total: 0.059 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+[LPW] Expansion scene complete:
+WorldBuildReport seed=20291018 version=0.2.0 time=2026-10-02 03:04:37Z
+theme=Harbor grid=16x16 buildMs=3710
+roads=544 blocks=256 lots=2387 buildings=2387 scatter=660 prefabs=0
+[Info] (RoadNetwork) 544 road segments, 289 intersections
+[Info] (Blocks) 256 blocks, 2387 lots
+[Info] (Scatter) 660 scatter items (trees/lamps)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+LowPolyWorldBuilder.Editor.Batch.ExpansionBatchEntryPoint:GenerateExpansionPack () (at ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs:67)
+
+(Filename: ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs Line: 67)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 12979 unused Assets / (3.7 MB). Loaded Objects now: 1056.
+Memory consumption went from 129.4 MB to 125.7 MB.
+Total: 8.880000 ms (FindLiveObjects: 0.385000 ms CreateObjectMapping: 0.221300 ms MarkObjects: 4.195100 ms  DeleteObjects: 4.078200 ms)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 0 unused Assets / (0 B). Loaded Objects now: 1056.
+Memory consumption went from 125.7 MB to 125.7 MB.
+Total: 3.896500 ms (FindLiveObjects: 0.035800 ms CreateObjectMapping: 0.006700 ms MarkObjects: 3.851400 ms  DeleteObjects: 0.002300 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6 unused Assets / (16.2 KB). Loaded Objects now: 1063.
+Memory consumption went from 121.7 MB to 121.7 MB.
+Total: 3.272300 ms (FindLiveObjects: 0.034900 ms CreateObjectMapping: 0.006900 ms MarkObjects: 3.217300 ms  DeleteObjects: 0.012800 ms)
+
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Airport using Guid(0c266337a233eb347980fa52c5b8a5ce) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '827b40d6c4fd7aef62cbdeba1c597ebc') in 0.0054279 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=3131ebf5e7817634abaf5f842664a0fc): Total: 0.025 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Airport/Airport_4x4.prefab using Guid(68fb05170c8aa6a45aaf79fd567e0f8a) (PrefabImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '979e038ca733727903de4c792b072e40') in 0.0171319 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=820cf2c72ba4aae41b1d52803f08d35b): Total: 0.035 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Airport/Airport_4x4.unity using Guid(db7815639ebe7064ea0265060e8c6e43) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6313b897011cda1e1e25341a1b1a208f') in 0.0009845 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=1cb547fbbc6c3a749a4524a8fc3db8c3): Total: 0.030 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=304c9d4e50838054e9f4b840f8656819): Total: 0.002 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Airport/Airport_4x4.report.json using Guid(e89dc805eca67c34ba427cdd266237fa) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '9e6ab42cb3b913b2f7bdaf058949bf9f') in 0.0098444 seconds
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Airport/Airport_4x4.report.txt using Guid(df55d8cff6400ea4b8bcc1a7c48dbb94) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6ed5b2defc75692e146c6c16c7103bbd') in 0.0075919 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=01afa3438f2965c42bd94250cd77c2ad): Total: 0.054 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+[LPW] Expansion scene complete:
+WorldBuildReport seed=20301006 version=0.2.0 time=2026-10-02 03:04:41Z
+theme=Airport grid=4x4 buildMs=218
+roads=40 blocks=16 lots=106 buildings=106 scatter=47 prefabs=0
+[Info] (RoadNetwork) 40 road segments, 25 intersections
+[Info] (Blocks) 16 blocks, 106 lots
+[Info] (Scatter) 47 scatter items (trees/lamps)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+LowPolyWorldBuilder.Editor.Batch.ExpansionBatchEntryPoint:GenerateExpansionPack () (at ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs:67)
+
+(Filename: ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs Line: 67)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 683 unused Assets / (198.1 KB). Loaded Objects now: 1056.
+Memory consumption went from 122.1 MB to 121.9 MB.
+Total: 4.868900 ms (FindLiveObjects: 0.057200 ms CreateObjectMapping: 0.019100 ms MarkObjects: 4.450100 ms  DeleteObjects: 0.341900 ms)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 0 unused Assets / (0 B). Loaded Objects now: 1056.
+Memory consumption went from 121.9 MB to 121.9 MB.
+Total: 3.551800 ms (FindLiveObjects: 0.031500 ms CreateObjectMapping: 0.007000 ms MarkObjects: 3.510900 ms  DeleteObjects: 0.002100 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6 unused Assets / (16.2 KB). Loaded Objects now: 1063.
+Memory consumption went from 121.8 MB to 121.8 MB.
+Total: 3.354500 ms (FindLiveObjects: 0.033700 ms CreateObjectMapping: 0.006900 ms MarkObjects: 3.298700 ms  DeleteObjects: 0.014900 ms)
+
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Airport using Guid(2bb1c2830497d074b8ba9175e5be9f89) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '14edcf98938a73b10f3847d4a40e969a') in 0.0060315 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=1b8c4ae2cbdf6ea4fab66aaf617ce5fc): Total: 0.028 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Airport/Airport_16x16.prefab using Guid(15287b3e0e7bd9a42bc0e9c9e5a13a0c) (PrefabImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6f803f4b60aef8522520d6ca61504d48') in 0.9779323 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=a44653962044ee048a815b2ba67379a4): Total: 1.041 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=1036 ms
+		Asset DB Callback time: managed=0 ms, native=2 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=131, non-scripts=97
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.001ms
+	ApplyChangesToAssetFolders: 0.033ms
+	Scan: 11.933ms
+	OnSourceAssetsModified: 0.041ms
+	CategorizeAssetsWithTransientArtifact: 0.002ms
+	ProcessAssetsWithTransientArtifactChanges: 0.005ms
+	CategorizeAssets: 0.073ms
+	ImportOutOfDateAssets: 1023.901ms (0.198ms without children)
+		ImportManagerImport: 1023.364ms (45.222ms without children)
+			ImportInProcess: 978.126ms
+			UpdateCategorizedAssets: 0.016ms
+		ReloadNativeAssets: 0.011ms
+		UnloadImportedAssets: 0.147ms
+		ReloadImportedAssets: 0.000ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.016ms
+		InitializingProgressBar: 0.005ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 0.158ms
+	PostProcessAllAssets: 0.406ms
+	Hotreload: 3.095ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.011ms
+	UnloadStreamsBegin: 0.002ms
+	PersistCurrentRevisions: 0.026ms
+	UnloadStreamsEnd: 0.001ms
+	Untracked: 1.117ms
+
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Airport/Airport_16x16.unity using Guid(24745fba41140f741a3211b99f119b43) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f3d9f3d0586653ee2fc00da8511a65a6') in 0.0010547 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=7a2886d16dbc864468d5600f1099e213): Total: 0.355 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=349 ms
+		Asset DB Callback time: managed=0 ms, native=4 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=131, non-scripts=98
+		Asset File Changes: new=1, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.001ms
+	ApplyChangesToAssetFolders: 0.046ms
+	Scan: 44.824ms
+	OnSourceAssetsModified: 0.049ms
+	CategorizeAssetsWithTransientArtifact: 0.003ms
+	ProcessAssetsWithTransientArtifactChanges: 0.004ms
+	CategorizeAssets: 0.073ms
+	ImportOutOfDateAssets: 300.341ms (298.775ms without children)
+		ImportManagerImport: 1.243ms (0.040ms without children)
+			ImportInProcess: 1.196ms
+			UpdateCategorizedAssets: 0.007ms
+		ReloadNativeAssets: 0.012ms
+		UnloadImportedAssets: 0.139ms
+		ReloadImportedAssets: 0.001ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.015ms
+		InitializingProgressBar: 0.006ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.000ms
+		OnDemandSchedulerStart: 0.150ms
+	PostProcessAllAssets: 0.462ms
+	Hotreload: 5.036ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.012ms
+	UnloadStreamsBegin: 2.010ms
+	PersistCurrentRevisions: 0.038ms
+	UnloadStreamsEnd: 1.122ms
+	Untracked: 0.709ms
+
+Asset Pipeline Refresh (id=facd64c26eb63c449b3d6fe911cc362d): Total: 0.002 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Airport/Airport_16x16.report.txt using Guid(46a67108be6c6c44c8eb210406107bb2) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '8e08356ee29e217951326a82bd6a30a5') in 0.0096067 seconds
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Airport/Airport_16x16.report.json using Guid(dfea49707bf1a5d4082d5b277e47d974) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6f8c35d34fb2d16b832980d9b4b288fd') in 0.0073544 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=342c499bff6f0dd46adb5ceee5c81f6e): Total: 0.060 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+[LPW] Expansion scene complete:
+WorldBuildReport seed=20301018 version=0.2.0 time=2026-10-02 03:04:41Z
+theme=Airport grid=16x16 buildMs=3833
+roads=544 blocks=256 lots=2410 buildings=2410 scatter=659 prefabs=0
+[Info] (RoadNetwork) 544 road segments, 289 intersections
+[Info] (Blocks) 256 blocks, 2410 lots
+[Info] (Scatter) 659 scatter items (trees/lamps)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+LowPolyWorldBuilder.Editor.Batch.ExpansionBatchEntryPoint:GenerateExpansionPack () (at ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs:67)
+
+(Filename: ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs Line: 67)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13067 unused Assets / (3.8 MB). Loaded Objects now: 1056.
+Memory consumption went from 130.3 MB to 126.5 MB.
+Total: 9.443000 ms (FindLiveObjects: 0.419100 ms CreateObjectMapping: 0.194600 ms MarkObjects: 4.429900 ms  DeleteObjects: 4.398600 ms)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 0 unused Assets / (0 B). Loaded Objects now: 1056.
+Memory consumption went from 126.5 MB to 126.5 MB.
+Total: 3.772300 ms (FindLiveObjects: 0.032800 ms CreateObjectMapping: 0.006700 ms MarkObjects: 3.730700 ms  DeleteObjects: 0.001900 ms)
+
+[LPW] All 10 expansion scenarios generated successfully.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+LowPolyWorldBuilder.Editor.Batch.ExpansionBatchEntryPoint:GenerateExpansionPack () (at ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs:85)
+
+(Filename: ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs Line: 85)
+
+[Licensing::IpcConnector] License Notification channel disconnected successfully.
+[Licensing::IpcConnector] License Client channel disconnected successfully.
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+Checking for leaked weakptr:
+  Found no leaked weakptrs.
+[Package Manager] Server process was shutdown
+##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1790910285758,"processId":23272,"allocatedMemory":10127006,"memoryLabels":[{"Default":26045},{"Permanent":15300},{"NewDelete":81217},{"Thread":4230344},{"Manager":29730},{"VertexData":8},{"Geometry":816},{"Texture":160},{"Shader":78771},{"Material":24},{"GfxDevice":55392},{"Animation":328},{"Audio":4040},{"FontEngine":256},{"Physics":929},{"Serialization":968},{"Input":14816},{"JobScheduler":33024},{"TextLib":32},{"Mono":32},{"ScriptingNativeRuntime":155060},{"BaseObject":1619920},{"Resource":1304},{"Renderer":2880},{"Transform":4646},{"File":976},{"WebCam":752},{"Culling":32},{"Terrain":11394},{"Wind":24},{"STL":80},{"String":25419},{"DynamicArray":78318},{"HashMap":70305},{"Utility":2664222},{"Curl":48},{"PoolAlloc":1768},{"AI":104},{"TypeTree":4493},{"ScriptManager":512},{"RuntimeInitializeOnLoadManager":64},{"SpriteAtlas":112},{"GI":7888},{"Director":8240},{"CloudService":12968},{"WebRequest":6582},{"VR":45953},{"SceneManager":496},{"Video":64},{"LazyScriptCache":32},{"NativeArray":8},{"Camera":17},{"Secure":1},{"SerializationCache":1576},{"APIUpdating":10320},{"Subsystems":336},{"VirtualTexturing":57888},{"StaticSafetyDebugInfo":278528},{"Analytics":560},{"Hierarchy":16},{"Gui":80},{"EditorUtility":43744},{"VersionControl":4},{"Undo":624},{"AssetDatabase":381471},{"EditorGi":328},{"UnityConnect":24184},{"Upm":1880},{"DrivenProperties":72},{"LocalIPC":260},{"ProfilerEditor":9738},{"CoreBusinessMetrics":14763},{"Licensing":3656},{"AssetReference":32},{"IPCStream":32}]}
+~StackAllocator(ALLOC_TEMP_MAIN) m_LastAlloc not NULL. Did you forget to call FreeAllStackAllocations()? To get more information, run app with -diag-temp-memory-leak-validation cmd line argument

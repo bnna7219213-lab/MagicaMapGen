@@ -1,0 +1,10 @@
+{
+    "name": "LowPolyWorldBuilder.Runtime",
+    "rootNamespace": "LowPolyWorldBuilder",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "autoReferenced": true,
+    "noEngineReferences": false
+}

@@ -1,0 +1,119 @@
+newmtl biome_deep_water
+Ka 0.18 0.18 0.18
+Kd 0.0350 0.1600 0.2500
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
+newmtl biome_shallow_water
+Ka 0.18 0.18 0.18
+Kd 0.0800 0.3900 0.5300
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
+newmtl biome_beach
+Ka 0.18 0.18 0.18
+Kd 0.8800 0.7600 0.4900
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
+newmtl biome_grassland
+Ka 0.18 0.18 0.18
+Kd 0.3800 0.6200 0.2300
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
+newmtl biome_forest
+Ka 0.18 0.18 0.18
+Kd 0.1200 0.3400 0.2000
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
+newmtl biome_rocky
+Ka 0.18 0.18 0.18
+Kd 0.3900 0.3900 0.3700
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
+newmtl biome_peak
+Ka 0.18 0.18 0.18
+Kd 0.7900 0.8100 0.7700
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
+newmtl biome_valley_basin
+Ka 0.18 0.18 0.18
+Kd 0.2800 0.5300 0.3200
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
+newmtl biome_lake_bed
+Ka 0.18 0.18 0.18
+Kd 0.0550 0.2200 0.3200
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
+newmtl lake_water
+Ka 0.18 0.18 0.18
+Kd 0.0550 0.4300 0.6600
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
+newmtl river_water
+Ka 0.18 0.18 0.18
+Kd 0.0450 0.3400 0.6100
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
+newmtl tree_bark
+Ka 0.18 0.18 0.18
+Kd 0.2500 0.1300 0.0650
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
+newmtl tree_leaves
+Ka 0.18 0.18 0.18
+Kd 0.1600 0.3900 0.1100
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
+newmtl tree_leaves_light
+Ka 0.18 0.18 0.18
+Kd 0.3400 0.5700 0.1600
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
+newmtl scatter_rock
+Ka 0.18 0.18 0.18
+Kd 0.3600 0.3900 0.4000
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
+newmtl detail_grass
+Ka 0.18 0.18 0.18
+Kd 0.6000 0.7200 0.2800
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
+newmtl detail_reed
+Ka 0.18 0.18 0.18
+Kd 0.4500 0.5100 0.1700
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+

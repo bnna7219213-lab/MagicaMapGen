@@ -1,0 +1,10 @@
+{
+  "name": "com.studio.lowpoly-world-builder",
+  "version": "0.1.0",
+  "displayName": "Low Poly World Builder",
+  "description": "Parametric, seed-deterministic low-poly world/city prototype generator for Unity 6. MVP: 4x4 cartoon city block closed loop (preview -> generate -> rebuild -> save). Rail, port and airport generators plug in via the same BuildPlan/AssetCatalog pipeline.",
+  "unity": "6000.0",
+  "keywords": ["procedural", "low-poly", "city", "generation", "editor"],
+  "author": { "name": "Studio" },
+  "type": "tool"
+}

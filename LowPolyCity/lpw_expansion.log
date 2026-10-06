@@ -1,0 +1,1474 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Connection attempt to the License Client on channel: "LicenseClient-bnna7" failed because channel doesn't exist; code: "0x80000002"
+[Licensing::Module] Successfully launched the LicensingClient (PId: 7456)
+[Licensing::IpcConnector] Successfully connected to the License Client on channel: "LicenseClient-bnna7" at "2026-10-02T03:34:02.1499866Z"
+[Licensing::Client] Error: Code 10 while verifying Licensing Client signature (process Id: 7456, path: "C:/Program Files/Unity 6000.0.0f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::Module] Error: LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.15.4+eee609c
+  Session Id:              807c81c63f764fd3b7133eb624d199d7
+  Correlation Id:          b9219a790ce13e3eeba59024d7c3839b
+  External correlation Id: 5184726782468753025
+  Machine Id:              W+EtGLg0MsTmx7QQf553hFe27bs=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-bnna7" (connect: 0.63s, validation: 0.04s, handshake: 0.05s)
+[Licensing::IpcConnector] Successfully connected to the License Notification on channel: "LicenseClient-bnna7-notifications" at "2026-10-02T03:34:02.2415232Z"
+[Licensing::Module] Connected to LicensingClient (PId: 7456, launch time: 0.00, total connection time: 0.73s)
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Error: Code 500 while processing request (status: Unable to update licenses. Errors: Internal Client Error: The delegate executed asynchronously through TimeoutPolicy did not complete within the timeout.,Token not found in cache)
+[Licensing::Client] Error: Code 500 while updating license in client (status: Unable to update licenses. Errors: Internal Client Error: The delegate executed asynchronously through TimeoutPolicy did not complete within the timeout.,Token not found in cache)
+Built from '6000.0/release' branch; Version is '6000.0.0f1 (4ff56b3ea44c) revision 5240171'; Using compiler version '193933522'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26200) 64bit ProfessionalWorkstation' Language: 'zh' Physical Memory: 23844 MB
+[Licensing::Client] Successfully resolved entitlements
+[Licensing::Module] Serial number assigned to: "F4-B33G-4WN5-WM8A-SSQ9-XXXX"
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity 6000.0.0f1\Editor\Unity.exe
+-batchmode
+-quit
+-projectPath
+C:\Users\bnna7\workspace\Houdini\LowPolyCity
+-executeMethod
+LowPolyWorldBuilder.Editor.Batch.ExpansionBatchEntryPoint.GenerateExpansionPack
+-logFile
+C:\Users\bnna7\workspace\Houdini\LowPolyCity\lpw_expansion.log
+Successfully changed project path to: C:\Users\bnna7\workspace\Houdini\LowPolyCity
+C:/Users/bnna7/workspace/Houdini/LowPolyCity
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [25932]  Target information:
+
+Player connection [25932]  * "[IP] 172.29.240.1 [Port] 55504 [Flags] 2 [Guid] 3658466402 [EditorId] 3658466402 [Version] 1048832 [Id] WindowsEditor(7,desktop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [25932]  * "[IP] 192.168.255.126 [Port] 55504 [Flags] 2 [Guid] 3658466402 [EditorId] 3658466402 [Version] 1048832 [Id] WindowsEditor(7,desktop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [25932]  * "[IP] 192.168.1.13 [Port] 55504 [Flags] 2 [Guid] 3658466402 [EditorId] 3658466402 [Version] 1048832 [Id] WindowsEditor(7,desktop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [25932] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [25932] Host joined alternative multi-casting on [225.0.0.222:34997]...
+[Package Manager] Connected to IPC stream "Upm-18416" after 0.2 seconds.
+Library Redirect Path: Library/
+[Licensing::Client] Successfully resolved entitlements
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 14 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.test-framework@1.4.5 (location: C:\Users\bnna7\workspace\Houdini\LowPolyCity\Library\PackageCache\com.unity.test-framework)
+    com.unity.ext.nunit@2.0.5 (location: C:\Users\bnna7\workspace\Houdini\LowPolyCity\Library\PackageCache\com.unity.ext.nunit)
+  Built-in packages:
+    com.unity.modules.audio@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\LowPolyCity\Library\PackageCache\com.unity.modules.audio)
+    com.unity.modules.imgui@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\LowPolyCity\Library\PackageCache\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\LowPolyCity\Library\PackageCache\com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\LowPolyCity\Library\PackageCache\com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\LowPolyCity\Library\PackageCache\com.unity.modules.physics)
+    com.unity.modules.screencapture@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\LowPolyCity\Library\PackageCache\com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\LowPolyCity\Library\PackageCache\com.unity.modules.terrain)
+    com.unity.modules.ui@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\LowPolyCity\Library\PackageCache\com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\LowPolyCity\Library\PackageCache\com.unity.modules.uielements)
+    com.unity.modules.hierarchycore@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\LowPolyCity\Library\PackageCache\com.unity.modules.hierarchycore)
+    com.unity.modules.imageconversion@1.0.0 (location: C:\Users\bnna7\workspace\Houdini\LowPolyCity\Library\PackageCache\com.unity.modules.imageconversion)
+  Embedded packages:
+    com.studio.lowpoly-world-builder@file:C:\Users\bnna7\workspace\Houdini\LowPolyCity\Packages\com.studio.lowpoly-world-builder (location: C:\Users\bnna7\workspace\Houdini\LowPolyCity\Packages\com.studio.lowpoly-world-builder)
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[Subsystems] No new subsystems found in resolved package list.
+Package Manager log level set to [2]
+[Package Manager] Done registering packages in 0.38 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.0.0f1 (4ff56b3ea44c)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity 6000.0.0f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/bnna7/workspace/Houdini/LowPolyCity/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 4050 Laptop GPU (ID=0x28a1)
+    Vendor:   NVIDIA
+    VRAM:     5921 MB
+    Driver:   32.0.15.8088
+[Licensing::Client] Successfully resolved entitlements
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity 6000.0.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity 6000.0.0f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56416
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity 6000.0.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.004105 seconds.
+- Loaded All Assemblies, in  0.297 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.256 seconds
+Domain Reload Profiling: 548ms
+	BeginReloadAssembly (111ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (44ms)
+	LoadAllAssembliesAndSetupDomain (102ms)
+		LoadAssemblies (106ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (99ms)
+			TypeCache.Refresh (98ms)
+				TypeCache.ScanAssembly (89ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (257ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (224ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (13ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (3ms)
+			ProcessInitializeOnLoadAttributes (99ms)
+			ProcessInitializeOnLoadMethodAttributes (105ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlements
+Application.AssetDatabase Initial Refresh Start
+[ScriptCompilation] Requested script compilation because: Assetdatabase observed changes in script compilation related files
+Starting: C:\Program Files\Unity 6000.0.0f1\Editor\Data\bee_backend.exe --dont-print-to-structured-log --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/bnna7/workspace/Houdini/LowPolyCity
+DisplayProgressbar: Compiling Scripts
+ExitCode: 4 Duration: 0s905ms
+Rebuilding DAG because FileSignature timestamp changed: Library/Bee/1900b0aE-inputdata.json
+[152/161    0s] Csc Library/Bee/artifacts/1900b0aE.dag/LowPolyWorldBuilder.Runtime.dll (+2 others)
+##### CommandLine
+"C:\Program Files\Unity 6000.0.0f1\Editor\Data\NetCoreRuntime\dotnet.exe" exec "C:/Program Files/Unity 6000.0.0f1/Editor/Data/DotNetSdkRoslyn/csc.dll" /nostdlib /noconfig /shared "@Library/Bee/artifacts/1900b0aE.dag/LowPolyWorldBuilder.Runtime.rsp" "@Library/Bee/artifacts/1900b0aE.dag/LowPolyWorldBuilder.Runtime.rsp2"
+##### Contents of Library\Bee\artifacts\1900b0aE.dag\LowPolyWorldBuilder.Runtime.rsp
+-target:library
+-out:"Library/Bee/artifacts/1900b0aE.dag/LowPolyWorldBuilder.Runtime.dll"
+-refout:"Library/Bee/artifacts/1900b0aE.dag/LowPolyWorldBuilder.Runtime.ref.dll"
+-define:UNITY_6000_0_0
+-define:UNITY_6000_0
+-define:UNITY_6000
+-define:UNITY_5_3_OR_NEWER
+-define:UNITY_5_4_OR_NEWER
+-define:UNITY_5_5_OR_NEWER
+-define:UNITY_5_6_OR_NEWER
+-define:UNITY_2017_1_OR_NEWER
+-define:UNITY_2017_2_OR_NEWER
+-define:UNITY_2017_3_OR_NEWER
+-define:UNITY_2017_4_OR_NEWER
+-define:UNITY_2018_1_OR_NEWER
+-define:UNITY_2018_2_OR_NEWER
+-define:UNITY_2018_3_OR_NEWER
+-define:UNITY_2018_4_OR_NEWER
+-define:UNITY_2019_1_OR_NEWER
+-define:UNITY_2019_2_OR_NEWER
+-define:UNITY_2019_3_OR_NEWER
+-define:UNITY_2019_4_OR_NEWER
+-define:UNITY_2020_1_OR_NEWER
+-define:UNITY_2020_2_OR_NEWER
+-define:UNITY_2020_3_OR_NEWER
+-define:UNITY_2021_1_OR_NEWER
+-define:UNITY_2021_2_OR_NEWER
+-define:UNITY_2021_3_OR_NEWER
+-define:UNITY_2022_1_OR_NEWER
+-define:UNITY_2022_2_OR_NEWER
+-define:UNITY_2022_3_OR_NEWER
+-define:UNITY_2023_1_OR_NEWER
+-define:UNITY_2023_2_OR_NEWER
+-define:UNITY_2023_3_OR_NEWER
+-define:UNITY_6000_0_OR_NEWER
+-define:PLATFORM_ARCH_64
+-define:UNITY_64
+-define:UNITY_INCLUDE_TESTS
+-define:ENABLE_AR
+-define:ENABLE_AUDIO
+-define:ENABLE_CACHING
+-define:ENABLE_CLOTH
+-define:ENABLE_EVENT_QUEUE
+-define:ENABLE_MICROPHONE
+-define:ENABLE_MULTIPLE_DISPLAYS
+-define:ENABLE_PHYSICS
+-define:ENABLE_TEXTURE_STREAMING
+-define:ENABLE_VIRTUALTEXTURING
+-define:ENABLE_LZMA
+-define:ENABLE_UNITYEVENTS
+-define:ENABLE_VR
+-define:ENABLE_WEBCAM
+-define:ENABLE_UNITYWEBREQUEST
+-define:ENABLE_WWW
+-define:ENABLE_CLOUD_SERVICES
+-define:ENABLE_CLOUD_SERVICES_ADS
+-define:ENABLE_CLOUD_SERVICES_USE_WEBREQUEST
+-define:ENABLE_CLOUD_SERVICES_CRASH_REPORTING
+-define:ENABLE_CLOUD_SERVICES_PURCHASING
+-define:ENABLE_CLOUD_SERVICES_ANALYTICS
+-define:ENABLE_CLOUD_SERVICES_BUILD
+-define:ENABLE_EDITOR_GAME_SERVICES
+-define:ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT
+-define:ENABLE_CLOUD_LICENSE
+-define:ENABLE_EDITOR_HUB_LICENSE
+-define:ENABLE_WEBSOCKET_CLIENT
+-define:ENABLE_GENERATE_NATIVE_PLUGINS_FOR_ASSEMBLIES_API
+-define:ENABLE_DIRECTOR_AUDIO
+-define:ENABLE_DIRECTOR_TEXTURE
+-define:ENABLE_MANAGED_JOBS
+-define:ENABLE_MANAGED_TRANSFORM_JOBS
+-define:ENABLE_MANAGED_ANIMATION_JOBS
+-define:ENABLE_MANAGED_AUDIO_JOBS
+-define:ENABLE_MANAGED_UNITYTLS
+-define:INCLUDE_DYNAMIC_GI
+-define:ENABLE_SCRIPTING_GC_WBARRIERS
+-define:PLATFORM_SUPPORTS_MONO
+-define:RENDER_SOFTWARE_CURSOR
+-define:ENABLE_MARSHALLING_TESTS
+-define:ENABLE_VIDEO
+-define:ENABLE_NAVIGATION_OFFMESHLINK_TO_NAVMESHLINK
+-define:ENABLE_ACCELERATOR_CLIENT_DEBUGGING
+-define:TEXTCORE_1_0_OR_NEWER
+-define:EDITOR_ONLY_NAVMESH_BUILDER_DEPRECATED
+-define:PLATFORM_STANDALONE_WIN
+-define:PLATFORM_STANDALONE
+-define:UNITY_STANDALONE_WIN
+-define:UNITY_STANDALONE
+-define:ENABLE_RUNTIME_GI
+-define:ENABLE_MOVIES
+-define:ENABLE_NETWORK
+-define:ENABLE_NVIDIA
+-define:ENABLE_AMD
+-define:ENABLE_CRUNCH_TEXTURE_COMPRESSION
+-define:ENABLE_OUT_OF_PROCESS_CRASH_HANDLER
+-define:ENABLE_CLUSTER_SYNC
+-define:ENABLE_CLUSTERINPUT
+-define:PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP
+-define:GFXDEVICE_WAITFOREVENT_MESSAGEPUMP
+-define:PLATFORM_USES_EXPLICIT_MEMORY_MANAGER_INITIALIZER
+-define:PLATFORM_SUPPORTS_WAIT_FOR_PRESENTATION
+-define:PLATFORM_SUPPORTS_SPLIT_GRAPHICS_JOBS
+-define:ENABLE_MONO
+-define:NET_STANDARD_2_0
+-define:NET_STANDARD
+-define:NET_STANDARD_2_1
+-define:NETSTANDARD
+-define:NETSTANDARD2_1
+-define:ENABLE_PROFILER
+-define:DEBUG
+-define:TRACE
+-define:UNITY_ASSERTIONS
+-define:UNITY_EDITOR
+-define:UNITY_EDITOR_64
+-define:UNITY_EDITOR_WIN
+-define:ENABLE_UNITY_COLLECTIONS_CHECKS
+-define:ENABLE_BURST_AOT
+-define:UNITY_TEAM_LICENSE
+-define:ENABLE_CUSTOM_RENDER_TEXTURE
+-define:ENABLE_DIRECTOR
+-define:ENABLE_LOCALIZATION
+-define:ENABLE_SPRITES
+-define:ENABLE_TERRAIN
+-define:ENABLE_TILEMAP
+-define:ENABLE_TIMELINE
+-define:ENABLE_LEGACY_INPUT_MANAGER
+-define:TEXTCORE_FONT_ENGINE_1_5_OR_NEWER
+-define:TEXTCORE_TEXT_ENGINE_1_5_OR_NEWER
+-define:CSHARP_7_OR_LATER
+-define:CSHARP_7_3_OR_NEWER
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEditor.Graphs.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.AccessibilityModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.AdaptivePerformanceModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.BuildProfileModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreBusinessMetricsModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.DiagnosticsModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.EditorToolbarModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.GIModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.GraphicsStateCollectionSerializerModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.GraphViewModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.GridAndSnapModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.GridModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.MultiplayerModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.Physics2DModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.PhysicsModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.PresetsUIModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.PropertiesModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.QuickSearchModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.SafeModeModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.SceneTemplateModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.SceneViewModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.ShaderFoundryModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.SketchUpModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.SpriteMaskModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.SpriteShapeModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.SubstanceModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.TerrainModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.TextCoreFontEngineModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.TextCoreTextEngineModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.TextRenderingModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.TilemapModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.TreeModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.UIAutomationModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.UIBuilderModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.UIElementsModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.UIElementsSamplesModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.UmbraModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.VFXModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.VideoModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEditor.XRModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.ARModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.AudioModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterInputModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.ContentLoadModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.CrashReportingModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.DSPGraphModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.GameCenterModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.GIModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.GraphicsStateCollectionSerializerModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.GridModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.HierarchyCoreModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.HotReloadModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.ImageConversionModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.IMGUIModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.InputForUIModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.InputLegacyModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.InputModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.JSONSerializeModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.LocalizationModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.MarshallingModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.MultiplayerModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.ParticleSystemModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.PerformanceReportingModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.PhysicsModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.PropertiesModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.ScreenCaptureModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.SharedInternalsModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.SpriteShapeModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.StreamingModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.SubstanceModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.TerrainModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.TextCoreFontEngineModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.TextCoreTextEngineModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.TextRenderingModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.TLSModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.UIElementsModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.UIModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityAnalyticsCommonModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityConnectModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityCurlModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.UnityTestProtocolModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.VFXModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Managed/UnityEngine/UnityEngine.VirtualTexturingModule.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/mscorlib.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.ComponentModel.Composition.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Core.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Data.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Drawing.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.IO.Compression.FileSystem.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Net.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Numerics.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Runtime.Serialization.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.ServiceModel.Web.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Transactions.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Web.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Windows.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Xml.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Xml.Linq.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/System.Xml.Serialization.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/Microsoft.Win32.Primitives.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.AppContext.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Buffers.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Collections.Concurrent.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Collections.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Collections.NonGeneric.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Collections.Specialized.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.ComponentModel.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.ComponentModel.EventBasedAsync.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.ComponentModel.Primitives.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.ComponentModel.TypeConverter.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Console.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Data.Common.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.Contracts.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.Debug.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.FileVersionInfo.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.Process.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.StackTrace.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.TextWriterTraceListener.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.Tools.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.TraceSource.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Diagnostics.Tracing.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Drawing.Primitives.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Dynamic.Runtime.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Globalization.Calendars.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Globalization.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Globalization.Extensions.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.Compression.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.Compression.ZipFile.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.FileSystem.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.FileSystem.DriveInfo.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.FileSystem.Primitives.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.FileSystem.Watcher.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.IsolatedStorage.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.MemoryMappedFiles.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.Pipes.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.IO.UnmanagedMemoryStream.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Linq.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Linq.Expressions.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Linq.Parallel.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Linq.Queryable.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Memory.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.Http.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.NameResolution.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.NetworkInformation.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.Ping.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.Primitives.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.Requests.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.Security.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.Sockets.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.WebHeaderCollection.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.WebSockets.Client.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Net.WebSockets.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Numerics.Vectors.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.ObjectModel.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Reflection.DispatchProxy.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Reflection.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Reflection.Emit.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Reflection.Emit.ILGeneration.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Reflection.Emit.Lightweight.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Reflection.Extensions.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Reflection.Primitives.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Resources.Reader.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Resources.ResourceManager.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Resources.Writer.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.CompilerServices.VisualC.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.Extensions.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.Handles.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.InteropServices.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.InteropServices.RuntimeInformation.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.Numerics.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.Serialization.Formatters.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.Serialization.Json.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.Serialization.Primitives.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Runtime.Serialization.Xml.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Security.Claims.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Security.Cryptography.Algorithms.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Security.Cryptography.Csp.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Security.Cryptography.Encoding.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Security.Cryptography.Primitives.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Security.Cryptography.X509Certificates.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Security.Principal.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Security.SecureString.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Text.Encoding.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Text.Encoding.Extensions.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Text.RegularExpressions.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Threading.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Threading.Overlapped.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Threading.Tasks.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Threading.Tasks.Extensions.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Threading.Tasks.Parallel.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Threading.Thread.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Threading.ThreadPool.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Threading.Timer.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.ValueTuple.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Xml.ReaderWriter.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Xml.XDocument.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Xml.XmlDocument.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Xml.XmlSerializer.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Xml.XPath.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/compat/2.1.0/shims/netstandard/System.Xml.XPath.XDocument.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/Extensions/2.0.0/System.Runtime.InteropServices.WindowsRuntime.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/NetStandard/ref/2.1.0/netstandard.dll"
+-r:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll"
+-r:"Library/PackageCache/com.unity.ext.nunit/net40/unity-custom/nunit.framework.dll"
+-analyzer:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
+-analyzer:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
+-analyzer:"C:/Program Files/Unity 6000.0.0f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll"
+"Packages/com.studio.lowpoly-world-builder/Runtime/Config/AssetCatalog.cs"
+"Packages/com.studio.lowpoly-world-builder/Runtime/Config/StylePalette.cs"
+"Packages/com.studio.lowpoly-world-builder/Runtime/Config/WorldBuildProfile.cs"
+"Packages/com.studio.lowpoly-world-builder/Runtime/Config/ZoneProfile.cs"
+"Packages/com.studio.lowpoly-world-builder/Runtime/Data/BuildPlan.cs"
+"Packages/com.studio.lowpoly-world-builder/Runtime/Data/CityBlock.cs"
+"Packages/com.studio.lowpoly-world-builder/Runtime/Data/RoadGraph.cs"
+"Packages/com.studio.lowpoly-world-builder/Runtime/Data/WorldBuildMarker.cs"
+"Packages/com.studio.lowpoly-world-builder/Runtime/Data/WorldBuildReport.cs"
+"Packages/com.studio.lowpoly-world-builder/Runtime/Generation/BlockSubdivisionGenerator.cs"
+"Packages/com.studio.lowpoly-world-builder/Runtime/Generation/BuildingGenerator.cs"
+"Packages/com.studio.lowpoly-world-builder/Runtime/Generation/DeterministicRandom.cs"
+"Packages/com.studio.lowpoly-world-builder/Runtime/Generation/GenerationContext.cs"
+"Packages/com.studio.lowpoly-world-builder/Runtime/Generation/IWorldGenerator.cs"
+"Packages/com.studio.lowpoly-world-builder/Runtime/Generation/RoadNetworkGenerator.cs"
+"Packages/com.studio.lowpoly-world-builder/Runtime/Generation/ScatterGenerator.cs"
+"Packages/com.studio.lowpoly-world-builder/Runtime/Generation/TerrainGenerator.cs"
+"Packages/com.studio.lowpoly-world-builder/Runtime/Generation/WorldPlanGenerator.cs"
+"Packages/com.studio.lowpoly-world-builder/Runtime/Geometry/BuildingMeshBuilder.cs"
+"Packages/com.studio.lowpoly-world-builder/Runtime/Geometry/MeshBuilder.cs"
+"Packages/com.studio.lowpoly-world-builder/Runtime/Geometry/MeshChunk.cs"
+"Packages/com.studio.lowpoly-world-builder/Runtime/Geometry/RoadMeshBuilder.cs"
+"Packages/com.studio.lowpoly-world-builder/Runtime/Placement/AssetSelector.cs"
+"Packages/com.studio.lowpoly-world-builder/Runtime/Placement/PlacementRules.cs"
+"Packages/com.studio.lowpoly-world-builder/Runtime/Placement/PortCompatibility.cs"
+-langversion:9.0
+/deterministic
+/optimize+
+/debug:portable
+/nologo
+/RuntimeMetadataVersion:v4.0.30319
+/nowarn:0169
+/nowarn:0649
+/nowarn:0282
+/nowarn:1701
+/nowarn:1702
+/utf8output
+/preferreduilang:en-US
+/additionalfile:"Library/Bee/artifacts/1900b0aE.dag/LowPolyWorldBuilder.Runtime.UnityAdditionalFile.txt"
+##### Custom Environment Variables
+DOTNET_MULTILEVEL_LOOKUP=0
+##### ExitCode
+1
+##### Output
+Packages\com.studio.lowpoly-world-builder\Runtime\Generation\BuildingGenerator.cs(56,16): error CS0246: The type or namespace name 'BuildingArchetype' could not be found (are you missing a using directive or an assembly reference?)
+
+Packages\com.studio.lowpoly-world-builder\Runtime\Data\CityBlock.cs(28,16): error CS0246: The type or namespace name 'BuildingArchetype' could not be found (are you missing a using directive or an assembly reference?)
+*** Tundra requires additional run (0.88 seconds), 1 items updated, 151 evaluated
+Starting: C:\Program Files\Unity 6000.0.0f1\Editor\Data\Tools\netcorerun\netcorerun.exe "C:\Program Files\Unity 6000.0.0f1\Editor\Data\Tools\BuildPipeline\ScriptCompilationBuildProgram.exe" "Library/Bee/1900b0aE.dag.json" "Library/Bee/1900b0aE-inputdata.json" "Library\Bee\buildprogram0.traceevents"
+WorkingDir: C:/Users/bnna7/workspace/Houdini/LowPolyCity
+ExitCode: 0 Duration: 0s194ms
+Starting: C:\Program Files\Unity 6000.0.0f1\Editor\Data\bee_backend.exe --dont-print-to-structured-log --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --dagfilejson="Library\Bee\1900b0aE.dag.json" --profile="Library/Bee/backend2.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/bnna7/workspace/Houdini/LowPolyCity
+ExitCode: 0 Duration: 0s886ms
+Finished compiling graph: 164 nodes, 925 flattened edges (885 ToBuild, 10 ToUse), maximum node priority 47
+[140/161    0s] WriteText Library/Bee/artifacts/1900b0aE.dag/LowPolyWorldBuilder.Runtime.rsp
+[152/161    0s] Csc Library/Bee/artifacts/1900b0aE.dag/LowPolyWorldBuilder.Runtime.dll (+2 others)
+[           0s] Csc Library/Bee/artifacts/1900b0aE.dag/LowPolyWorldBuilder.Runtime.dll (+2 others) [CacheWrite 00000000000000000000000000000003]
+[153/161    0s] CopyFiles Library/ScriptAssemblies/LowPolyWorldBuilder.Runtime.dll
+[154/161    0s] CopyFiles Library/ScriptAssemblies/LowPolyWorldBuilder.Runtime.pdb
+[155/161    0s] Csc Library/Bee/artifacts/1900b0aE.dag/LowPolyWorldBuilder.Editor.dll (+2 others)
+[           0s] Csc Library/Bee/artifacts/1900b0aE.dag/LowPolyWorldBuilder.Editor.dll (+2 others) [CacheWrite 00000000000000000000000000000003]
+[156/161    0s] CopyFiles Library/ScriptAssemblies/LowPolyWorldBuilder.Editor.pdb
+[157/161    0s] CopyFiles Library/ScriptAssemblies/LowPolyWorldBuilder.Editor.dll
+[158/161    0s] Csc Library/Bee/artifacts/1900b0aE.dag/LowPolyWorldBuilder.EditorTests.dll (+2 others)
+[           0s] Csc Library/Bee/artifacts/1900b0aE.dag/LowPolyWorldBuilder.EditorTests.dll (+2 others) [CacheWrite 00000000000000000000000000000003]
+[159/161    0s] CopyFiles Library/ScriptAssemblies/LowPolyWorldBuilder.EditorTests.pdb
+[160/161    0s] CopyFiles Library/ScriptAssemblies/LowPolyWorldBuilder.EditorTests.dll
+*** Tundra build success (0.86 seconds), 10 items updated, 161 evaluated
+AssetDatabase: script compilation time: 2.300428s
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.717 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.361 seconds
+Domain Reload Profiling: 1073ms
+	BeginReloadAssembly (404ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (9ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (32ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (28ms)
+	LoadAllAssembliesAndSetupDomain (244ms)
+		LoadAssemblies (330ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (13ms)
+			TypeCache.Refresh (9ms)
+				TypeCache.ScanAssembly (6ms)
+			BuildScriptInfoCaches (2ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (361ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (222ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (10ms)
+			SetLoadedEditorAssemblies (2ms)
+			BeforeProcessingInitializeOnLoad (38ms)
+			ProcessInitializeOnLoadAttributes (81ms)
+			ProcessInitializeOnLoadMethodAttributes (82ms)
+			AfterProcessingInitializeOnLoad (10ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (12ms)
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=c23679e709f053248ac7e160dcbe5907): Total: 3.559 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=0 (actual=0, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=465 ms
+		Asset DB Callback time: managed=42 ms, native=3 ms
+		Scripting: domain reloads=1, domain reload time=733 ms, compile time=2302 ms, other=12 ms
+		Project Asset Count: scripts=131, non-scripts=104
+		Asset File Changes: new=1, changed=10, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 4.870ms
+	ApplyChangesToAssetFolders: 0.284ms
+	Scan: 40.143ms
+	OnSourceAssetsModified: 0.624ms
+	CategorizeAssetsWithTransientArtifact: 4.361ms
+	ProcessAssetsWithTransientArtifactChanges: 3.307ms
+	CategorizeAssets: 1.381ms
+	ImportOutOfDateAssets: 363.140ms (-1939.796ms without children)
+		CompileScripts: 2302.009ms
+		ReloadNativeAssets: 0.000ms
+		UnloadImportedAssets: 0.754ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.025ms
+		InitializingProgressBar: 0.001ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.000ms
+		OnDemandSchedulerStart: 0.147ms
+	PostProcessAllAssets: 42.214ms
+	Hotreload: 1.423ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.001ms
+	UnloadStreamsBegin: 0.245ms
+	PersistCurrentRevisions: 0.005ms
+	UnloadStreamsEnd: 0.001ms
+	GenerateScriptTypeHashes: 0.013ms
+	Untracked: 3096.602ms
+
+Application.AssetDatabase Initial Refresh End
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Scanning for USB devices : 3.039ms
+Initializing Unity extensions:
+[Licensing::Client] Successfully resolved entitlements
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-LowPolyCity
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 426 unused Assets / (0.6 MB). Loaded Objects now: 1056.
+Memory consumption went from 105.5 MB to 104.9 MB.
+Total: 4.453300 ms (FindLiveObjects: 0.077600 ms CreateObjectMapping: 0.013700 ms MarkObjects: 4.033000 ms  DeleteObjects: 0.328500 ms)
+
+Start importing Assets/LowPolyWorldBuilder/Config/CartoonCity_4x4.asset using Guid(9f3623583cc501446bc034f74c24ab5d) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c43127b8f440a58653c1caed7081699b') in 0.0058225 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=418cd53e420777a48bde3cbd9abe2525): Total: 0.026 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+[LPW] Default profile created at Assets/LowPolyWorldBuilder/Config/CartoonCity_4x4.asset
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+LowPolyWorldBuilder.Editor.UI.SampleAssetFactory:CreateDefaultProfileWithZones () (at ./Packages/com.studio.lowpoly-world-builder/Editor/UI/SampleAssetFactory.cs:59)
+LowPolyWorldBuilder.Editor.UI.ExpansionScenarioFactory:CreateProfiles () (at ./Packages/com.studio.lowpoly-world-builder/Editor/UI/ExpansionScenarioFactory.cs:15)
+LowPolyWorldBuilder.Editor.Batch.ExpansionBatchEntryPoint:GenerateExpansionPack () (at ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs:25)
+
+(Filename: ./Packages/com.studio.lowpoly-world-builder/Editor/UI/SampleAssetFactory.cs Line: 59)
+
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Railway_16x16.asset using Guid(b035c30c12ddc75499a86a20cfff9b82) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ccd68d13dfa570d364f2188afbd8053c') in 0.0026094 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Zone_Metro_Office.asset using Guid(f0b6a46c607e2a34aa746d42d335673a) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7902e85d67a6ed9b27a5c38c110160d7') in 0.0019161 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Palette_Metro.asset using Guid(0123d4e71dbeb0b4294a1e0cfc20f6c7) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '59439f2c1e5d771c3d92633c4a9f0a63') in 0.0017123 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Airport_4x4.asset using Guid(01194ed9ff0ab0248b2beac2d7515a2c) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '598f23616395d037d5b2a225530a5f17') in 0.0017156 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Zone_Railway_Rail.asset using Guid(81d5700059354b343bc4b71649480288) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7eedc82fc9fd9c51ea713372eae0b121') in 0.0016835 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Zone_Airport_Office.asset using Guid(622ef756406528e4eaccdbd35828e070) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '501045a644071670f120290426070ceb') in 0.0019208 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Zone_Airport_Commercial.asset using Guid(92d896724c97692418abab3a958c48f7) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '8f69261945df0b8852c3ff0c950e0872') in 0.0019234 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Zone_Harbor_Commercial.asset using Guid(f443b661223b32e49bb2b3fce3c1d5e1) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '4cc630dd846f79f00798a4623e93b972') in 0.0016253 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Zone_City_Commercial.asset using Guid(754629f5804cea9408dddb92c59466c3) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '063c1fe028910fa20f022e8033df55af') in 0.001796 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Palette_Railway.asset using Guid(8504b0eb55a6edd438fbb08b8efcf7ce) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '33a1322e406f6f3974abf7e1ef6d7878') in 0.0016751 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Zone_City_Park.asset using Guid(954fdcb293c1d474baac1afbbe2c3888) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '140bcf7c3328e7871b509b49ab689bc3') in 0.0016972 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Zone_Railway_Commercial.asset using Guid(b69e69c03412f3441b19f72e0aa4a00e) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ffc3f4a82f1f2b5c4f1f11c040ffbf03') in 0.0016564 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Airport_16x16.asset using Guid(57be0d8a4a7c50f46bb5f536cd423f8a) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'bf7191acdd15d4182312861b4025cb3a') in 0.001622 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Harbor_16x16.asset using Guid(58d3eb1c6ce832743b130c667c47e9f8) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '6491dd64ead188bbf99ad15512ace7ce') in 0.001598 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Zone_Harbor_Industrial.asset using Guid(a811765ec58ddcf45a10bf6c718f2e51) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '310ad5ae9409135e01df465d5a59c57b') in 0.0015392 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/City_16x16.asset using Guid(f8e6d38dd17264a419ea9d2d7f3ebacb) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '44bfd803ff042325c68871231b69ae51') in 0.001596 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Zone_Airport_Park.asset using Guid(696e3e9ce2d6be5458677e1f405e8dff) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0dd47e95aa01b72f734b60a63c94eed1') in 0.0016296 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Railway_4x4.asset using Guid(a9e4fed555f830a43bc1623616e3f83d) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'dce65eaf7aa13bc87c5a6f42b0c5e731') in 0.001587 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Metro_16x16.asset using Guid(e933ae52d91d45f42832891ba4b4dd4a) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'bbda33122b229b52535b6748d9b2853a') in 0.0016558 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Palette_Harbor.asset using Guid(daa861e5eb4e4d840a0d18b123b4a4e4) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'fb9858f2f8712f2b1993348d25071abd') in 0.002638 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Zone_City_Residential.asset using Guid(7cd4d93ac7d983947beebff6d36f1237) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '12ba361ad7ae918f0b8e6a8741680e3c') in 0.0025459 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Zone_Metro_Residential.asset using Guid(bce91144a0fbbab43ad35b41904bfef8) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a503b9531f677392b1b925bdded06432') in 0.0019374 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Zone_Harbor_Park.asset using Guid(8d6fa3c675cd5ab429c654c21f0d9d68) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'cb8ef663440d43caf6e67574f722b054') in 0.0016311 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Palette_City.asset using Guid(5e8964ec9ce3139448f8e4ba77d7c528) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '50f580191f9c8fe6622d53969028b0ad') in 0.002285 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Harbor_4x4.asset using Guid(4ff303f27c5f6fc4089779ac2c4b01ac) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f63e3e91cfd782872a68f2e1b3e74d72') in 0.0016922 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Palette_Airport.asset using Guid(7fec95c781e4a5c4a88531efade4e1cb) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '934d3ad99c0919c0060ce6867f8a97a6') in 0.001628 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Metro_4x4.asset using Guid(9fbbc067fba4bfe4eaab2c30e88ba885) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ad09e52a422a201022e730e93b8df9f2') in 0.0017872 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Zone_Railway_Park.asset using Guid(bfd3f1af2ae606743b50f3593b069330) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b4b63763b37be90e170dcca706842bfb') in 0.0015448 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/City_4x4.asset using Guid(dffd8d34824e28543826f965eb6ddf6e) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1d3919537f672ccf523ad5c762df21ef') in 0.0016287 seconds
+Start importing Assets/LowPolyWorldBuilder/Config/Expansion/Zone_Metro_Commercial.asset using Guid(ff7e2bce1c4036d4d9f19c4e36c49374) (NativeFormatImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7423dfbaaa36ed2877e2e2eb3eccc34e') in 0.0017845 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=f95a9cd86e9b21945ae191a5c1ede085): Total: 0.087 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=162923208e6a5d242b3b54edff3773e1): Total: 0.012 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 38 unused Assets / (19.9 KB). Loaded Objects now: 1065.
+Memory consumption went from 103.4 MB to 103.4 MB.
+Total: 4.512300 ms (FindLiveObjects: 0.046900 ms CreateObjectMapping: 0.008000 ms MarkObjects: 4.402800 ms  DeleteObjects: 0.054100 ms)
+
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/City/City_4x4.prefab using Guid(b2ffe2deefce6a1428145a78ff4c0756) (PrefabImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'c0bde683bfd1f9876597f45e5bfa160a') in 0.0158509 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=acf41acdb415ec14ebcfb2897be775f7): Total: 0.047 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/City/City_4x4.unity using Guid(21c30578ed54ea64eb4a80fa95b53e69) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'cc03a7dcccb56adc80bf7bfefdf45398') in 0.0010195 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=abbee84b5457f854fb68966f8b0c5451): Total: 0.016 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=8ccd490a4bb8a1f499d27d958131e6bc): Total: 0.002 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/City/City_4x4.report.json using Guid(b109cc52fd4ff934ca48886e44075445) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '382ff14424b7961efbbc9747be9a063e') in 0.0022091 seconds
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/City/City_4x4.report.txt using Guid(47e74c0bead26bd498aeee7d6819e44c) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '57de4ee3d947846953d472035f535119') in 0.0018311 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=cff2279503dc7bb418dfb19a09eb77b4): Total: 0.045 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+[LPW] Expansion scene complete:
+WorldBuildReport seed=20261006 version=0.2.0 time=2026-10-02 03:34:28Z
+theme=City grid=4x4 buildMs=235
+roads=40 blocks=16 lots=157 buildings=157 scatter=56 prefabs=0
+[Info] (RoadNetwork) 40 road segments, 25 intersections
+[Info] (Blocks) 16 blocks, 157 lots
+[Info] (Scatter) 56 scatter items (trees/lamps)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+LowPolyWorldBuilder.Editor.Batch.ExpansionBatchEntryPoint:GenerateExpansionPack () (at ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs:67)
+
+(Filename: ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs Line: 67)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 920 unused Assets / (243.3 KB). Loaded Objects now: 1058.
+Memory consumption went from 105.1 MB to 104.8 MB.
+Total: 4.905900 ms (FindLiveObjects: 0.081000 ms CreateObjectMapping: 0.018400 ms MarkObjects: 4.472400 ms  DeleteObjects: 0.333700 ms)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 0 unused Assets / (0 B). Loaded Objects now: 1058.
+Memory consumption went from 104.8 MB to 104.8 MB.
+Total: 3.974200 ms (FindLiveObjects: 0.036100 ms CreateObjectMapping: 0.007000 ms MarkObjects: 3.929000 ms  DeleteObjects: 0.001700 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6 unused Assets / (16.2 KB). Loaded Objects now: 1065.
+Memory consumption went from 104.6 MB to 104.5 MB.
+Total: 3.452700 ms (FindLiveObjects: 0.044700 ms CreateObjectMapping: 0.006900 ms MarkObjects: 3.389000 ms  DeleteObjects: 0.011800 ms)
+
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/City/City_16x16.prefab using Guid(3213a045130e59544826f22396d08405) (PrefabImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'b423140152f58252f7494e9d3bf34d7a') in 1.0018502 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=6fa1fb13b80c52e438dbf7710442160f): Total: 1.136 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=1130 ms
+		Asset DB Callback time: managed=0 ms, native=5 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=131, non-scripts=104
+		Asset File Changes: new=0, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.001ms
+	ApplyChangesToAssetFolders: 0.041ms
+	Scan: 15.680ms
+	OnSourceAssetsModified: 0.054ms
+	CategorizeAssetsWithTransientArtifact: 0.003ms
+	ProcessAssetsWithTransientArtifactChanges: 0.008ms
+	CategorizeAssets: 0.150ms
+	ImportOutOfDateAssets: 1109.412ms (-45.078ms without children)
+		ImportManagerImport: 1096.920ms (94.860ms without children)
+			ImportInProcess: 1002.036ms
+			UpdateCategorizedAssets: 0.024ms
+		ReloadNativeAssets: 0.013ms
+		UnloadImportedAssets: 12.252ms
+		ReloadImportedAssets: 45.130ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.020ms
+		InitializingProgressBar: 0.006ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 0.149ms
+	PostProcessAllAssets: 0.413ms
+	Hotreload: 5.169ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.010ms
+	UnloadStreamsBegin: 1.071ms
+	PersistCurrentRevisions: 0.042ms
+	UnloadStreamsEnd: 0.000ms
+	Untracked: 3.824ms
+
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/City/City_16x16.unity using Guid(a49f1f85d298fad4d85da4ce9496ace3) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f628654e0fbefe53c6d2fce8441c980a') in 0.0009969 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=1898f3ad1be4a8242868f80b4bfe8018): Total: 0.035 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=b635bcf8de0adbe46a4cfca5b736158f): Total: 0.002 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/City/City_16x16.report.txt using Guid(7051cf7904b201842a53f94d7b2b0504) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ab50806f09b6b62dd15785a53cae7656') in 0.0026726 seconds
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/City/City_16x16.report.json using Guid(ed23e34d217275d4fb15fa108d602db1) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '8ecf436de97570a9d8ba7e78a9555279') in 0.0020705 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=f8f2237ced5986c47aa51085e7546593): Total: 0.046 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+[LPW] Expansion scene complete:
+WorldBuildReport seed=20261018 version=0.2.0 time=2026-10-02 03:34:28Z
+theme=City grid=16x16 buildMs=3103
+roads=544 blocks=256 lots=2560 buildings=2560 scatter=711 prefabs=0
+[Info] (RoadNetwork) 544 road segments, 289 intersections
+[Info] (Blocks) 256 blocks, 2560 lots
+[Info] (Scatter) 711 scatter items (trees/lamps)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+LowPolyWorldBuilder.Editor.Batch.ExpansionBatchEntryPoint:GenerateExpansionPack () (at ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs:67)
+
+(Filename: ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs Line: 67)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13872 unused Assets / (3.9 MB). Loaded Objects now: 1058.
+Memory consumption went from 121.9 MB to 118.0 MB.
+Total: 12.161600 ms (FindLiveObjects: 0.464600 ms CreateObjectMapping: 0.262200 ms MarkObjects: 4.959600 ms  DeleteObjects: 6.474600 ms)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 0 unused Assets / (Unknown). Loaded Objects now: 1058.
+Memory consumption went from 118.0 MB to 118.0 MB.
+Total: 4.563800 ms (FindLiveObjects: 0.046300 ms CreateObjectMapping: 0.007200 ms MarkObjects: 4.506400 ms  DeleteObjects: 0.003500 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6 unused Assets / (16.2 KB). Loaded Objects now: 1065.
+Memory consumption went from 115.2 MB to 115.2 MB.
+Total: 4.566000 ms (FindLiveObjects: 0.048200 ms CreateObjectMapping: 0.010000 ms MarkObjects: 4.488100 ms  DeleteObjects: 0.019200 ms)
+
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Railway/Railway_4x4.prefab using Guid(8d5fc5bd8a852ff40b9fa1e3d569d7ae) (PrefabImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'e48d13580d53831a5d084c7f99959982') in 0.0171943 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=a892631afc4ef56468a8b3b61e3ce019): Total: 0.054 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Railway/Railway_4x4.unity using Guid(7f7197c653b65bd429b5fe33340f9a92) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '78c4360a91a1504cc7db8323315800ad') in 0.0010556 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=d2bd69cd7b8e82e4195cd2dacc0654f3): Total: 0.022 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=64e4e51a592f5184db749e926d79984a): Total: 0.002 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Railway/Railway_4x4.report.json using Guid(c419d39c34ea1ee4e9d963f9a19d6226) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '265dbb6cd50faba6f5d028aa2a86ad85') in 0.002684 seconds
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Railway/Railway_4x4.report.txt using Guid(8fec0db66428391498ba9f8fb288c4db) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '119f7db37567b2f68f9d3d6d2003404c') in 0.0020628 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=58d7ad2b66339e04e9f73509b9eb0c57): Total: 0.041 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+[LPW] Expansion scene complete:
+WorldBuildReport seed=20271006 version=0.2.0 time=2026-10-02 03:34:31Z
+theme=Railway grid=4x4 buildMs=222
+roads=40 blocks=16 lots=167 buildings=167 scatter=59 prefabs=0
+[Info] (RoadNetwork) 40 road segments, 25 intersections
+[Info] (Blocks) 16 blocks, 167 lots
+[Info] (Scatter) 59 scatter items (trees/lamps)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+LowPolyWorldBuilder.Editor.Batch.ExpansionBatchEntryPoint:GenerateExpansionPack () (at ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs:67)
+
+(Filename: ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs Line: 67)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 976 unused Assets / (246.9 KB). Loaded Objects now: 1058.
+Memory consumption went from 115.8 MB to 115.5 MB.
+Total: 5.378400 ms (FindLiveObjects: 0.083200 ms CreateObjectMapping: 0.026500 ms MarkObjects: 4.825000 ms  DeleteObjects: 0.443200 ms)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 0 unused Assets / (0 B). Loaded Objects now: 1058.
+Memory consumption went from 115.5 MB to 115.5 MB.
+Total: 3.988100 ms (FindLiveObjects: 0.038000 ms CreateObjectMapping: 0.007300 ms MarkObjects: 3.940900 ms  DeleteObjects: 0.001600 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6 unused Assets / (16.2 KB). Loaded Objects now: 1065.
+Memory consumption went from 115.2 MB to 115.2 MB.
+Total: 3.829700 ms (FindLiveObjects: 0.039300 ms CreateObjectMapping: 0.007700 ms MarkObjects: 3.766100 ms  DeleteObjects: 0.016200 ms)
+
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Railway/Railway_16x16.prefab using Guid(cb55e367def904b44b806272373dae65) (PrefabImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '440ccff4b55933b3a2e589d4a2c9a113') in 0.9379658 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=d12280a0ca0386247a053879f18febbb): Total: 1.073 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=1067 ms
+		Asset DB Callback time: managed=0 ms, native=5 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=131, non-scripts=104
+		Asset File Changes: new=0, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.001ms
+	ApplyChangesToAssetFolders: 0.053ms
+	Scan: 15.980ms
+	OnSourceAssetsModified: 0.043ms
+	CategorizeAssetsWithTransientArtifact: 0.003ms
+	ProcessAssetsWithTransientArtifactChanges: 0.008ms
+	CategorizeAssets: 0.136ms
+	ImportOutOfDateAssets: 1046.415ms (-46.449ms without children)
+		ImportManagerImport: 1034.248ms (96.069ms without children)
+			ImportInProcess: 938.153ms
+			UpdateCategorizedAssets: 0.026ms
+		ReloadNativeAssets: 0.011ms
+		UnloadImportedAssets: 11.917ms
+		ReloadImportedAssets: 46.505ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.021ms
+		InitializingProgressBar: 0.005ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 0.157ms
+	PostProcessAllAssets: 0.449ms
+	Hotreload: 4.864ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.009ms
+	UnloadStreamsBegin: 1.762ms
+	PersistCurrentRevisions: 0.047ms
+	UnloadStreamsEnd: 0.000ms
+	Untracked: 3.389ms
+
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Railway/Railway_16x16.unity using Guid(378adc079b42e06428881cc6a7cd1e62) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7ac6bfe9ab9d9d1dfdb25e75a5de7f80') in 0.0010986 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=e1f2b10a56692c64aa9a3bd48df5333e): Total: 0.036 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=197188fdbec32c741b0ceb99e5e8a635): Total: 0.002 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Railway/Railway_16x16.report.txt using Guid(257935604022175488dad5918d93221b) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1a99ec611893b161537e1165686a694f') in 0.0020876 seconds
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Railway/Railway_16x16.report.json using Guid(2c1e181862d80e84f866b80e6c28c91a) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0f2d4d3d821abb3a3e75b594d8fec253') in 0.0017883 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=cfba77bd8b9b78d41ba8d3a9daf54e97): Total: 0.038 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+[LPW] Expansion scene complete:
+WorldBuildReport seed=20271018 version=0.2.0 time=2026-10-02 03:34:32Z
+theme=Railway grid=16x16 buildMs=3015
+roads=544 blocks=256 lots=2555 buildings=2555 scatter=698 prefabs=0
+[Info] (RoadNetwork) 544 road segments, 289 intersections
+[Info] (Blocks) 256 blocks, 2555 lots
+[Info] (Scatter) 698 scatter items (trees/lamps)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+LowPolyWorldBuilder.Editor.Batch.ExpansionBatchEntryPoint:GenerateExpansionPack () (at ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs:67)
+
+(Filename: ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs Line: 67)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13804 unused Assets / (3.7 MB). Loaded Objects now: 1058.
+Memory consumption went from 124.9 MB to 121.2 MB.
+Total: 9.495200 ms (FindLiveObjects: 0.493600 ms CreateObjectMapping: 0.319200 ms MarkObjects: 4.423500 ms  DeleteObjects: 4.258200 ms)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 0 unused Assets / (48.9 KB). Loaded Objects now: 1058.
+Memory consumption went from 121.1 MB to 121.1 MB.
+Total: 4.003700 ms (FindLiveObjects: 0.046300 ms CreateObjectMapping: 0.007100 ms MarkObjects: 3.946800 ms  DeleteObjects: 0.003000 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6 unused Assets / (16.2 KB). Loaded Objects now: 1065.
+Memory consumption went from 116.3 MB to 116.3 MB.
+Total: 3.482100 ms (FindLiveObjects: 0.033700 ms CreateObjectMapping: 0.006900 ms MarkObjects: 3.425100 ms  DeleteObjects: 0.015900 ms)
+
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Metro/Metro_4x4.prefab using Guid(948930e5fbb89ae4e838b06265386dad) (PrefabImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'bd14b9ad62a6ffdb1a2b0c0bfae244a1') in 0.0141455 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=d65b8b92765b9bc4699d2b84e7bb4c8a): Total: 0.045 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Metro/Metro_4x4.unity using Guid(8cd83b55fa7f81143a549116b9c15fbf) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7f5ac72d4f6edfdd8ed082f237690b76') in 0.0009552 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=d6f2dbfc12f5bd640939c746726e35b1): Total: 0.022 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=4f11aeed891261842b4552255da873e3): Total: 0.003 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Metro/Metro_4x4.report.json using Guid(5b662223570cbf8409c4eeee7f41e88d) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'a1bbf6a19e5cf8395f7aba4d1a616be5') in 0.0020104 seconds
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Metro/Metro_4x4.report.txt using Guid(8fcf29a1152928047af6ee4c2921951e) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '59a439ae538697a2774c9347069c5c95') in 0.0020701 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=c797a2ad7bb83e14d95e7beada78d217): Total: 0.031 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+[LPW] Expansion scene complete:
+WorldBuildReport seed=20281006 version=0.2.0 time=2026-10-02 03:34:35Z
+theme=Metro grid=4x4 buildMs=192
+roads=40 blocks=16 lots=152 buildings=152 scatter=53 prefabs=0
+[Info] (RoadNetwork) 40 road segments, 25 intersections
+[Info] (Blocks) 16 blocks, 152 lots
+[Info] (Scatter) 53 scatter items (trees/lamps)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+LowPolyWorldBuilder.Editor.Batch.ExpansionBatchEntryPoint:GenerateExpansionPack () (at ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs:67)
+
+(Filename: ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs Line: 67)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 892 unused Assets / (239.8 KB). Loaded Objects now: 1058.
+Memory consumption went from 116.9 MB to 116.6 MB.
+Total: 5.168100 ms (FindLiveObjects: 0.071700 ms CreateObjectMapping: 0.019100 ms MarkObjects: 4.732000 ms  DeleteObjects: 0.344800 ms)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 0 unused Assets / (0 B). Loaded Objects now: 1058.
+Memory consumption went from 116.6 MB to 116.6 MB.
+Total: 4.050700 ms (FindLiveObjects: 0.036700 ms CreateObjectMapping: 0.006900 ms MarkObjects: 4.004700 ms  DeleteObjects: 0.002000 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6 unused Assets / (16.2 KB). Loaded Objects now: 1065.
+Memory consumption went from 116.4 MB to 116.3 MB.
+Total: 3.510000 ms (FindLiveObjects: 0.035100 ms CreateObjectMapping: 0.006900 ms MarkObjects: 3.448500 ms  DeleteObjects: 0.019200 ms)
+
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Metro/Metro_16x16.prefab using Guid(48b76b0c6183ae2439d27ae947629200) (PrefabImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'f0aa2e5869114ecac0206d4c23555daf') in 0.9600253 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=8366bf228eca4304b86ae525bf398213): Total: 1.098 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=1093 ms
+		Asset DB Callback time: managed=0 ms, native=4 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=131, non-scripts=104
+		Asset File Changes: new=0, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.001ms
+	ApplyChangesToAssetFolders: 0.062ms
+	Scan: 18.489ms
+	OnSourceAssetsModified: 0.051ms
+	CategorizeAssetsWithTransientArtifact: 0.003ms
+	ProcessAssetsWithTransientArtifactChanges: 0.009ms
+	CategorizeAssets: 0.160ms
+	ImportOutOfDateAssets: 1067.035ms (-44.874ms without children)
+		ImportManagerImport: 1053.770ms (93.538ms without children)
+			ImportInProcess: 960.208ms
+			UpdateCategorizedAssets: 0.024ms
+		ReloadNativeAssets: 0.014ms
+		UnloadImportedAssets: 12.993ms
+		ReloadImportedAssets: 44.950ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.024ms
+		InitializingProgressBar: 0.008ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 0.150ms
+	PostProcessAllAssets: 0.450ms
+	Hotreload: 4.731ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.011ms
+	UnloadStreamsBegin: 1.947ms
+	PersistCurrentRevisions: 0.043ms
+	UnloadStreamsEnd: 0.000ms
+	Untracked: 5.458ms
+
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Metro/Metro_16x16.unity using Guid(29a5fbb622349544d84a7df70d4de9d1) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '8e3272198ee6ad8972f167062b543c7b') in 0.0010581 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=39e1b7fceec146b48ab02138b138a492): Total: 0.036 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=5bedb8f83c5b8f74b8c7648e2ac2dad2): Total: 0.002 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Metro/Metro_16x16.report.txt using Guid(05e1c87e38fea914d88d4fafd3f9faf2) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'fcf3abfb4493b513666e4647ba9bf212') in 0.0022116 seconds
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Metro/Metro_16x16.report.json using Guid(a6b00c91e5e19b040828f8773760305f) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '9668a625472d3b9083defc0613ee52dd') in 0.0023171 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=b2320202baad7a04a9a54aa106896be5): Total: 0.051 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+[LPW] Expansion scene complete:
+WorldBuildReport seed=20281018 version=0.2.0 time=2026-10-02 03:34:35Z
+theme=Metro grid=16x16 buildMs=3041
+roads=544 blocks=256 lots=2546 buildings=2546 scatter=680 prefabs=0
+[Info] (RoadNetwork) 544 road segments, 289 intersections
+[Info] (Blocks) 256 blocks, 2546 lots
+[Info] (Scatter) 680 scatter items (trees/lamps)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+LowPolyWorldBuilder.Editor.Batch.ExpansionBatchEntryPoint:GenerateExpansionPack () (at ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs:67)
+
+(Filename: ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs Line: 67)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13696 unused Assets / (3.7 MB). Loaded Objects now: 1058.
+Memory consumption went from 130.0 MB to 126.3 MB.
+Total: 9.100800 ms (FindLiveObjects: 0.448300 ms CreateObjectMapping: 0.267700 ms MarkObjects: 4.466600 ms  DeleteObjects: 3.917600 ms)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 0 unused Assets / (82.7 KB). Loaded Objects now: 1058.
+Memory consumption went from 126.3 MB to 126.2 MB.
+Total: 4.046100 ms (FindLiveObjects: 0.040900 ms CreateObjectMapping: 0.007000 ms MarkObjects: 3.995100 ms  DeleteObjects: 0.002700 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6 unused Assets / (16.2 KB). Loaded Objects now: 1065.
+Memory consumption went from 121.5 MB to 121.5 MB.
+Total: 3.739400 ms (FindLiveObjects: 0.049700 ms CreateObjectMapping: 0.010100 ms MarkObjects: 3.663300 ms  DeleteObjects: 0.015700 ms)
+
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Harbor/Harbor_4x4.prefab using Guid(351c32080f511d1449cc0dce93f12fdf) (PrefabImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '64c5b9d82544305d2cd12495c6be1690') in 0.01215 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=0530c03f3a1cc234ea70d4105c344a80): Total: 0.042 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Harbor/Harbor_4x4.unity using Guid(fead4cfd05ebb014aaf02368836b9f0b) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '75eb810ed515f6792c4aee695f975c2f') in 0.0009862 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=ba8275558c479e640b5054196cc67cd8): Total: 0.017 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=94e801a1e8b582c42911b5a24c6cb74e): Total: 0.002 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Harbor/Harbor_4x4.report.json using Guid(02eb83c1c74f9734ba843c201c989e0e) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '83ba94a2303339974dc347ddc21bf1a0') in 0.0021346 seconds
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Harbor/Harbor_4x4.report.txt using Guid(bec0fa050cf505744bc4e4e9b09d1db2) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '1a3cc1724d16359307eee6e82872bce3') in 0.0025772 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=5775c2259769afa4099e09f90cf1f6ac): Total: 0.047 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+[LPW] Expansion scene complete:
+WorldBuildReport seed=20291006 version=0.2.0 time=2026-10-02 03:34:38Z
+theme=Harbor grid=4x4 buildMs=164
+roads=40 blocks=16 lots=117 buildings=117 scatter=46 prefabs=0
+[Info] (RoadNetwork) 40 road segments, 25 intersections
+[Info] (Blocks) 16 blocks, 117 lots
+[Info] (Scatter) 46 scatter items (trees/lamps)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+LowPolyWorldBuilder.Editor.Batch.ExpansionBatchEntryPoint:GenerateExpansionPack () (at ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs:67)
+
+(Filename: ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs Line: 67)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 724 unused Assets / (208.8 KB). Loaded Objects now: 1058.
+Memory consumption went from 121.9 MB to 121.7 MB.
+Total: 4.801900 ms (FindLiveObjects: 0.065800 ms CreateObjectMapping: 0.016700 ms MarkObjects: 4.434800 ms  DeleteObjects: 0.284200 ms)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 0 unused Assets / (0 B). Loaded Objects now: 1058.
+Memory consumption went from 121.7 MB to 121.7 MB.
+Total: 3.644800 ms (FindLiveObjects: 0.037900 ms CreateObjectMapping: 0.006900 ms MarkObjects: 3.598100 ms  DeleteObjects: 0.001600 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6 unused Assets / (16.2 KB). Loaded Objects now: 1065.
+Memory consumption went from 121.5 MB to 121.5 MB.
+Total: 3.701200 ms (FindLiveObjects: 0.044600 ms CreateObjectMapping: 0.010100 ms MarkObjects: 3.632600 ms  DeleteObjects: 0.013200 ms)
+
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Harbor/Harbor_16x16.prefab using Guid(7d9f3e537390cbd48aa816de05410afd) (PrefabImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0f5c846b7b1104455c05b2ee063621d8') in 0.8837605 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=6d8e698d7a6fdd54c961ee3a98ef391b): Total: 1.014 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=1006 ms
+		Asset DB Callback time: managed=0 ms, native=6 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=131, non-scripts=104
+		Asset File Changes: new=0, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.001ms
+	ApplyChangesToAssetFolders: 0.045ms
+	Scan: 15.646ms
+	OnSourceAssetsModified: 0.044ms
+	CategorizeAssetsWithTransientArtifact: 0.002ms
+	ProcessAssetsWithTransientArtifactChanges: 0.008ms
+	CategorizeAssets: 0.136ms
+	ImportOutOfDateAssets: 985.506ms (-43.344ms without children)
+		ImportManagerImport: 973.816ms (89.808ms without children)
+			ImportInProcess: 883.983ms
+			UpdateCategorizedAssets: 0.026ms
+		ReloadNativeAssets: 0.012ms
+		UnloadImportedAssets: 11.424ms
+		ReloadImportedAssets: 43.396ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.020ms
+		InitializingProgressBar: 0.005ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 0.176ms
+	PostProcessAllAssets: 0.550ms
+	Hotreload: 6.514ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.010ms
+	UnloadStreamsBegin: 1.745ms
+	PersistCurrentRevisions: 0.059ms
+	UnloadStreamsEnd: 0.001ms
+	Untracked: 3.467ms
+
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Harbor/Harbor_16x16.unity using Guid(0ef5a00fc26be4340a4114d4bfac6e56) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'fc26ffe7969b33d7800e7a5d79e0f29d') in 0.0009781 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=580159c2b49d6d84e983cbde38186853): Total: 0.035 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=d5f1791e6b256d549984ddb11d640ad4): Total: 0.002 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Harbor/Harbor_16x16.report.txt using Guid(c5f75fcffcc34864dbf794eb190cc9df) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'bce251d673d798e5b03f98b876170bd0') in 0.0021489 seconds
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Harbor/Harbor_16x16.report.json using Guid(ae2833e5f95598144bfbf4f2d73c0cf6) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '0fe3b34b836daa97c016b62f02ddeced') in 0.0020654 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=f1ff8a6fe485ef14faa0205ebe1fc314): Total: 0.036 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+[LPW] Expansion scene complete:
+WorldBuildReport seed=20291018 version=0.2.0 time=2026-10-02 03:34:38Z
+theme=Harbor grid=16x16 buildMs=2800
+roads=544 blocks=256 lots=2387 buildings=2387 scatter=660 prefabs=0
+[Info] (RoadNetwork) 544 road segments, 289 intersections
+[Info] (Blocks) 256 blocks, 2387 lots
+[Info] (Scatter) 660 scatter items (trees/lamps)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+LowPolyWorldBuilder.Editor.Batch.ExpansionBatchEntryPoint:GenerateExpansionPack () (at ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs:67)
+
+(Filename: ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs Line: 67)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 12980 unused Assets / (3.8 MB). Loaded Objects now: 1058.
+Memory consumption went from 130.7 MB to 126.9 MB.
+Total: 9.561100 ms (FindLiveObjects: 0.490300 ms CreateObjectMapping: 0.287000 ms MarkObjects: 4.747800 ms  DeleteObjects: 4.035100 ms)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 0 unused Assets / (0 B). Loaded Objects now: 1058.
+Memory consumption went from 126.9 MB to 126.9 MB.
+Total: 4.350600 ms (FindLiveObjects: 0.041000 ms CreateObjectMapping: 0.006800 ms MarkObjects: 4.300500 ms  DeleteObjects: 0.001900 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6 unused Assets / (16.2 KB). Loaded Objects now: 1065.
+Memory consumption went from 122.4 MB to 122.4 MB.
+Total: 3.516700 ms (FindLiveObjects: 0.037300 ms CreateObjectMapping: 0.007000 ms MarkObjects: 3.457300 ms  DeleteObjects: 0.014700 ms)
+
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Airport/Airport_4x4.prefab using Guid(68fb05170c8aa6a45aaf79fd567e0f8a) (PrefabImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '4845b592f93f46ccced5c6d3761dddcb') in 0.0117786 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=7355afdfec7f78c47a33b17f4706f16a): Total: 0.040 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Airport/Airport_4x4.unity using Guid(db7815639ebe7064ea0265060e8c6e43) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: 'ca9843e27d944054983ecd31373ffbc6') in 0.0009828 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=ff1cb5e562752c949936b6ad6b4cc7f4): Total: 0.017 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=b6fdd269f79b9554e8131be3a1b37a92): Total: 0.002 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Airport/Airport_4x4.report.json using Guid(e89dc805eca67c34ba427cdd266237fa) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '03fb0ee4e9ea0869042c300e020c1bd8') in 0.0020789 seconds
+Start importing Assets/LowPolyWorldOutput/Expansion/4x4/Airport/Airport_4x4.report.txt using Guid(df55d8cff6400ea4b8bcc1a7c48dbb94) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '2597a78ac25033d84dcecd10cc75481c') in 0.0018993 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=c565e4a58ccc08e4fae7ae2fac8d8d2d): Total: 0.036 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+[LPW] Expansion scene complete:
+WorldBuildReport seed=20301006 version=0.2.0 time=2026-10-02 03:34:41Z
+theme=Airport grid=4x4 buildMs=161
+roads=40 blocks=16 lots=106 buildings=106 scatter=47 prefabs=0
+[Info] (RoadNetwork) 40 road segments, 25 intersections
+[Info] (Blocks) 16 blocks, 106 lots
+[Info] (Scatter) 47 scatter items (trees/lamps)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+LowPolyWorldBuilder.Editor.Batch.ExpansionBatchEntryPoint:GenerateExpansionPack () (at ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs:67)
+
+(Filename: ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs Line: 67)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 684 unused Assets / (196.3 KB). Loaded Objects now: 1058.
+Memory consumption went from 122.8 MB to 122.6 MB.
+Total: 4.781900 ms (FindLiveObjects: 0.068100 ms CreateObjectMapping: 0.016200 ms MarkObjects: 4.421500 ms  DeleteObjects: 0.275700 ms)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 0 unused Assets / (0 B). Loaded Objects now: 1058.
+Memory consumption went from 122.6 MB to 122.6 MB.
+Total: 3.556600 ms (FindLiveObjects: 0.034800 ms CreateObjectMapping: 0.007000 ms MarkObjects: 3.513000 ms  DeleteObjects: 0.001600 ms)
+
+Unloading 6 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6 unused Assets / (16.2 KB). Loaded Objects now: 1065.
+Memory consumption went from 122.5 MB to 122.4 MB.
+Total: 3.610700 ms (FindLiveObjects: 0.034700 ms CreateObjectMapping: 0.006800 ms MarkObjects: 3.548600 ms  DeleteObjects: 0.020000 ms)
+
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Airport/Airport_16x16.prefab using Guid(15287b3e0e7bd9a42bc0e9c9e5a13a0c) (PrefabImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7926dfe84b123ff7cd55600f0aca87f1') in 0.8793858 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=c3e1777e30b491e4f867381ee6119d87): Total: 1.010 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=1004 ms
+		Asset DB Callback time: managed=0 ms, native=4 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=131, non-scripts=104
+		Asset File Changes: new=0, changed=1, moved=0, deleted=0
+		Scan Filter Count: 6
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 0.001ms
+	ApplyChangesToAssetFolders: 0.050ms
+	Scan: 15.342ms
+	OnSourceAssetsModified: 0.046ms
+	CategorizeAssetsWithTransientArtifact: 0.003ms
+	ProcessAssetsWithTransientArtifactChanges: 0.008ms
+	CategorizeAssets: 0.147ms
+	ImportOutOfDateAssets: 984.259ms (-46.375ms without children)
+		ImportManagerImport: 973.035ms (93.442ms without children)
+			ImportInProcess: 879.568ms
+			UpdateCategorizedAssets: 0.025ms
+		ReloadNativeAssets: 0.011ms
+		UnloadImportedAssets: 10.971ms
+		ReloadImportedAssets: 46.426ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.022ms
+		InitializingProgressBar: 0.006ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 0.162ms
+	PostProcessAllAssets: 0.409ms
+	Hotreload: 4.762ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.009ms
+	UnloadStreamsBegin: 1.762ms
+	PersistCurrentRevisions: 0.045ms
+	UnloadStreamsEnd: 0.000ms
+	Untracked: 3.301ms
+
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Airport/Airport_16x16.unity using Guid(24745fba41140f741a3211b99f119b43) (DefaultImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '656ff03a229c40329a093b59cc0a4671') in 0.0009765 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=06c9e3055db10ad4db9da29a22418481): Total: 0.034 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Asset Pipeline Refresh (id=4e7567af6dd2305488ae7931530ddcc4): Total: 0.002 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Airport/Airport_16x16.report.txt using Guid(46a67108be6c6c44c8eb210406107bb2) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '47f5eac2451bc4a05114c7fa4114dfcc') in 0.0027344 seconds
+Start importing Assets/LowPolyWorldOutput/Expansion/16x16/Airport/Airport_16x16.report.json using Guid(dfea49707bf1a5d4082d5b277e47d974) (TextScriptImporter)[PhysX] Initialized MultithreadedTaskDispatcher with 16 workers.
+ -> (artifact id: '7041fd23cc15ba85aa0c98dc3bdb1f84') in 0.0019959 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=4fd6ef3d6e664ba48a079b3e69ee3baf): Total: 0.052 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+[LPW] Expansion scene complete:
+WorldBuildReport seed=20301018 version=0.2.0 time=2026-10-02 03:34:41Z
+theme=Airport grid=16x16 buildMs=2854
+roads=544 blocks=256 lots=2410 buildings=2410 scatter=659 prefabs=0
+[Info] (RoadNetwork) 544 road segments, 289 intersections
+[Info] (Blocks) 256 blocks, 2410 lots
+[Info] (Scatter) 659 scatter items (trees/lamps)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+LowPolyWorldBuilder.Editor.Batch.ExpansionBatchEntryPoint:GenerateExpansionPack () (at ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs:67)
+
+(Filename: ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs Line: 67)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 13068 unused Assets / (3.8 MB). Loaded Objects now: 1058.
+Memory consumption went from 132.5 MB to 128.7 MB.
+Total: 9.392200 ms (FindLiveObjects: 0.433500 ms CreateObjectMapping: 0.193800 ms MarkObjects: 4.451100 ms  DeleteObjects: 4.313500 ms)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 0 unused Assets / (0 B). Loaded Objects now: 1058.
+Memory consumption went from 128.7 MB to 128.7 MB.
+Total: 3.812600 ms (FindLiveObjects: 0.037200 ms CreateObjectMapping: 0.006800 ms MarkObjects: 3.765200 ms  DeleteObjects: 0.002600 ms)
+
+[LPW] All 10 expansion scenarios generated successfully.
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+LowPolyWorldBuilder.Editor.Batch.ExpansionBatchEntryPoint:GenerateExpansionPack () (at ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs:85)
+
+(Filename: ./Packages/com.studio.lowpoly-world-builder/Editor/Batch/ExpansionBatchEntryPoint.cs Line: 85)
+
+[Licensing::IpcConnector] License Notification channel disconnected successfully.
+[Licensing::IpcConnector] License Client channel disconnected successfully.
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+Checking for leaked weakptr:
+  Found no leaked weakptrs.
+[Package Manager] Server process was shutdown
+##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1790912085101,"processId":18416,"allocatedMemory":10129299,"memoryLabels":[{"Default":26045},{"Permanent":15300},{"NewDelete":81217},{"Thread":4230344},{"Manager":29730},{"VertexData":8},{"Geometry":816},{"Texture":160},{"Shader":78771},{"Material":24},{"GfxDevice":55392},{"Animation":328},{"Audio":4040},{"FontEngine":256},{"Physics":929},{"Serialization":968},{"Input":14816},{"JobScheduler":33024},{"TextLib":32},{"Mono":32},{"ScriptingNativeRuntime":155060},{"BaseObject":1619920},{"Resource":1304},{"Renderer":2880},{"Transform":4646},{"File":976},{"WebCam":752},{"Culling":32},{"Terrain":11394},{"Wind":24},{"STL":80},{"String":25943},{"DynamicArray":78318},{"HashMap":70039},{"Utility":2664222},{"Curl":48},{"PoolAlloc":1768},{"AI":104},{"TypeTree":4493},{"ScriptManager":512},{"RuntimeInitializeOnLoadManager":64},{"SpriteAtlas":112},{"GI":7888},{"Director":8240},{"CloudService":12968},{"WebRequest":9423},{"VR":45953},{"SceneManager":496},{"Video":64},{"LazyScriptCache":32},{"NativeArray":8},{"Camera":17},{"Secure":1},{"SerializationCache":1576},{"APIUpdating":10320},{"Subsystems":336},{"VirtualTexturing":57888},{"StaticSafetyDebugInfo":278528},{"Analytics":912},{"Hierarchy":16},{"Gui":80},{"EditorUtility":43682},{"VersionControl":4},{"Undo":624},{"AssetDatabase":380151},{"EditorGi":328},{"UnityConnect":24184},{"Upm":1880},{"DrivenProperties":72},{"LocalIPC":260},{"ProfilerEditor":9738},{"CoreBusinessMetrics":14763},{"Licensing":3880},{"AssetReference":32},{"IPCStream":32}]}

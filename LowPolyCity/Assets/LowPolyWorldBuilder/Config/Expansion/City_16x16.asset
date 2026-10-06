@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb840157f8fd8f34a83a159d314c699f, type: 3}
+  m_Name: City_16x16
+  m_EditorClassIdentifier: 
+  schemaVersion: 1
+  worldName: City_16x16
+  seed: 20261018
+  theme: 0
+  blockCount: {x: 16, y: 16}
+  blockSize: 80
+  roadWidth: 12
+  sidewalkWidth: 3
+  lotFillRatio: 0.82
+  minBuildingHeight: 8
+  maxBuildingHeight: 46
+  lotSizeRange: {x: 16, y: 30}
+  zones:
+  - {fileID: 11400000, guid: 7cd4d93ac7d983947beebff6d36f1237, type: 2}
+  - {fileID: 11400000, guid: 754629f5804cea9408dddb92c59466c3, type: 2}
+  - {fileID: 11400000, guid: 954fdcb293c1d474baac1afbbe2c3888, type: 2}
+  palette: {fileID: 11400000, guid: 5e8964ec9ce3139448f8e4ba77d7c528, type: 2}
+  catalog: {fileID: 11400000, guid: 4358890d06f0a7f46aa8ed748c57d662, type: 2}
+  outputFolder: Assets/LowPolyWorldOutput/Expansion/16x16/City

@@ -1,0 +1,62 @@
+{
+  "label": "snow_north_taiga",
+  "theme": "snow",
+  "seed": 20261002,
+  "width": 256,
+  "height": 256,
+  "formats": ["map", "csv", "pgm", "report", "obj"],
+
+  "terrain": {
+    "lake_count": 8,
+    "lake_mean_radius": 0.045,
+    "river_count": 4,
+    "island_radius": 0.46
+  },
+
+  "features": {
+    "lakes":   { "distribution": "poisson_disk", "min_spacing": 26.0 },
+    "rivers":  { "distribution": "uniform" },
+    "mountains": { "distribution": "uniform" }
+  },
+
+  "categories": {
+    "trees_dense":  { "count": 340, "distribution": "normal_clusters",
+                      "cluster_count": 14, "spread": 3.4 },
+    "trees_sparse": { "count": 90,  "distribution": "poisson_disk",
+                      "min_spacing": 7.0 },
+    "trees_other":  { "count": 60,  "distribution": "uniform" }
+  },
+
+  "regions": [
+    {
+      "id": "north_taiga",
+      "shape": "rect",
+      "bounds": { "x0": 0.0, "y0": 0.0, "x1": 1.0, "y1": 0.34 },
+      "overrides": {
+        "trees_dense": { "count": 260, "distribution": "normal_clusters",
+                         "cluster_count": 9, "spread": 4.2 },
+        "trees_sparse": { "count": 20, "density_scale": 0.2 }
+      }
+    },
+    {
+      "id": "south_open_snow",
+      "shape": "rect",
+      "bounds": { "x0": 0.30, "y0": 0.56, "x1": 0.72, "y1": 0.80 },
+      "overrides": {
+        "trees_dense": { "count": 30, "distribution": "poisson_disk",
+                         "min_spacing": 9.0 },
+        "snow_drifts": { "count": 45, "distribution": "grid_jitter",
+                         "spacing": 7.0, "jitter": 0.5 }
+      }
+    },
+    {
+      "id": "east_ridge",
+      "shape": "circle",
+      "bounds": { "cx": 0.74, "cy": 0.48, "r": 0.16 },
+      "overrides": {
+        "ice_boulders": { "count": 60, "distribution": "poisson_disk",
+                          "min_spacing": 4.0 }
+      }
+    }
+  ]
+}

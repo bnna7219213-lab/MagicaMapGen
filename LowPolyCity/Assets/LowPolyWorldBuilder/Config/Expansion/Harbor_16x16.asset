@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb840157f8fd8f34a83a159d314c699f, type: 3}
+  m_Name: Harbor_16x16
+  m_EditorClassIdentifier: 
+  schemaVersion: 1
+  worldName: Harbor_16x16
+  seed: 20291018
+  theme: 3
+  blockCount: {x: 16, y: 16}
+  blockSize: 80
+  roadWidth: 12
+  sidewalkWidth: 3
+  lotFillRatio: 0.82
+  minBuildingHeight: 8
+  maxBuildingHeight: 46
+  lotSizeRange: {x: 16, y: 30}
+  zones:
+  - {fileID: 11400000, guid: b72ace82d203eaf468baaa3d7d113003, type: 2}
+  - {fileID: 11400000, guid: a811765ec58ddcf45a10bf6c718f2e51, type: 2}
+  - {fileID: 11400000, guid: f443b661223b32e49bb2b3fce3c1d5e1, type: 2}
+  - {fileID: 11400000, guid: 8d6fa3c675cd5ab429c654c21f0d9d68, type: 2}
+  palette: {fileID: 11400000, guid: daa861e5eb4e4d840a0d18b123b4a4e4, type: 2}
+  catalog: {fileID: 11400000, guid: 4358890d06f0a7f46aa8ed748c57d662, type: 2}
+  outputFolder: Assets/LowPolyWorldOutput/Expansion/16x16/Harbor

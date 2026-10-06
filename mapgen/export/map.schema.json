@@ -1,0 +1,372 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mapgen.invalid/schemas/map.schema.json",
+  "title": "mapgen map.json",
+  "description": "Primary deliverable of the mapgen prototype map generator: a self-describing, reproducible, engine-consumable tilemap plus object instances. Units are declared in the `units` block of the document itself; see `units` below.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "generator_version",
+    "label",
+    "seed",
+    "units",
+    "theme",
+    "contract",
+    "request",
+    "resolved",
+    "grid",
+    "features",
+    "regions",
+    "categories",
+    "instances",
+    "stats"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Artifact schema version. Bumped whenever any field changes shape or meaning. Shared with report.json."
+    },
+    "generator_version": {
+      "type": "string",
+      "description": "Version of the generator that produced this file."
+    },
+    "label": {
+      "type": "string",
+      "description": "Artifact name stem."
+    },
+    "seed": {
+      "type": "integer",
+      "description": "Random seed. theme + seed + request regenerate this exact map byte-for-byte."
+    },
+
+    "units": {
+      "type": "object",
+      "description": "Unit and convention declarations for every numeric field in this document.",
+      "required": [
+        "schema",
+        "length",
+        "angle",
+        "scale",
+        "world_up",
+        "cell_to_world_xz",
+        "cell_to_world_y",
+        "height_quantisation",
+        "instance_rot",
+        "instance_water_depth"
+      ],
+      "properties": {
+        "schema": { "type": "string" },
+        "length": { "type": "string", "const": "meter" },
+        "angle": { "type": "string", "const": "degree" },
+        "scale": { "type": "string" },
+        "world_up": { "type": "string" },
+        "world_forward": { "type": "string" },
+        "grid_axis": { "type": "string" },
+        "cell_to_world_xz": { "type": "string" },
+        "cell_to_world_y": { "type": "string" },
+        "height_quantisation": { "type": "string" },
+        "river_quantisation": { "type": "string" },
+        "moisture_quantisation": {
+          "type": "string",
+          "description": "How moisture_rle values map to moisture_norm. Present iff moisture_rle is present (v2+)."
+        },
+        "instance_rot": { "type": "string" },
+        "instance_slope": { "type": "string" },
+        "instance_water_depth": { "type": "string" },
+        "biome_legend": { "type": "string" }
+      }
+    },
+
+    "theme": {
+      "type": "object",
+      "required": ["id", "display_name", "description", "forbidden_biomes"],
+      "properties": {
+        "id": { "type": "string" },
+        "display_name": { "type": "string" },
+        "description": { "type": "string" },
+        "forbidden_biomes": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Biome keys the theme guarantees will never appear."
+        }
+      }
+    },
+
+    "contract": {
+      "type": "object",
+      "description": "Outcome of the theme's declared guarantees. `passed=false` means at least one hard check failed and the run exited non-zero.",
+      "required": ["theme_id", "passed", "checks_run", "hard_failures", "warnings", "results"],
+      "properties": {
+        "theme_id": { "type": "string" },
+        "passed": { "type": "boolean" },
+        "checks_run": { "type": "integer", "minimum": 0 },
+        "hard_failures": { "type": "array", "items": { "$ref": "#/$defs/checkResult" } },
+        "warnings": { "type": "array", "items": { "$ref": "#/$defs/checkResult" } },
+        "results": { "type": "array", "items": { "$ref": "#/$defs/checkResult" } }
+      }
+    },
+
+    "request": {
+      "type": "object",
+      "description": "The resolved generation request, round-tripped verbatim. Feeding this back with theme.id + seed reproduces this exact file. `formats` is intentionally absent: output selection does not affect map content."
+    },
+
+    "resolved": {
+      "type": "object",
+      "description": "Fully bound parameters after theme defaults and overrides were applied.",
+      "required": ["terrain", "feature_distributions", "categories"],
+      "properties": {
+        "terrain": { "type": "object" },
+        "feature_distributions": { "type": "object" },
+        "categories": { "type": "array", "items": { "type": "object" } }
+      }
+    },
+
+    "grid": {
+      "type": "object",
+      "description": "Tilemap. The three RLE arrays each decode to exactly width*height values in the order given by scan_order.",
+      "required": [
+        "width", "height", "axis", "tile_size_meters", "height_scale_meters",
+        "cell_to_world", "scan_order", "encoding", "biome_legend",
+        "biome_rle", "height_rle", "river_rle"
+      ],
+      "properties": {
+        "width": { "type": "integer", "minimum": 1 },
+        "height": { "type": "integer", "minimum": 1 },
+        "axis": { "type": "string", "const": "y_up" },
+        "tile_size_meters": { "type": "number", "exclusiveMinimum": 0 },
+        "height_scale_meters": { "type": "number", "exclusiveMinimum": 0 },
+        "cell_to_world": { "type": "string" },
+        "scan_order": { "type": "string" },
+        "encoding": {
+          "type": "object",
+          "required": ["biome", "height", "river"],
+          "properties": {
+            "biome": { "type": "string" },
+            "height": { "type": "string" },
+            "river": { "type": "string" },
+            "moisture": {
+              "type": "string",
+              "description": "Encoding of moisture_rle. Present iff moisture_rle is present (v2+)."
+            }
+          }
+        },
+        "biome_legend": {
+          "type": "array",
+          "description": "Index into this array+1 gives the biome id used by biome_rle (index 0 is unused padding).",
+          "items": {
+            "type": "object",
+            "required": ["id", "key", "name", "color_hex", "is_water",
+                         "walkable", "buildable", "movement_cost"],
+            "properties": {
+              "id": { "type": "integer", "minimum": 0 },
+              "key": { "type": "string" },
+              "name": { "type": "string" },
+              "color_hex": { "type": "string", "pattern": "^#[0-9a-f]{6}$" },
+              "is_water": { "type": "boolean" },
+              "walkable": { "type": "boolean" },
+              "buildable": { "type": "boolean" },
+              "movement_cost": { "type": "number" }
+            }
+          }
+        },
+        "heightmap_raw_url": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Relative path from this map.json to a 16-bit little-endian PGM (P5, maxval 65535) heightmap, row-major y outer / x inner (same scan_order as the RLE grids). Prefer this over height_rle for terrain authoring: height_norm = sample / 65535. Written as `{label}_height.pgm` alongside this file whenever map.json is produced. Absent only on schema v1 files."
+        },
+        "biome_rle": { "$ref": "#/$defs/rle" },
+        "height_rle": { "$ref": "#/$defs/rle" },
+        "river_rle": { "$ref": "#/$defs/rle" },
+        "moisture_rle": {
+          "$ref": "#/$defs/rle",
+          "description": "Optional 0-255 quantised moisture grid (v2+). moisture_norm = value / 255. Same RLE and scan_order as height_rle. Absent on schema v1 files."
+        }
+      }
+    },
+
+    "features": {
+      "type": "object",
+      "required": ["sea_level", "sea_level_meters", "lakes", "rivers"],
+      "properties": {
+        "sea_level": { "type": "number" },
+        "sea_level_meters": { "type": "number" },
+        "lakes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "center_norm", "radius_norm", "level",
+                         "level_meters", "cells", "frozen"],
+            "properties": {
+              "id": { "type": "integer" },
+              "center_norm": { "$ref": "#/$defs/normPoint" },
+              "radius_norm": { "type": "number" },
+              "level": { "type": "number" },
+              "level_meters": { "type": "number" },
+              "cells": { "type": "integer", "minimum": 0 },
+              "frozen": { "type": "boolean" }
+            }
+          }
+        },
+        "rivers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "source", "terminus", "length", "reached_water", "path"],
+            "properties": {
+              "id": { "type": "integer" },
+              "source": { "$ref": "#/$defs/cellPoint" },
+              "terminus": { "$ref": "#/$defs/cellPoint" },
+              "length": { "type": "integer", "minimum": 0 },
+              "reached_water": { "type": "boolean" },
+              "path": {
+                "type": "array",
+                "items": { "$ref": "#/$defs/cellPoint" },
+                "description": "Polyline in grid cells, source first."
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "regions": {
+      "type": "array",
+      "description": "Declared regions and the per-category overrides applied inside them. From schema v3, each region carries an explicit precedence and cell counts are resolved by it.",
+      "items": {
+        "type": "object",
+        "required": ["id", "shape", "priority", "bounds", "cells", "cells_raw", "overlaps", "overrides"],
+        "properties": {
+          "id": { "type": "string" },
+          "shape": { "type": "string", "enum": ["rect", "circle", "polygon", "all"] },
+          "priority": {
+            "type": "integer",
+            "description": "Overlap precedence; higher wins. Must be unique across regions so the owner of a cell is always explicit (v3+)."
+          },
+          "bounds": { "type": "object" },
+          "cells": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Cells this region owns after priority resolution (v3+). Equals cells_raw when nothing overlaps it."
+          },
+          "cells_raw": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Cells within this region's mask, including any owned by a higher-priority region (v3+)."
+          },
+          "overlaps": {
+            "type": "boolean",
+            "description": "True when this region shares cells with a higher-priority region (v3+)."
+          },
+          "overrides": { "type": "object" }
+        }
+      }
+    },
+
+    "categories": {
+      "type": "array",
+      "description": "One entry per (category, region) placement run, including how many objects were requested vs actually placed.",
+      "items": {
+        "type": "object",
+        "required": ["category", "display_name", "object_type", "distribution",
+                     "params", "requested", "placed", "legal_cells", "region"],
+        "properties": {
+          "category": { "type": "string" },
+          "display_name": { "type": "string" },
+          "object_type": { "type": "string" },
+          "distribution": { "type": "string" },
+          "params": { "type": "object" },
+          "requested": { "type": "integer", "minimum": 0 },
+          "placed": { "type": "integer", "minimum": 0 },
+          "legal_cells": { "type": "integer", "minimum": 0 },
+          "region": { "type": ["string", "null"] },
+          "clusters": { "type": ["array", "null"], "items": { "type": "object" } }
+        }
+      }
+    },
+
+    "instances": {
+      "type": "array",
+      "description": "Every placed object. `x`/`y` are grid cells; `world` is [x, y, z] in meters; `rot` is degrees about +Y; `scale` is a multiplier.",
+      "items": {
+        "type": "object",
+        "required": ["id", "cat", "type", "x", "y", "world",
+                     "rot", "scale", "biome", "slope", "water_depth"],
+        "properties": {
+          "id": { "type": "integer", "minimum": 0 },
+          "cat": { "type": "string" },
+          "type": { "type": "string" },
+          "x": { "type": "integer", "minimum": 0 },
+          "y": { "type": "integer", "minimum": 0 },
+          "world": {
+            "type": "array",
+            "items": { "type": "number" },
+            "minItems": 3,
+            "maxItems": 3,
+            "description": "[world_x, world_y, world_z] in meters."
+          },
+          "rot": { "type": "number", "description": "Degrees about +Y, clockwise from +Y." },
+          "scale": { "type": "number", "exclusiveMinimum": 0 },
+          "biome": { "type": "string", "description": "Biome key of the cell this object stands on." },
+          "slope": { "type": "number", "minimum": 0, "description": "Terrain gradient at this cell (unitless)." },
+          "water_depth": { "type": "number", "minimum": 0, "description": "Meters of water above the terrain here; 0 on land." },
+          "region": { "type": "string" },
+          "cluster": { "type": "integer" }
+        }
+      }
+    },
+
+    "stats": {
+      "type": "object",
+      "description": "Summary counters. Content-only: never contains timings, timestamps or paths.",
+      "required": ["total_cells", "land_cells", "water_cells", "land_fraction",
+                   "instance_count"],
+      "properties": {
+        "total_cells": { "type": "integer", "minimum": 0 },
+        "land_cells": { "type": "integer", "minimum": 0 },
+        "water_cells": { "type": "integer", "minimum": 0 },
+        "land_fraction": { "type": "number" },
+        "instance_count": { "type": "integer", "minimum": 0 }
+      }
+    }
+  },
+
+  "$defs": {
+    "rle": {
+      "type": "array",
+      "description": "Run-length encoding as [[value, run_length], ...]. Sum of run lengths must equal grid.width * grid.height.",
+      "items": {
+        "type": "array",
+        "items": { "type": "integer" },
+        "minItems": 2,
+        "maxItems": 2
+      }
+    },
+    "cellPoint": {
+      "type": "array",
+      "items": { "type": "integer" },
+      "minItems": 2,
+      "maxItems": 2,
+      "description": "[x, y] in grid cells."
+    },
+    "normPoint": {
+      "type": "array",
+      "items": { "type": "number", "minimum": 0, "maximum": 1 },
+      "minItems": 2,
+      "maxItems": 2,
+      "description": "[x, y] normalised to [0,1] over the full map."
+    },
+    "checkResult": {
+      "type": "object",
+      "required": ["kind", "passed", "severity", "message"],
+      "properties": {
+        "kind": { "type": "string" },
+        "passed": { "type": "boolean" },
+        "severity": { "type": "string", "enum": ["hard", "soft"] },
+        "message": { "type": "string" },
+        "details": { "type": "object" }
+      }
+    }
+  }
+}

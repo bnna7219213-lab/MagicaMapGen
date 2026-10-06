@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 136f83984ee60fa43b626281073c9f9e, type: 3}
+  m_Name: Palette_Harbor
+  m_EditorClassIdentifier: 
+  road: {r: 0.22, g: 0.23, b: 0.26, a: 1}
+  roadMarking: {r: 0.92, g: 0.88, b: 0.6, a: 1}
+  sidewalk: {r: 0.65, g: 0.63, b: 0.6, a: 1}
+  ground: {r: 0.57, g: 0.68, b: 0.48, a: 1}
+  water: {r: 0.09, g: 0.42, b: 0.69, a: 1}
+  buildingWalls:
+  - {r: 0.87, g: 0.68, b: 0.46, a: 1}
+  - {r: 0.79, g: 0.49, b: 0.33, a: 1}
+  - {r: 0.77, g: 0.78, b: 0.68, a: 1}
+  buildingRoofs:
+  - {r: 0.55, g: 0.28, b: 0.24, a: 1}
+  - {r: 0.3, g: 0.35, b: 0.45, a: 1}
+  - {r: 0.6, g: 0.5, b: 0.3, a: 1}
+  window: {r: 0.55, g: 0.78, b: 0.9, a: 1}
+  buildingGlass: {r: 0.5, g: 0.75, b: 0.88, a: 1}
+  buildingAccent: {r: 0.75, g: 0.28, b: 0.2, a: 1}
+  foliage: {r: 0.28, g: 0.55, b: 0.25, a: 1}
+  trunk: {r: 0.42, g: 0.3, b: 0.2, a: 1}
+  lampPost: {r: 0.2, g: 0.2, b: 0.22, a: 1}

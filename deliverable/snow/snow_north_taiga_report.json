@@ -1,0 +1,794 @@
+{
+  "schema_version": 1,
+  "generator_version": "1.0.0",
+  "label": "snow_north_taiga",
+  "seed": 20261002,
+  "theme": {
+    "id": "snow",
+    "display_name": "雪地"
+  },
+  "grid": {
+    "width": 256,
+    "height": 256,
+    "tile_size_meters": 8.0,
+    "height_scale_meters": 120.0
+  },
+  "contract": {
+    "passed": true,
+    "checks_run": 10,
+    "hard_failures": [],
+    "warnings": []
+  },
+  "stats": {
+    "total_cells": 65536,
+    "land_cells": 7629,
+    "water_cells": 57907,
+    "land_fraction": 0.1164,
+    "biome_cells": {
+      "deep_water": 55048,
+      "shallow_water": 444,
+      "ice_shore": 321,
+      "snow_flat": 1440,
+      "snow_forest": 882,
+      "tundra": 594,
+      "rock_snow": 2326,
+      "peak_ice": 2066,
+      "frozen_lake": 2415
+    },
+    "lake_count": 8,
+    "lake_cells": 2415,
+    "river_count": 4,
+    "rivers_reaching_water": 4,
+    "river_cells": 68,
+    "instance_count": 1022,
+    "instances_by_category": {
+      "trees_sparse": 70,
+      "trees_dense": 615,
+      "trees_other": 60,
+      "ice_boulders": 103,
+      "snow_drifts": 94,
+      "frozen_reeds": 80
+    },
+    "instances_by_type": {
+      "pine_snow_sparse": 70,
+      "pine_snow_dense": 615,
+      "birch_snow_dead": 60,
+      "ice_boulder": 103,
+      "snow_drift": 94,
+      "frozen_reed": 80
+    },
+    "instances_by_region": {
+      "": 666,
+      "north_taiga": 271,
+      "south_open_snow": 52,
+      "east_ridge": 33
+    },
+    "cluster_count": 24,
+    "basin_count": 3,
+    "max_height": 1.0,
+    "regions": {
+      "north_taiga": 22272,
+      "south_open_snow": 6634,
+      "east_ridge": 5272
+    },
+    "obj_vertices": 102979,
+    "obj_faces": 156927,
+    "obj_river_segments": 60
+  },
+  "categories": [
+    {
+      "category": "trees_sparse",
+      "display_name": "稀疏树木",
+      "object_type": "pine_snow_sparse",
+      "distribution": "poisson_disk",
+      "params": {
+        "min_spacing": 7.0,
+        "max_attempts_per_point": 80
+      },
+      "requested": 90,
+      "placed": 56,
+      "legal_cells": 1731,
+      "region": "",
+      "clusters": []
+    },
+    {
+      "category": "trees_sparse",
+      "display_name": "稀疏树木",
+      "object_type": "pine_snow_sparse",
+      "distribution": "poisson_disk",
+      "params": {
+        "min_spacing": 7.0,
+        "max_attempts_per_point": 80
+      },
+      "requested": 18,
+      "placed": 14,
+      "legal_cells": 303,
+      "region": "north_taiga",
+      "clusters": []
+    },
+    {
+      "category": "trees_dense",
+      "display_name": "密集树木",
+      "object_type": "pine_snow_dense",
+      "distribution": "normal_clusters",
+      "params": {
+        "cluster_count": 14,
+        "per_cluster": 26,
+        "spread": 3.4,
+        "min_cluster_spacing": 9.0,
+        "centre_sigma": 0.2
+      },
+      "requested": 340,
+      "placed": 340,
+      "legal_cells": 1191,
+      "region": "",
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "x": 124.73913043478261,
+          "y": 91.6086956521739,
+          "count": 23
+        },
+        {
+          "cluster_id": 1,
+          "x": 87.08,
+          "y": 135.88,
+          "count": 25
+        },
+        {
+          "cluster_id": 2,
+          "x": 80.76,
+          "y": 129.24,
+          "count": 25
+        },
+        {
+          "cluster_id": 3,
+          "x": 144.4516129032258,
+          "y": 110.29032258064517,
+          "count": 31
+        },
+        {
+          "cluster_id": 4,
+          "x": 77.88235294117646,
+          "y": 140.11764705882354,
+          "count": 17
+        },
+        {
+          "cluster_id": 5,
+          "x": 170.17142857142858,
+          "y": 108.88571428571429,
+          "count": 35
+        },
+        {
+          "cluster_id": 6,
+          "x": 151.0,
+          "y": 89.0,
+          "count": 16
+        },
+        {
+          "cluster_id": 7,
+          "x": 79.125,
+          "y": 99.65625,
+          "count": 32
+        },
+        {
+          "cluster_id": 8,
+          "x": 80.76,
+          "y": 112.64,
+          "count": 25
+        },
+        {
+          "cluster_id": 9,
+          "x": 135.88,
+          "y": 89.4,
+          "count": 25
+        },
+        {
+          "cluster_id": 10,
+          "x": 159.63636363636363,
+          "y": 106.21212121212122,
+          "count": 33
+        },
+        {
+          "cluster_id": 11,
+          "x": 152.52173913043478,
+          "y": 103.73913043478261,
+          "count": 23
+        },
+        {
+          "cluster_id": 12,
+          "x": 86.34782608695652,
+          "y": 127.82608695652173,
+          "count": 23
+        },
+        {
+          "cluster_id": 13,
+          "x": 91.42857142857143,
+          "y": 97.85714285714286,
+          "count": 7
+        }
+      ]
+    },
+    {
+      "category": "trees_dense",
+      "display_name": "密集树木",
+      "object_type": "pine_snow_dense",
+      "distribution": "normal_clusters",
+      "params": {
+        "cluster_count": 9,
+        "per_cluster": 26,
+        "spread": 4.2,
+        "min_cluster_spacing": 9.0,
+        "centre_sigma": 0.2
+      },
+      "requested": 260,
+      "placed": 257,
+      "legal_cells": 503,
+      "region": "north_taiga",
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "x": 131.5151515151515,
+          "y": 75.06060606060606,
+          "count": 33
+        },
+        {
+          "cluster_id": 1,
+          "x": 145.92307692307693,
+          "y": 79.92307692307692,
+          "count": 26
+        },
+        {
+          "cluster_id": 2,
+          "x": 100.61764705882354,
+          "y": 78.44117647058823,
+          "count": 34
+        },
+        {
+          "cluster_id": 3,
+          "x": 106.48275862068965,
+          "y": 76.06896551724138,
+          "count": 29
+        },
+        {
+          "cluster_id": 4,
+          "x": 102.55555555555556,
+          "y": 77.92592592592592,
+          "count": 27
+        },
+        {
+          "cluster_id": 5,
+          "x": 107.86666666666666,
+          "y": 78.53333333333333,
+          "count": 30
+        },
+        {
+          "cluster_id": 6,
+          "x": 133.22222222222223,
+          "y": 80.96296296296296,
+          "count": 27
+        },
+        {
+          "cluster_id": 7,
+          "x": 132.76190476190476,
+          "y": 76.80952380952381,
+          "count": 21
+        },
+        {
+          "cluster_id": 8,
+          "x": 153.3,
+          "y": 83.63333333333334,
+          "count": 30
+        }
+      ]
+    },
+    {
+      "category": "trees_dense",
+      "display_name": "密集树木",
+      "object_type": "pine_snow_dense",
+      "distribution": "poisson_disk",
+      "params": {
+        "cluster_count": 14,
+        "per_cluster": 26,
+        "spread": 3.4,
+        "min_cluster_spacing": 9.0,
+        "centre_sigma": 0.2,
+        "min_spacing": 9.0
+      },
+      "requested": 30,
+      "placed": 18,
+      "legal_cells": 1152,
+      "region": "south_open_snow",
+      "clusters": [
+        {
+          "cluster_id": 0,
+          "x": 116.77777777777777,
+          "y": 156.72222222222223,
+          "count": 18
+        }
+      ]
+    },
+    {
+      "category": "trees_other",
+      "display_name": "其它树木",
+      "object_type": "birch_snow_dead",
+      "distribution": "uniform",
+      "params": {
+        "max_attempts_per_point": 60
+      },
+      "requested": 60,
+      "placed": 60,
+      "legal_cells": 2231,
+      "region": "",
+      "clusters": []
+    },
+    {
+      "category": "ice_boulders",
+      "display_name": "冰岩",
+      "object_type": "ice_boulder",
+      "distribution": "poisson_disk",
+      "params": {
+        "min_spacing": 6.0
+      },
+      "requested": 70,
+      "placed": 70,
+      "legal_cells": 3327,
+      "region": "",
+      "clusters": []
+    },
+    {
+      "category": "ice_boulders",
+      "display_name": "冰岩",
+      "object_type": "ice_boulder",
+      "distribution": "poisson_disk",
+      "params": {
+        "min_spacing": 4.0
+      },
+      "requested": 60,
+      "placed": 33,
+      "legal_cells": 484,
+      "region": "east_ridge",
+      "clusters": []
+    },
+    {
+      "category": "snow_drifts",
+      "display_name": "雪堆",
+      "object_type": "snow_drift",
+      "distribution": "grid_jitter",
+      "params": {
+        "spacing": 11.0,
+        "jitter": 0.45
+      },
+      "requested": 110,
+      "placed": 60,
+      "legal_cells": 941,
+      "region": "",
+      "clusters": []
+    },
+    {
+      "category": "snow_drifts",
+      "display_name": "雪堆",
+      "object_type": "snow_drift",
+      "distribution": "grid_jitter",
+      "params": {
+        "spacing": 11.0,
+        "jitter": 0.5
+      },
+      "requested": 45,
+      "placed": 34,
+      "legal_cells": 816,
+      "region": "south_open_snow",
+      "clusters": []
+    },
+    {
+      "category": "frozen_reeds",
+      "display_name": "枯芦苇",
+      "object_type": "frozen_reed",
+      "distribution": "uniform",
+      "params": {},
+      "requested": 80,
+      "placed": 80,
+      "legal_cells": 3293,
+      "region": "",
+      "clusters": []
+    }
+  ],
+  "lakes": [
+    {
+      "id": 0,
+      "x": 0.470703125,
+      "y": 0.314453125,
+      "radius": 0.03387725337793638,
+      "level": 0.42817414777069934,
+      "cells": 240,
+      "frozen": true
+    },
+    {
+      "id": 1,
+      "x": 0.419921875,
+      "y": 0.669921875,
+      "radius": 0.03330968306071418,
+      "level": 0.5121038936649998,
+      "cells": 226,
+      "frozen": true
+    },
+    {
+      "id": 2,
+      "x": 0.650390625,
+      "y": 0.361328125,
+      "radius": 0.04717490834915638,
+      "level": 0.25929289820917545,
+      "cells": 267,
+      "frozen": true
+    },
+    {
+      "id": 3,
+      "x": 0.533203125,
+      "y": 0.681640625,
+      "radius": 0.04338256863906835,
+      "level": 0.4134350508905714,
+      "cells": 372,
+      "frozen": true
+    },
+    {
+      "id": 4,
+      "x": 0.626953125,
+      "y": 0.630859375,
+      "radius": 0.06055555655908803,
+      "level": 0.2753589435822657,
+      "cells": 509,
+      "frozen": true
+    },
+    {
+      "id": 5,
+      "x": 0.345703125,
+      "y": 0.341796875,
+      "radius": 0.04152436901092746,
+      "level": 0.3516949372297865,
+      "cells": 338,
+      "frozen": true
+    },
+    {
+      "id": 6,
+      "x": 0.669921875,
+      "y": 0.478515625,
+      "radius": 0.041901141147353986,
+      "level": 0.6039954244064921,
+      "cells": 351,
+      "frozen": true
+    },
+    {
+      "id": 7,
+      "x": 0.287109375,
+      "y": 0.470703125,
+      "radius": 0.023399999999999997,
+      "level": 0.31598579017637873,
+      "cells": 112,
+      "frozen": true
+    }
+  ],
+  "rivers": [
+    {
+      "id": 0,
+      "source": [
+        89,
+        120
+      ],
+      "terminus": [
+        70,
+        133
+      ],
+      "length": 20,
+      "reached_water": true
+    },
+    {
+      "id": 1,
+      "source": [
+        82,
+        112
+      ],
+      "terminus": [
+        67,
+        106
+      ],
+      "length": 16,
+      "reached_water": true
+    },
+    {
+      "id": 2,
+      "source": [
+        88,
+        132
+      ],
+      "terminus": [
+        73,
+        141
+      ],
+      "length": 16,
+      "reached_water": true
+    },
+    {
+      "id": 3,
+      "source": [
+        138,
+        87
+      ],
+      "terminus": [
+        140,
+        72
+      ],
+      "length": 16,
+      "reached_water": true
+    }
+  ],
+  "regions": [
+    {
+      "id": "north_taiga",
+      "shape": "rect",
+      "bounds": {
+        "x0": 0.0,
+        "y0": 0.0,
+        "x1": 1.0,
+        "y1": 0.34
+      },
+      "overrides": {
+        "trees_dense": {
+          "count": 260,
+          "distribution": "normal_clusters",
+          "cluster_count": 9,
+          "spread": 4.2
+        },
+        "trees_sparse": {
+          "count": 20,
+          "density_scale": 0.2
+        }
+      },
+      "cells": 22272
+    },
+    {
+      "id": "south_open_snow",
+      "shape": "rect",
+      "bounds": {
+        "x0": 0.3,
+        "y0": 0.56,
+        "x1": 0.72,
+        "y1": 0.8
+      },
+      "overrides": {
+        "trees_dense": {
+          "count": 30,
+          "distribution": "poisson_disk",
+          "min_spacing": 9.0
+        },
+        "snow_drifts": {
+          "count": 45,
+          "distribution": "grid_jitter",
+          "spacing": 7.0,
+          "jitter": 0.5
+        }
+      },
+      "cells": 6634
+    },
+    {
+      "id": "east_ridge",
+      "shape": "circle",
+      "bounds": {
+        "cx": 0.74,
+        "cy": 0.48,
+        "r": 0.16
+      },
+      "overrides": {
+        "ice_boulders": {
+          "count": 60,
+          "distribution": "poisson_disk",
+          "min_spacing": 4.0
+        }
+      },
+      "cells": 5272
+    }
+  ],
+  "request": {
+    "theme": "snow",
+    "seed": 20261002,
+    "width": 256,
+    "height": 256,
+    "label": "snow_north_taiga",
+    "terrain": {
+      "lake_count": 8,
+      "lake_mean_radius": 0.045,
+      "river_count": 4,
+      "island_radius": 0.46
+    },
+    "categories": {
+      "trees_dense": {
+        "count": 340,
+        "distribution": "normal_clusters",
+        "cluster_count": 14,
+        "spread": 3.4
+      },
+      "trees_sparse": {
+        "count": 90,
+        "distribution": "poisson_disk",
+        "min_spacing": 7.0
+      },
+      "trees_other": {
+        "count": 60,
+        "distribution": "uniform"
+      }
+    },
+    "features": {
+      "lakes": {
+        "distribution": "poisson_disk",
+        "min_spacing": 26.0
+      },
+      "rivers": {
+        "distribution": "uniform"
+      },
+      "mountains": {
+        "distribution": "uniform"
+      }
+    },
+    "disable_categories": [],
+    "formats": [
+      "map",
+      "csv",
+      "pgm",
+      "report",
+      "obj"
+    ],
+    "regions": [
+      {
+        "id": "north_taiga",
+        "shape": "rect",
+        "bounds": {
+          "x0": 0.0,
+          "y0": 0.0,
+          "x1": 1.0,
+          "y1": 0.34
+        },
+        "overrides": {
+          "trees_dense": {
+            "count": 260,
+            "distribution": "normal_clusters",
+            "cluster_count": 9,
+            "spread": 4.2
+          },
+          "trees_sparse": {
+            "count": 20,
+            "density_scale": 0.2
+          }
+        }
+      },
+      {
+        "id": "south_open_snow",
+        "shape": "rect",
+        "bounds": {
+          "x0": 0.3,
+          "y0": 0.56,
+          "x1": 0.72,
+          "y1": 0.8
+        },
+        "overrides": {
+          "trees_dense": {
+            "count": 30,
+            "distribution": "poisson_disk",
+            "min_spacing": 9.0
+          },
+          "snow_drifts": {
+            "count": 45,
+            "distribution": "grid_jitter",
+            "spacing": 7.0,
+            "jitter": 0.5
+          }
+        }
+      },
+      {
+        "id": "east_ridge",
+        "shape": "circle",
+        "bounds": {
+          "cx": 0.74,
+          "cy": 0.48,
+          "r": 0.16
+        },
+        "overrides": {
+          "ice_boulders": {
+            "count": 60,
+            "distribution": "poisson_disk",
+            "min_spacing": 4.0
+          }
+        }
+      }
+    ]
+  },
+  "resolved_categories": [
+    {
+      "id": "trees_sparse",
+      "count": 90,
+      "distribution": "poisson_disk",
+      "params": {
+        "min_spacing": 7.0,
+        "max_attempts_per_point": 80
+      },
+      "form": "conifer"
+    },
+    {
+      "id": "trees_dense",
+      "count": 340,
+      "distribution": "normal_clusters",
+      "params": {
+        "cluster_count": 14,
+        "per_cluster": 26,
+        "spread": 3.4,
+        "min_cluster_spacing": 9.0,
+        "centre_sigma": 0.2
+      },
+      "form": "conifer"
+    },
+    {
+      "id": "trees_other",
+      "count": 60,
+      "distribution": "uniform",
+      "params": {
+        "max_attempts_per_point": 60
+      },
+      "form": "broadleaf"
+    },
+    {
+      "id": "ice_boulders",
+      "count": 70,
+      "distribution": "poisson_disk",
+      "params": {
+        "min_spacing": 6.0
+      },
+      "form": "boulder"
+    },
+    {
+      "id": "snow_drifts",
+      "count": 110,
+      "distribution": "grid_jitter",
+      "params": {
+        "spacing": 11.0,
+        "jitter": 0.45
+      },
+      "form": "drift"
+    },
+    {
+      "id": "frozen_reeds",
+      "count": 80,
+      "distribution": "uniform",
+      "params": {},
+      "form": "reed"
+    }
+  ],
+  "resolved_features": {
+    "mountains": {
+      "kind": "uniform",
+      "params": {
+        "max_attempts_per_point": 30
+      }
+    },
+    "lakes": {
+      "kind": "poisson_disk",
+      "params": {
+        "min_spacing": 26.0,
+        "max_attempts_per_point": 200
+      }
+    },
+    "rivers": {
+      "kind": "uniform",
+      "params": {
+        "max_attempts_per_point": 60
+      }
+    }
+  },
+  "outputs": {
+    "map_json": "snow_north_taiga_map.json",
+    "biomes_csv": "snow_north_taiga_biomes.csv",
+    "scatter_csv": "snow_north_taiga_scatter.csv",
+    "height_pgm": "snow_north_taiga_height.pgm",
+    "obj": "snow_north_taiga_scene.obj",
+    "mtl": "snow_north_taiga_scene.mtl",
+    "houdini_guide": "snow_north_taiga_Houdini_Import.md",
+    "houdini_hip_builder": "snow_north_taiga_build_hip.py"
+  }
+}

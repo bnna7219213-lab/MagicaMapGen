@@ -1,0 +1,8 @@
+map report  label=snow_north_taiga  seed=20261002  theme=snow (雪地)
+generator=1.0.0  grid=256x256
+CONTRACT: PASSED  checks=10  hard_failures=0  warnings=0
+land=7629 (0.1164)  water=57907  lakes=8  rivers=4 (reaching water 4)
+instances=1022  clusters=24
+biomes: deep_water=55048, shallow_water=444, ice_shore=321, snow_flat=1440, snow_forest=882, tundra=594, rock_snow=2326, peak_ice=2066, frozen_lake=2415
+categories: trees_sparse=56/90[poisson_disk], trees_sparse=14/18[poisson_disk]@north_taiga, trees_dense=340/340[normal_clusters], trees_dense=257/260[normal_clusters]@north_taiga, trees_dense=18/30[poisson_disk]@south_open_snow, trees_other=60/60[uniform], ice_boulders=70/70[poisson_disk], ice_boulders=33/60[poisson_disk]@east_ridge, snow_drifts=60/110[grid_jitter], snow_drifts=34/45[grid_jitter]@south_open_snow, frozen_reeds=80/80[uniform]
+outputs: biomes_csv=snow_north_taiga_biomes.csv, height_pgm=snow_north_taiga_height.pgm, houdini_guide=snow_north_taiga_Houdini_Import.md, houdini_hip_builder=snow_north_taiga_build_hip.py, map_json=snow_north_taiga_map.json, mtl=snow_north_taiga_scene.mtl, obj=snow_north_taiga_scene.obj, scatter_csv=snow_north_taiga_scatter.csv

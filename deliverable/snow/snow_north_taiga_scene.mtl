@@ -1,0 +1,130 @@
+# Materials for theme 'snow' (雪地)
+# Generated deterministically from seed 20261002. No textures;
+# the OBJ carries no UV channel, so these are flat colours.
+
+newmtl deep_water
+Ka 0.18 0.18 0.18
+Kd 0.0500 0.1300 0.2400
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
+newmtl detail_frozen_reed
+Ka 0.18 0.18 0.18
+Kd 0.5600 0.5100 0.3300
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
+newmtl detail_snow_drift
+Ka 0.18 0.18 0.18
+Kd 0.9500 0.9700 1.0000
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
+newmtl frozen_lake
+Ka 0.18 0.18 0.18
+Kd 0.6600 0.8000 0.8800
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
+newmtl ice_shore
+Ka 0.18 0.18 0.18
+Kd 0.7200 0.8200 0.8800
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
+newmtl lake_water
+Ka 0.18 0.18 0.18
+Kd 0.6600 0.8000 0.8800
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
+newmtl peak_ice
+Ka 0.18 0.18 0.18
+Kd 0.8400 0.9000 0.9600
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
+newmtl river_water
+Ka 0.18 0.18 0.18
+Kd 0.3000 0.5000 0.6200
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
+newmtl rock_snow
+Ka 0.18 0.18 0.18
+Kd 0.4400 0.4600 0.5000
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
+newmtl scatter_ice_rock
+Ka 0.18 0.18 0.18
+Kd 0.4600 0.5100 0.5700
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
+newmtl shallow_water
+Ka 0.18 0.18 0.18
+Kd 0.1100 0.2800 0.4200
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
+newmtl snow_flat
+Ka 0.18 0.18 0.18
+Kd 0.9300 0.9500 0.9800
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
+newmtl snow_forest
+Ka 0.18 0.18 0.18
+Kd 0.1600 0.2800 0.2700
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
+newmtl tree_bark
+Ka 0.18 0.18 0.18
+Kd 0.2000 0.1600 0.1400
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
+newmtl tree_snow_birch
+Ka 0.18 0.18 0.18
+Kd 0.7400 0.7600 0.7200
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
+newmtl tree_snow_pine
+Ka 0.18 0.18 0.18
+Kd 0.1500 0.2700 0.2600
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
+newmtl tree_snow_pine_light
+Ka 0.18 0.18 0.18
+Kd 0.4200 0.5500 0.5600
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
+newmtl tundra
+Ka 0.18 0.18 0.18
+Kd 0.5500 0.5800 0.5500
+Ks 0.04 0.04 0.04
+Ns 12
+illum 2
+
