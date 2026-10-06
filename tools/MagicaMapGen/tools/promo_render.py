@@ -22,6 +22,13 @@ import cv2
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
+# The RLE codec lives in the generator core (symmetric with its encoder), so the
+# promo renderer can expand a grid without re-implementing it or pulling in the
+# PyQt6-tied GUI preview module. Guard the import against a non-repo cwd.
+if str(REPO) not in sys.path:
+    sys.path.insert(0, str(REPO))
+from mapgen.export.mapdata import decode_rle  # noqa: E402
+
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[2]
 FONTS = Path(os.environ.get("WINDIR", r"C:\Windows")) / "Fonts"
@@ -300,23 +307,6 @@ def scene_determinism(t, ctx):
 
 
 
-def _decode_rle(runs, total):
-    """Expand [[value, run_length], ...] into exactly total cells.
-
-    Kept local so this script does not need PyQt6 just to draw a frame.
-    """
-    flat = []
-    for pair in runs or []:
-        if len(pair) < 2:
-            continue
-        value, length = int(pair[0]), int(pair[1])
-        flat.extend([value] * length)
-        if len(flat) >= total:
-            break
-    if len(flat) < total:
-        flat.extend([0] * (total - len(flat)))
-    return flat[:total]
-
 def _preview_image(case, box_w, box_h):
     """Render a real map.json into a PIL image, straight from the delivered contract."""
     stem = case["theme"] + "_" + str(case["seed"])
@@ -326,10 +316,9 @@ def _preview_image(case, box_w, box_h):
     legend = {}
     for b in grid.get("biome_legend", []):
         legend[int(b["id"])] = b.get("color_hex", "#ff00ff")
-    cells = _decode_rle(grid["biome_rle"], w * h)
-    # One pixel per cell, then a single resize to fill the card. An integer tile
-    # size would floor to 1 pixel for a 128-cell map in a 252 px card and leave the
-    # thumbnail stranded in the corner.
+    cells = decode_rle(grid["biome_rle"], w * h)
+    # Draw one pixel per cell, then resize to the card. Resizing (not an integer
+    # tile size) is what keeps a 128-cell map from collapsing to a 1px thumbnail.
     small = Image.new("RGB", (w, h))
     px = small.load()
     for y in range(h):
@@ -411,8 +400,7 @@ def scene_gui(t, ctx):
             "契约结论、失败原因、产物路径",
             "当场可见",
     ]):
-        text(d, (x, 250 + i * 36), s, font("body", 19),
-             TEXT_DIM if s else TEXT_DIM)
+        text(d, (x, 250 + i * 36), s, font("body", 19), TEXT_DIM)
     text(d, (x, 690), "GUI 不 import 生成器，", font("bodybold", 19), EMBER_LIT)
     text(d, (x, 720), "而是通过命令行调用它 ——", font("bodybold", 19), EMBER_LIT)
     text(d, (x, 750), "所以界面看到的退出码", font("body", 18), TEXT_DIM)

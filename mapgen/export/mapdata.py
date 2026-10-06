@@ -38,6 +38,26 @@ def _rle(values: Sequence[int]) -> List[List[int]]:
     return out
 
 
+def decode_rle(runs: Sequence[Sequence[int]], total: int) -> List[int]:
+    """Inverse of :func:`_rle`: expand ``[[value, run_length], ...]`` to exactly ``total`` cells.
+
+    The encode side lives above so the codec is one source of truth; consumers
+    (and the promo renderer) import this rather than re-implementing the loop.
+    Padding with zeros keeps a truncated or short run safe to index into.
+    """
+    flat: List[int] = []
+    for pair in runs or []:
+        if len(pair) < 2:
+            continue
+        value, length = int(pair[0]), int(pair[1])
+        flat.extend([value] * length)
+        if len(flat) >= total:
+            break
+    if len(flat) < total:
+        flat.extend([0] * (total - len(flat)))
+    return flat[:total]
+
+
 def _flatten_row_major(grid: List[List[Any]], W: int, H: int) -> List[Any]:
     """Grids are stored [x][y]; maps are consumed row-major (y outer, x inner)."""
     return [grid[x][y] for y in range(H) for x in range(W)]

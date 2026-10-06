@@ -22,6 +22,7 @@ from PyQt6.QtWidgets import (
 
 from . import theme
 from .bridge import EXIT_MEANING, EXIT_OK, MapgenBridge, MapSummary
+from .edits_panel import EditsPanel
 from .param_form import ParamForm
 from .preview import render_map
 from .region_editor import RegionEditor
@@ -216,6 +217,8 @@ class MainWindow(QMainWindow):
         tabs.addTab(self._wrap_scroll(self.form), "Parameters")
         self.region_host = QWidget()
         tabs.addTab(self._wrap_scroll(self.region_host), "Regions")
+        self.edits_panel = EditsPanel(self.bridge)
+        tabs.addTab(self._wrap_scroll(self.edits_panel), "Edit")
         outer.addWidget(tabs)
 
         row = QHBoxLayout()
@@ -441,6 +444,11 @@ class MainWindow(QMainWindow):
             self.summary = summary
             self.btn_open.setEnabled(True)
             self._apply_summary(summary)
+            # Rebase the edit loop on a fresh base, but never on an overlay output
+            # (otherwise each incremental run would chain onto the previous one).
+            if summary.path is not None and summary.label != "overlay":
+                self.edits_panel.set_base(summary.path, self.out_dir)
+        self.edits_panel.on_finished()
         self._fill_contract_text(code, summary)
 
     def _apply_summary(self, s: MapSummary) -> None:

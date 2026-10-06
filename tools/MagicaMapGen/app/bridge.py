@@ -194,6 +194,48 @@ class MapgenBridge(QObject):
         proc.start(sys.executable, args)
         return config_path
 
+    def start_overlay(self, base_map: Path, edits_json: Path, out_dir: Path,
+                      label: str = "") -> None:
+        """Run the incremental-edit overlay (phase 2 closed loop).
+
+        ``base_map`` is the map.json the edits were authored against; ``edits_json``
+        is the ops list. The output lands in ``out_dir`` so it sits next to the
+        base and the preview can simply reload the latest map.json.
+        """
+        if self.busy:
+            self.log.emit("A generation is already running.")
+            return
+
+        self._out_dir = Path(out_dir)
+        self._out_dir.mkdir(parents=True, exist_ok=True)
+        self._progress_path.write_text("", encoding="utf-8")
+
+        stem = label or "overlay"
+        args = [
+            "-m", "mapgen",
+            "--overlay", str(base_map),
+            "--edits", str(edits_json),
+            "--out", str(self._out_dir),
+            "--label", stem,
+            "--progress", str(self._progress_path),
+            "--validate",
+        ]
+        for fmt in ("map", "csv", "pgm", "report"):
+            args += ["--format", fmt]
+
+        env = QProcessEnvironment.systemEnvironment()
+        env.insert("PYTHONIOENCODING", "utf-8")
+        env.insert("PYTHONPATH", str(REPO_ROOT))
+
+        self.log.emit("python -m mapgen " + " ".join(args))
+        proc = QProcess(self)
+        proc.setWorkingDirectory(str(REPO_ROOT))
+        proc.setProcessEnvironment(env)
+        proc.readyReadStandardOutput.connect(self._on_output)
+        proc.finished.connect(self._on_finished)
+        self._proc = proc
+        proc.start(sys.executable, args)
+
     def _on_output(self) -> None:
         proc = self._proc
         if proc is None:

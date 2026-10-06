@@ -14,6 +14,7 @@ import hashlib
 import json
 import math
 import os
+import re
 import sys
 import unittest
 
@@ -23,7 +24,7 @@ import mapgen
 from mapgen import MapRequest, get_theme, generate, list_themes
 from mapgen.config import ConfigError, request_from_dict
 from mapgen.contract import validate_theme_spec
-from mapgen.distributions import (Domain, get_distribution,
+from mapgen.distributions import (Distribution, Domain, get_distribution,
                                   list_distributions, REGISTRY)
 from mapgen.export.mapdata import build_map_data
 from mapgen.schema import SCHEMA_VERSION
@@ -63,13 +64,50 @@ class TestDeterminism(unittest.TestCase):
                              (ib["x"], ib["y"], ib["category"]))
 
     def test_different_seed_changes_content_but_not_theme(self):
+        """A different seed must move the world, not merely shuffle a counter.
+
+        The previous assertion was ``assertNotEqual(A == B and C == D)`` on the lake
+        count and positions, which passes as soon as the *count* differs -- so a
+        generator that returned the same map with one extra lake would have passed.
+        These checks compare actual geometry.
+        """
         _, a = make("snow", seed=1, size=SMALL)
         _, b = make("snow", seed=2, size=SMALL)
         self.assertEqual(a.theme_id, b.theme_id)
+
         self.assertNotEqual(a.biome, b.biome, "换 seed 必须改变地表")
-        self.assertNotEqual(len(a.lakes) == len(b.lakes) and
-                            [l["x"] for l in a.lakes],
-                            [l["x"] for l in b.lakes], "换 seed 必须移动湖泊")
+
+        # Lake centres must be at genuinely different places, not merely a different
+        # number of lakes.
+        self.assertNotEqual([(l["x"], l["y"]) for l in a.lakes],
+                            [(l["x"], l["y"]) for l in b.lakes],
+                            "换 seed 必须移动湖泊位置")
+        for la, lb in zip(a.lakes, b.lakes):
+            self.assertGreater((la["x"] - lb["x"]) ** 2 + (la["y"] - lb["y"]) ** 2,
+                               1e-9, "同名湖泊不应落在同一格")
+
+        # Terrain must differ over the land surface. Comparing every cell would be
+        # dominated by open water, which is the same deep water in both maps and so
+        # would mask a generator that returned an identical landscape.
+        water_ids = {bi.id for bi in get_theme("snow").biomes if bi.is_water}
+        land_cells = 0
+        differing = 0
+        for y in range(a.height):
+            for x in range(a.width):
+                ba, bb = a.biome[x][y], b.biome[x][y]
+                if ba in water_ids and bb in water_ids:
+                    continue
+                land_cells += 1
+                if ba != bb:
+                    differing += 1
+        self.assertGreater(land_cells, 0, "样本里没有陆地格子，无法比较")
+        self.assertGreater(differing / land_cells, 0.5,
+                           f"仅 {differing}/{land_cells} 格不同，说明换 seed 几乎没生效")
+
+        # Instances must land in different places.
+        self.assertNotEqual([(i["x"], i["y"]) for i in a.instances],
+                            [(i["x"], i["y"]) for i in b.instances],
+                            "换 seed 必须改变实例分布")
 
     def test_rng_stream_is_stable_across_instances(self):
         r1, r2 = DetRandom(999), DetRandom(999)
@@ -78,14 +116,39 @@ class TestDeterminism(unittest.TestCase):
             self.assertEqual(r1.next_float(-1, 1), r2.next_float(-1, 1))
 
     def test_fork_is_key_order_independent(self):
-        a = DetRandom(SEED).fork("cat:trees_dense")
-        b = DetRandom(SEED).fork("cat:trees_dense")
-        self.assertEqual([a.next_int(0, 999) for _ in range(50)],
-                         [b.next_int(0, 999) for _ in range(50)])
-        c = DetRandom(SEED).fork("cat:trees_sparse")
-        self.assertNotEqual([DetRandom(SEED).fork("cat:trees_dense").next_int(0, 999)
-                             for _ in range(5)],
-                            [c.next_int(0, 999) for _ in range(5)])
+        """fork(key) must depend only on the key, never on the order keys were taken.
+
+        The old version of this test forked the same key twice and compared, then
+        forked a *different* key and compared that against a fresh stream. Neither
+        assertion touched ordering, so the property in the name was never actually
+        checked. Here the same key is drawn from two independently-ordered key
+        sequences: if fork were order-sensitive the streams would diverge.
+        """
+        keys_a = ["cat:trees_dense", "cat:trees_sparse", "region:north",
+                  "feature:lakes", "cat:trees_other"]
+        keys_b = list(reversed(keys_a))
+
+        def draw(keys):
+            return {k: [DetRandom(SEED).fork(k).next_int(0, 10 ** 6)
+                        for _ in range(5)] for k in keys}
+
+        self.assertEqual(draw(keys_a), draw(keys_b),
+                         "fork 的结果不应依赖 key 的取出顺序")
+
+        # Repeating a key must give the same stream, and a fresh generator with the
+        # same key must equal it.
+        first = DetRandom(SEED).fork("cat:trees_dense")
+        again = DetRandom(SEED).fork("cat:trees_dense")
+        self.assertEqual([first.next_int(0, 999) for _ in range(50)],
+                         [again.next_int(0, 999) for _ in range(50)])
+
+        # Distinct keys must NOT collide, otherwise every category would share a
+        # stream and the "independent fork" guarantee would be worthless.
+        dense = DetRandom(SEED).fork("cat:trees_dense")
+        sparse = DetRandom(SEED).fork("cat:trees_sparse")
+        self.assertNotEqual([dense.next_int(0, 10 ** 9) for _ in range(8)],
+                            [sparse.next_int(0, 10 ** 9) for _ in range(8)],
+                            "不同 key 必须派生不同的流")
 
 
 class TestThemeContract(unittest.TestCase):
@@ -191,10 +254,52 @@ class TestDistributions(unittest.TestCase):
             cells.add((rng.next_int(0, n), rng.next_int(0, n)))
         return Domain(n, n, sorted(cells))
 
-    def test_registry_has_the_four_documented_strategies(self):
-        self.assertEqual(sorted(REGISTRY),
-                         ["grid_jitter", "normal_clusters", "poisson_disk", "uniform"])
-        self.assertEqual(len(list_distributions()), 4)
+    def test_registry_exposes_the_documented_strategies(self):
+        """The four shipped strategies must exist and be wired up.
+
+        Deliberately not asserting the registry is *exactly* these four. An earlier
+        revision did, which meant adding a fifth distribution turned the suite red
+        for no good reason -- the test was guarding a number, not the behaviour.
+        What actually matters is that every registered strategy is usable and
+        self-describing.
+        """
+        shipped = {"grid_jitter", "normal_clusters", "poisson_disk", "uniform"}
+        self.assertTrue(shipped.issubset(set(REGISTRY)),
+                        f"缺少内置分布: {sorted(shipped - set(REGISTRY))}")
+
+        # Extensibility: a strategy added later must work without touching the
+        # pipeline, which means it has an id, declares its params, and samples.
+        class Probe(Distribution):
+            id = "test_probe_strategy"
+            params = ("alpha",)
+            grouped = False
+
+            def sample_groups(self, rng, domain, count, params):
+                return [list(domain.cells[:count])]
+
+        REGISTRY[Probe.id] = Probe()
+        try:
+            self.assertIn(Probe.id, REGISTRY)
+            dom = self._domain()
+            out = get_distribution(Probe.id).sample(DetRandom(1), dom, 5, {})
+            self.assertLessEqual(len(out), 5)
+            described = {d["id"] for d in list_distributions()}
+            self.assertIn(Probe.id, described,
+                          "新分布必须自动出现在 --list-distributions 里")
+        finally:
+            del REGISTRY[Probe.id]
+        self.assertNotIn(Probe.id, REGISTRY, "注册表不应残留测试策略")
+
+    def test_every_registered_strategy_declares_itself(self):
+        """Each strategy needs a non-empty id and a describe() the CLI can print."""
+        for key, dist in REGISTRY.items():
+            with self.subTest(distribution=key):
+                self.assertEqual(dist.id, key,
+                                 "注册表的键必须与策略的 id 一致")
+                described = dist.describe()
+                self.assertEqual(described["id"], key)
+                self.assertIn("grouped", described)
+                self.assertIsInstance(described["params"], str)
 
     def test_poisson_disk_honours_min_spacing(self):
         spacing = 5.0
@@ -554,10 +659,16 @@ class TestConfig(unittest.TestCase):
                     self.assertEqual(main(list(args)), 2)
 
     def test_config_file_round_trips(self):
+        """The shipped example config must stay loadable.
+
+        This used to ``skipTest`` when the file was missing, so deleting or renaming
+        it turned the test silently green on CI. A shipped sample is part of the
+        contract with users, so absence is a failure.
+        """
         path = os.path.join(os.path.dirname(os.path.dirname(
             os.path.abspath(__file__))), "configs", "snow_north_taiga.json")
-        if not os.path.isfile(path):
-            self.skipTest("示例配置不存在")
+        self.assertTrue(os.path.isfile(path),
+                        f"示例配置缺失，README 与文档都引用了它: {path}")
         req = mapgen.load_config(path)
         self.assertEqual(req.theme_id, "snow")
         self.assertEqual(len(req.regions), 3)
@@ -585,12 +696,136 @@ class TestExport(unittest.TestCase):
                 self.assertEqual(flat[y * SMALL + x], w.biome[x][y],
                                  f"({x},{y}) 的 RLE 解码与网格不一致")
 
-    def test_map_json_has_no_timestamp(self):
+    def test_artifacts_have_verifiable_content(self):
+        """Read the artifacts back and check they describe this map.
+
+        Byte-equality across runs is necessary but not sufficient: every format could
+        be empty and still be perfectly reproducible. These assertions confirm the
+        table, the raster and the geometry actually carry the generated content.
+        """
+        from dataclasses import replace
+        import shutil
+        import tempfile
+        from mapgen.export import write_outputs
+
         req, w = make("snow", size=SMALL)
-        raw = json.dumps(build_map_data(w, req, {}), ensure_ascii=False)
-        for bad in ("timestamp", "generated_at", "created"):
-            self.assertNotIn(bad, raw,
-                             "报告不得含时间戳，否则同 seed 无法逐字节复现")
+        d = tempfile.mkdtemp(prefix="mapgen_content_")
+        try:
+            req = replace(req, request=replace(req.request,
+                formats=("map", "csv", "pgm", "report", "obj")))
+            outs = write_outputs(w, req, d, "c", elapsed_ms=1.0)
+            doc = build_map_data(w, req, {})
+
+            # ---- CSV: one row per cell, values agree with the grid ----------
+            with open(outs["biomes_csv"], "r", encoding="utf-8") as f:
+                lines = f.read().strip().split("\n")
+            header = lines[0].split(",")
+            self.assertEqual(len(lines) - 1, SMALL * SMALL, "biomes.csv 应每格一行")
+            for col in ("x", "y", "height", "biome_id", "biome_key", "region"):
+                self.assertIn(col, header)
+            cx, cy = header.index("x"), header.index("y")
+            ch, ck = header.index("height"), header.index("biome_key")
+            first = lines[1].split(",")
+            self.assertEqual((int(first[cx]), int(first[cy])), (0, 0), "CSV 应以 (0,0) 开头")
+            probe = lines[1 + 5 * SMALL + 7].split(",")
+            self.assertEqual((int(probe[cx]), int(probe[cy])), (7, 5),
+                             "CSV 必须行优先 (y 外层, x 内层)")
+            self.assertAlmostEqual(float(probe[ch]), w.height_map[7][5], places=3)
+            legend = {b["key"]: b["id"] for b in doc["grid"]["biome_legend"]}
+            self.assertEqual(int(probe[header.index("biome_id")]), legend.get(probe[ck]),
+                             "biome_id 与 biome_key 必须一致")
+
+            # ---- PGM: 16-bit, right size, and genuinely lossless ------------
+            with open(outs["height_pgm"], "rb") as f:
+                blob = f.read()
+            self.assertTrue(blob.startswith(b"P5"), "PGM 魔数必须是 P5")
+            end = blob.index(b"65535\n") + len(b"65535\n")
+            dims = blob[:end].split()
+            self.assertEqual(int(dims[1]), SMALL, "PGM 宽应等于网格宽")
+            self.assertEqual(int(dims[2]), SMALL, "PGM 高应等于网格高")
+            self.assertEqual(int(dims[3]), 65535, "maxval 必须是 65535（无损）")
+            payload = blob[end:]
+            self.assertEqual(len(payload), SMALL * SMALL * 2, "16-bit 每样本 2 字节")
+            peak = max(int.from_bytes(payload[i:i + 2], "little")
+                       for i in range(0, len(payload), 2))
+            self.assertGreater(peak, 255, "峰值应超过 8-bit 上限，否则高度被截断")
+            at = (5 * SMALL + 7) * 2
+            self.assertAlmostEqual(
+                int.from_bytes(payload[at:at + 2], "little") / 65535.0,
+                w.height_map[7][5], places=3,
+                msg="16-bit PGM 应比 8-bit RLE 更接近真实高度")
+
+            # ---- OBJ: named objects, basename material ref, real geometry ---
+            with open(outs["obj"], "r", encoding="utf-8") as f:
+                obj_text = f.read()
+            with open(outs["mtl"], "r", encoding="utf-8") as f:
+                mtl_text = f.read()
+
+            self.assertIn("mtllib c_scene.mtl", obj_text, "OBJ 必须以 basename 引用材质库")
+            self.assertNotIn(d.replace("\\", "/"), obj_text, "OBJ 不得包含绝对路径")
+            for name in ("Island_Terrain", "Ocean_Surface",
+                         "Inland_Lake_Water", "River_Network"):
+                self.assertIn("o " + name, obj_text, "OBJ 缺少 object " + name)
+            for cat in doc["categories"]:
+                self.assertIn("o Scatter_" + cat["category"], obj_text,
+                              "OBJ 缺少类别 object Scatter_" + cat["category"])
+
+            verts = sum(1 for l in obj_text.splitlines() if l.startswith("v "))
+            faces = sum(1 for l in obj_text.splitlines() if l.startswith("f "))
+            self.assertGreater(verts, SMALL, "OBJ 顶点过少，地形没有真正生成")
+            # A (W-1)x(H-1) quad grid needs at least 2 triangles per cell.
+            self.assertGreaterEqual(faces, 2 * (SMALL - 1) * (SMALL - 1),
+                                    "OBJ 面数不足，地形网格不完整")
+            self.assertIn("newmtl", mtl_text, "MTL 应声明材质")
+            used = {l.split()[1] for l in obj_text.splitlines() if l.startswith("usemtl ")}
+            declared = {l.split()[1] for l in mtl_text.splitlines() if l.startswith("newmtl ")}
+            self.assertTrue(used, "OBJ 没有任何 usemtl")
+            self.assertTrue(used.issubset(declared),
+                            "OBJ 引用了 MTL 未声明的材质: %r" % sorted(used - declared))
+        finally:
+            shutil.rmtree(d, ignore_errors=True)
+
+    def test_map_json_has_no_timestamp(self):
+        """No wall-clock value may reach the artifact, whatever the field is called.
+
+        The old version blacklisted the substrings "timestamp", "generated_at" and
+        "created". That only stops someone *naming* a field that way -- an ISO date
+        stored under a key like "built" sails straight through, which is exactly the
+        failure byte-identity depends on. So this inspects the values, not the names.
+        """
+        req, w = make("snow", size=SMALL)
+        doc = build_map_data(w, req, {})
+
+        patterns = [
+            (r"\d{4}-\d{2}-\d{2}", "ISO date"),
+            (r"\d{2}:\d{2}:\d{2}", "clock time"),
+            (r"\b1[6-9]\d{8}\b", "epoch seconds"),
+            (r"\b1[6-9]\d{11}\b", "epoch millis"),
+        ]
+        offenders = []
+
+        def walk(node, path):
+            if isinstance(node, dict):
+                for k, v in node.items():
+                    walk(v, path + "." + str(k))
+            elif isinstance(node, list):
+                for i, v in enumerate(node):
+                    walk(v, "%s[%d]" % (path, i))
+            elif isinstance(node, str):
+                for pattern, label in patterns:
+                    if re.search(pattern, node):
+                        offenders.append((path, node[:40], label))
+            elif isinstance(node, float) and node > 1.5e9:
+                offenders.append((path, node, "epoch seconds"))
+
+        walk(doc, "")
+        self.assertEqual(offenders, [],
+                         "产物中出现疑似时间值，会破坏逐字节可复现: %r" % (offenders[:5],))
+
+        # Structural half: no run-time bookkeeping may appear at all.
+        raw = json.dumps(doc, ensure_ascii=False)
+        for bad in ("timestamp", "generated_at", "elapsed", "duration"):
+            self.assertNotIn(bad, raw, "map.json 不应含运行期字段 %r" % bad)
 
     def test_every_category_appears_in_the_summary(self):
         req, w = make("island", size=SMALL)
@@ -654,18 +889,83 @@ class TestPortability(unittest.TestCase):
                 shutil.rmtree(d, ignore_errors=True)
 
     def test_no_absolute_paths_or_wall_clock_in_serialised_output(self):
+        """No machine-specific path may appear in the artifact.
+
+        The previous check searched for "C:\\\\", "/home/" and friends. Those literals
+        are *this* machine's prefixes, so on another platform or another drive the
+        test silently passed while an absolute path sat in the output. This looks for
+        the shape of an absolute path instead, which is machine-independent.
+        """
         req, w = make("snow", size=SMALL)
-        data = build_map_data(w, req, {})
-        raw = json.dumps(data, ensure_ascii=False)
-        for needle in (os.path.abspath("."), "C:\\", "C:/", "/Users/", "/home/",
-                       "elapsed", "timestamp"):
-            self.assertNotIn(needle, raw,
-                             f"map.json 含机器相关内容 {needle!r}，无法跨机复现")
+        doc = build_map_data(w, req, {})
+
+        # Shape-based, not literal-based: a drive letter, a UNC path, or a POSIX
+        # absolute path in any value.
+        shapes = [
+            re.compile(r"\b[A-Za-z]:[\\/]"),          # C:\ or C:/
+            re.compile(r"\\\\[A-Za-z0-9_.-]+\\"),    # UNC \\server\share
+            re.compile(r"(?<![\w.])/(?:home|Users|usr|var|tmp|opt|mnt|media)/"),
+            re.compile(r"(?<![\w.])/(?:etc|proc|sys|dev)/"),
+        ]
+        offenders = []
+
+        def walk(node, path):
+            if isinstance(node, dict):
+                for k, v in node.items():
+                    walk(v, path + "." + str(k))
+            elif isinstance(node, list):
+                for i, v in enumerate(node):
+                    walk(v, "%s[%d]" % (path, i))
+            elif isinstance(node, str):
+                for rx in shapes:
+                    if rx.search(node):
+                        offenders.append((path, node[:60]))
+                        break
+
+        walk(doc, "")
+        self.assertEqual(offenders, [],
+                         "map.json 含机器相关路径，无法跨机复现: %r" % (offenders[:5],))
+
+        # The positive statement of the same property: recorded artifact names must
+        # be bare basenames, which is what makes them relocatable.
+        for region in doc.get("regions", []):
+            self.assertNotIn("/", region.get("id", ""))
+        raw = json.dumps(doc, ensure_ascii=False)
+        for bad in ("elapsed", "timestamp"):
+            self.assertNotIn(bad, raw)
+        # And this machine's real prefix must genuinely be absent, now that the
+        # shape-based check above is the primary guard.
+        self.assertNotIn(os.path.abspath("."), raw)
 
     def test_elapsed_time_does_not_leak_into_stats(self):
+        """Run duration must not reach the artifact through any key.
+
+        The old assertion checked two hardcoded key names, so it passed no matter
+        what ``stats`` actually contained -- a genuine leak under a different name
+        would have sailed through. Now every key and every value is inspected.
+        """
         req, w = make("snow", size=SMALL)
-        self.assertNotIn("_elapsed_ms", w.stats)
-        self.assertNotIn("_report", w.stats)
+        stats = w.stats
+
+        duration_words = ("elapsed", "duration", "took", "seconds", "millis",
+                          "runtime", "timing", "generated_at", "timestamp")
+        bad_keys = [k for k in stats
+                    if any(word in str(k).lower() for word in duration_words)]
+        self.assertEqual(bad_keys, [],
+                         f"stats 出现了运行期字段: {bad_keys}")
+
+        # Stats must be made only of countable things: numbers and nested counters.
+        for key, value in stats.items():
+            with self.subTest(stat=key):
+                self.assertIsInstance(
+                    value, (int, float, dict),
+                    f"stats[{key!r}] = {value!r} 不是可复现的量（{type(value).__name__}）")
+
+        # And the documented core keys must all be present, so the check above
+        # cannot pass on an empty or gutted stats dict.
+        for key in ("total_cells", "land_cells", "water_cells", "land_fraction",
+                    "instance_count"):
+            self.assertIn(key, stats, f"stats 缺少核心字段 {key!r}")
 
     def test_map_bytes_ignore_format_set_and_output_directory(self):
         import shutil
@@ -1089,6 +1389,145 @@ class TestRegionPriority(unittest.TestCase):
         with self.assertRaises((ValueError, TypeError)):
             request_from_dict(cfg).resolve(get_theme("snow"))
 
+
+
+
+class TestCLIExitCodes(unittest.TestCase):
+    WARN_WORD = '\u8b66\u544a'
+    """The CLI is what the GUI and CI both invoke, so its exit codes are a
+    real interface rather than an implementation detail. Exit codes were
+    previously covered only in fragments, and --strict/--validate not at all."""
+
+    def run_cli(self, args):
+        import contextlib
+        import io
+        from mapgen.cli import main
+        out, err = io.StringIO(), io.StringIO()
+        with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
+            code = main(list(args))
+        return code, out.getvalue(), err.getvalue()
+
+    def _out(self):
+        import tempfile
+        return tempfile.mkdtemp(prefix='mapgen_cli_')
+
+    def test_two_on_every_configuration_error(self):
+        import shutil
+        d = self._out()
+        cases = [
+            (['--theme', 'snow', '--out', d], 'missing seed'),
+            (['--theme', 'no_such_theme', '--seed', '1', '--out', d], 'unknown theme'),
+            (['--theme', 'snow', '--seed', '1', '--width', '0', '--out', d], 'width 0'),
+            (['--theme', 'snow', '--seed', '1', '--out', d, '--set', 'bogus=1'], 'unknown set key'),
+            (['--theme', 'snow', '--seed', '1', '--out', d, '--set', 'lake_count=1.5'], 'wrong set type'),
+            (['--theme', 'snow', '--seed', '1', '--out', d, '--set', 'nokey'], 'set without equals'),
+            (['--theme', 'snow', '--seed', '1', '--set', 'lake_count=2'], 'missing --out'),
+            (['--seed', '1', '--out', d], 'neither theme nor config'),
+        ]
+        for args, why in cases:
+            with self.subTest(case=why):
+                self.assertEqual(self.run_cli(args)[0], 2,
+                                 'config error must exit 2: ' + why)
+        shutil.rmtree(d, ignore_errors=True)
+
+    def test_one_on_contract_failure_and_names_the_check(self):
+        import shutil
+        d = self._out()
+        try:
+            code, out, _ = self.run_cli([
+                '--theme', 'island', '--seed', '88',
+                '--width', '128', '--height', '128',
+                '--out', d, '--format', 'map', '--format', 'report'])
+            self.assertEqual(code, 1, 'a hard contract failure must exit 1')
+            self.assertIn('min_biome_coverage', out,
+                          'the summary must name the failing check')
+        finally:
+            shutil.rmtree(d, ignore_errors=True)
+
+    def test_four_on_schema_violation_detected_by_validate(self):
+        import shutil
+        from mapgen.export import mapdata
+        d = self._out()
+        original = mapdata.build_map_data
+
+        def broken(world, req, request_dict=None, **kw):
+            doc = original(world, req, request_dict or {}, **kw)
+            doc['instances'][0]['water_depth'] = -5.0
+            return doc
+
+        try:
+            mapdata.build_map_data = broken
+            code, _, err = self.run_cli([
+                '--theme', 'snow', '--seed', str(SEED),
+                '--width', '64', '--height', '64',
+                '--out', d, '--format', 'map', '--validate'])
+        finally:
+            mapdata.build_map_data = original
+            shutil.rmtree(d, ignore_errors=True)
+        self.assertEqual(code, 4, 'a schema violation must exit 4')
+        self.assertIn('water_depth', err,
+                      'the error must point at the offending field')
+
+    def test_validate_passes_on_a_clean_run(self):
+        import shutil
+        d = self._out()
+        try:
+            code, out, _ = self.run_cli([
+                '--theme', 'snow', '--seed', str(SEED),
+                "--width", "64", "--height", "64", "--out", d,
+                '--format', 'map', '--validate'])
+            self.assertEqual(code, 0)
+        finally:
+            shutil.rmtree(d, ignore_errors=True)
+
+    def test_strict_promotes_soft_warnings_to_failure(self):
+        import shutil
+        base_dir = self._out()
+        cfg = os.path.join(base_dir, "r.json")
+        with open(cfg, "w", encoding="utf-8") as f:
+            json.dump({
+                "theme": "snow",
+                "seed": SEED,
+                "width": 64, "height": 64,
+                "regions": [{
+                    "id": "pin",
+                    "shape": "rect",
+                    "bounds": {"x0": 0.0, "y0": 0.0,
+                               "x1": 0.02, "y1": 0.02},
+                    "overrides": {"trees_dense": {"count": 5}},
+                }],
+            }, f, ensure_ascii=False)
+        try:
+            # A region covering a sliver of open ocean changes nothing, which trips
+            # the soft regions_effective check. A real warning, so --strict has
+            # something to promote.
+            plain_dir = os.path.join(base_dir, "plain")
+            strict_dir = os.path.join(base_dir, "strict")
+            def args_for(out_dir, extra):
+                return ["--config", cfg, "--out", out_dir,
+                        "--format", "map",
+                        "--format", "report"] + extra
+
+            plain_code, _, _ = self.run_cli(args_for(plain_dir, []))
+            strict_code, _, _ = self.run_cli(args_for(strict_dir, ["--strict"]))
+            self.assertEqual(plain_code, 0,
+                             "sanity: without --strict a soft warning is not a failure")
+            self.assertEqual(strict_code, 1,
+                             "--strict must turn a soft warning into exit 1")
+
+            # Prove the warning is real by reading the report rather than trusting
+            # the console line, which always prints a warning count even at zero.
+            for out_dir, expect_fail in ((plain_dir, False), (strict_dir, True)):
+                report = [f for f in os.listdir(out_dir) if f.endswith("_report.json")][0]
+                with open(os.path.join(out_dir, report), "r", encoding="utf-8") as f:
+                    doc = json.load(f)
+                self.assertTrue(doc["contract"]["warnings"],
+                                "the scenario must really warn")
+                self.assertFalse(doc["contract"]["hard_failures"],
+                                 "warnings only; no hard failure here")
+                del expect_fail
+        finally:
+            shutil.rmtree(base_dir, ignore_errors=True)
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)

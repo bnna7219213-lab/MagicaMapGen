@@ -23,6 +23,7 @@ import json
 import os
 import sys
 import time
+from pathlib import Path
 from typing import List, Optional
 
 from . import GENERATOR_VERSION
@@ -72,6 +73,10 @@ def build_parser() -> argparse.ArgumentParser:
                         "不进入任何产物，故不影响确定性）")
     p.add_argument("--validate", action="store_true",
                    help="用 map.schema.json 校验生成的 map.json（退出码 4 表示违规）")
+    p.add_argument("--overlay", metavar="MAP_JSON",
+                   help="增量编辑：以该 base map.json 为起点（必须与 --edits 配合）")
+    p.add_argument("--edits", metavar="EDITS_JSON",
+                   help="edits.json：实例级操作（add/move/delete/paint）")
     p.add_argument("--version", action="store_true", help="打印版本并退出")
     return p
 
@@ -173,6 +178,17 @@ def main(argv: Optional[List[str]] = None) -> int:
             "spec_problems": problems,
         }, ensure_ascii=False, indent=2))
         return 2 if problems else 0
+
+    # ---- incremental edit overlay ----------------------------------------
+    if args.overlay:
+        if not args.edits:
+            print("[mapgen] 错误: --overlay 必须与 --edits 配合使用", file=sys.stderr)
+            return 2
+        if not args.out:
+            print("[mapgen] 错误: 必须指定 --out（生成器不会写到源码目录旁）",
+                  file=sys.stderr)
+            return 2
+        return _run_overlay(args)
 
     # ---- build the request -------------------------------------------------
     try:
@@ -310,6 +326,118 @@ def main(argv: Optional[List[str]] = None) -> int:
     if not c["passed"]:
         return 1
     if args.strict and c["warnings"]:
+        return 1
+    return 0
+
+
+def _run_overlay(args: argparse.Namespace) -> int:
+    """Apply an edits.json onto a base map.json and re-emit the deliverable.
+
+    The base map.json carries its own resolved request, so --theme/--seed/--config
+    are irrelevant here; only --out, --edits and (optionally) --format/--validate
+    apply. The surrounding map regenerates from the base seed and reproduces
+    byte-for-byte, so the diff is exactly the edited region.
+    """
+    from dataclasses import replace
+    from .edit import EditError, load_base_request, overlay_world, parse_edits
+    from .export import FORMATS, write_outputs
+
+    try:
+        base_doc = json.loads(Path(args.overlay).read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as e:
+        print(f"[mapgen] 无法读取 base map.json: {e}", file=sys.stderr)
+        return 2
+    try:
+        edits_doc = json.loads(Path(args.edits).read_text(encoding="utf-8"))
+        parsed = parse_edits(edits_doc)
+    except (OSError, json.JSONDecodeError) as e:
+        print(f"[mapgen] 无法读取 edits.json: {e}", file=sys.stderr)
+        return 2
+    except EditError as e:
+        print(f"[mapgen] edits.json 非法: {e}", file=sys.stderr)
+        return 2
+
+    try:
+        resolved = load_base_request(base_doc)
+    except EditError as e:
+        print(f"[mapgen] base map.json 非法: {e}", file=sys.stderr)
+        return 2
+    theme = resolved.theme
+
+    progress_sink = None
+    progress_file = None
+    if args.progress:
+        try:
+            progress_file = open(args.progress, "w", encoding="utf-8")
+        except OSError as e:
+            print(f"[mapgen] 无法写入 --progress 文件: {e}", file=sys.stderr)
+            return 3
+
+        def progress_sink(stage, done, total):
+            progress_file.write(json.dumps({
+                "stage": stage, "done": done, "total": total,
+                "percent": round(100.0 * done / total),
+            }, ensure_ascii=False) + "\n")
+            progress_file.flush()
+
+    t0 = time.time()
+    try:
+        world, resolved = overlay_world(base_doc, parsed, progress=progress_sink)
+    except EditError as e:
+        if progress_file is not None:
+            progress_file.close()
+        print(f"[mapgen] 编辑应用失败: {e}", file=sys.stderr)
+        return 2
+    except Exception as e:
+        if progress_file is not None:
+            progress_file.close()
+        print(f"[mapgen] 增量重生成失败: {type(e).__name__}: {e}", file=sys.stderr)
+        return 3
+    finally:
+        if progress_file is not None and not progress_file.closed:
+            progress_file.close()
+    elapsed = (time.time() - t0) * 1000.0
+
+    if args.formats:
+        resolved = replace(resolved,
+                          request=replace(resolved.request,
+                                          formats=tuple(args.formats)))
+    label = args.label or base_doc.get("label") or f"{theme.id}_{resolved.seed}"
+    resolved = replace(resolved,
+                      request=replace(resolved.request, label=label))
+    out_dir = os.path.normpath(args.out)
+    stem = label
+    try:
+        outputs = write_outputs(world, resolved, out_dir, stem, elapsed_ms=elapsed)
+    except OSError as e:
+        print(f"[mapgen] 写出失败: {e}", file=sys.stderr)
+        return 3
+
+    print(f"[mapgen] overlay {theme.display_name}({theme.id}) seed={resolved.seed} "
+          f" 耗时 {elapsed:.0f}ms")
+    print(f"  实例 {len(world.instances)} 个（含 {len(parsed['added'])} 新增 / "
+          f"{len(parsed['deleted'])} 删除 / {len(parsed['moved'])} 移动 / "
+          f"{len(parsed['painted'])} 涂抹格）")
+    for k, v in sorted(outputs.items()):
+        print(f"  {k}: {v}")
+
+    if args.validate and "map_json" in outputs:
+        from .validate import load_schema, validate, _semantic_checks
+        with open(outputs["map_json"], "r", encoding="utf-8") as f:
+            document = json.load(f)
+        problems = validate(document, load_schema()) + _semantic_checks(document)
+        if problems:
+            print("[mapgen] map.json 未通过 schema 校验:", file=sys.stderr)
+            for line in problems[:40]:
+                print(f"  - {line}", file=sys.stderr)
+            if len(problems) > 40:
+                print(f"  ... 另有 {len(problems) - 40} 条", file=sys.stderr)
+            return 4
+        print("  schema: 通过 map.schema.json 校验")
+
+    if not world.contract.get("passed", False):
+        return 1
+    if args.strict and world.contract.get("warnings"):
         return 1
     return 0
 

@@ -98,6 +98,10 @@ def generate(req: ResolvedRequest,
     # still place their own overrides; this only answers "which region owns a cell".
     world.region_owner = attribute_regions(world, regions, masks)
     step("regions")
+
+    # Scatter deterministically. The incremental-edit overlay (see ``mapgen.edit``)
+    # replays instance-level ops on top of this exact result, so the surrounding
+    # map is reproduced byte-for-byte and only the edited instances differ.
     place_all(world, req, regions, masks)
     step("scatter")
 
