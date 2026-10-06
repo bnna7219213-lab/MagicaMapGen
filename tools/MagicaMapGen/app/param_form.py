@@ -36,7 +36,7 @@ class ParamRow(QWidget):
         lay.setSpacing(6)
 
         self.label = QLabel(spec.get("label") or self.key)
-        self.label.setMinimumWidth(170)
+        self.label.setMinimumWidth(148)
         self.label.setStyleSheet("color:%s;" % theme.TEXT_DIM)
         if spec.get("help"):
             self.label.setToolTip(spec["help"])

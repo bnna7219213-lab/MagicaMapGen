@@ -25,15 +25,18 @@ from .bridge import EXIT_MEANING, EXIT_OK, MapgenBridge, MapSummary
 from .param_form import ParamForm
 from .preview import render_map
 from .region_editor import RegionEditor
+from .skin import SkinnedFrame, SkinManager
 
 APP_NAME = "MagicaMapGen"
 
 SIZES = (64, 96, 128, 256, 384, 512)
 
 
-def _panel(title: str = "") -> QFrame:
-    f = QFrame()
-    f.setObjectName("Panel")
+def _panel(title: str = "", skins: SkinManager = None) -> SkinnedFrame:
+    """A framed panel. Registered with the skin manager so skins can be toggled."""
+    f = SkinnedFrame()
+    if skins is not None:
+        skins.register(f, "panel")
     return f
 
 
@@ -67,6 +70,9 @@ class MainWindow(QMainWindow):
         self.themes: list = []
         self.theme_meta: dict = {}
         self.summary: Optional[MapSummary] = None
+        # Skins are optional: if the generated frames are absent the manager leaves
+        # every panel on the plain QSS border, so a clean checkout still works.
+        self.skins = SkinManager(enabled=True)
 
         # Built here because the parameter form and region editor both need to exist
         # before _build_ui() wires them into the tab widget.
@@ -129,6 +135,16 @@ class MainWindow(QMainWindow):
         self.btn_generate.setEnabled(False)
         self.btn_generate.clicked.connect(self._on_generate)
         lay.addWidget(self.btn_generate)
+
+        avail = self.skins.available()
+        have_all = all(avail.values())
+        self.btn_skin = QPushButton("Ornate frame: on" if have_all else "Ornate frame: n/a")
+        self.btn_skin.setCheckable(True)
+        self.btn_skin.setChecked(have_all)
+        self.btn_skin.setEnabled(have_all)
+        self.btn_skin.setToolTip("Toggle the generated nine-patch frame on the panels")
+        self.btn_skin.toggled.connect(self._on_toggle_skin)
+        lay.addWidget(self.btn_skin)
         return head
 
     def _build_left_rail(self) -> QWidget:
@@ -151,7 +167,7 @@ class MainWindow(QMainWindow):
         return scroll
 
     def _build_theme_panel(self) -> QFrame:
-        f = _panel()
+        f = _panel(skins=self.skins)
         lay = QVBoxLayout(f)
         lay.setContentsMargins(12, 10, 12, 12)
         lay.setSpacing(6)
@@ -190,7 +206,7 @@ class MainWindow(QMainWindow):
 
     def _build_param_panel(self) -> QFrame:
         """Interactive terrain parameters + region editor, both metadata-driven."""
-        f = _panel()
+        f = _panel(skins=self.skins)
         outer = QVBoxLayout(f)
         outer.setContentsMargins(12, 10, 12, 12)
         outer.setSpacing(8)
@@ -226,7 +242,7 @@ class MainWindow(QMainWindow):
         return area
 
     def _build_contract_panel(self) -> QFrame:
-        f = _panel()
+        f = _panel(skins=self.skins)
         lay = QVBoxLayout(f)
         lay.setContentsMargins(12, 10, 12, 12)
         lay.setSpacing(6)
@@ -262,7 +278,7 @@ class MainWindow(QMainWindow):
         return big
 
     def _build_log_panel(self) -> QFrame:
-        f = _panel()
+        f = _panel(skins=self.skins)
         lay = QVBoxLayout(f)
         lay.setContentsMargins(12, 10, 12, 12)
         lay.setSpacing(6)
@@ -352,6 +368,11 @@ class MainWindow(QMainWindow):
         self._on_form_changed()
 
     # ---- run -------------------------------------------------------------
+
+    def _on_toggle_skin(self, on: bool) -> None:
+        self.skins.set_enabled(on)
+        self.btn_skin.setText("Ornate frame: on" if on else "Ornate frame: off")
+        self._append_log("ornate frame %s" % ("enabled" if on else "disabled"))
 
     def _on_reset_overrides(self) -> None:
         self.form.reset_all()

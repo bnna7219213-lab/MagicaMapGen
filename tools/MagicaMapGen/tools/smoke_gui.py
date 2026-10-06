@@ -55,6 +55,28 @@ def main() -> int:
 
     failures = []
 
+    # --- skin layer -------------------------------------------------------
+    print("\n-- skin layer --")
+    avail = win.skins.available()
+    print("skin assets available:", avail)
+    if not all(avail.values()):
+        failures.append("skin assets missing; run tools/make_skins.py (%r)" % avail)
+    skinned = [f for f, _ in win.skins._frames if f.skinned]
+    print("panels registered: %d, currently skinned: %d"
+          % (len(win.skins._frames), len(skinned)))
+    if win.skins._frames and not skinned:
+        failures.append("panels registered but none are skinned")
+    # Toggling off must fall back to the stylesheet border, not leave a broken frame.
+    win._on_toggle_skin(False)
+    pump(app, 80)
+    if any(f.skinned for f, _ in win.skins._frames):
+        failures.append("disabling skins left a frame painted")
+    win._on_toggle_skin(True)
+    pump(app, 80)
+    if not all(f.skinned for f, _ in win.skins._frames):
+        failures.append("re-enabling skins did not repaint the frames")
+    win.btn_skin.setChecked(True)
+
     # Regression guard: Qt's QSS parser silently ignored `font-family` and fell back
     # to the system UI face, which rendered every label as tofu boxes. Assert the
     # application font actually resolved, so this cannot come back unnoticed.
