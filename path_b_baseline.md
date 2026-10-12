@@ -4,7 +4,7 @@
 > 状态：**阶段 0 完成（双端跑通）；阶段 1 部分完成（`regions[].priority` 已落地）；阶段 2 的 Python 半边完成（`--overlay` 增量重生成 + GUI Edit 面板），Unity 半边待做。**
 > schema：当前 **v3**（v2 → v3 是 `regions[].priority` 的加性变更）。
 > **阶段 2 之后的路线（阶段 3 / 4 / 5，含依赖关系、优先级与下一步可执行事项）见 §4。**
-> 最后更新：2026-10-06
+> 最后更新：2026-10-12
 
 ## 0. 已核实的前置事实（与最初假设有出入，先看这里）
 
@@ -78,6 +78,43 @@ python unity_import_smoke.py    # 生成文档 → 跑 Unity batchmode → 校�
 ```
 
 脚本同时把「任何 `error CS`」也判为失败，避免编译失败的构建被误当成导入成功。
+
+#### 环境回归：`ALLUSERSPROFILE` 缺失导致冒烟全挂（2026-10-12）
+
+**症状**：`unity_import_smoke.py` 报 `SMOKE_FAIL: Unity exit 1`；日志为
+`Failed to resolve packages: The "path" argument must be of type string. Received undefined. No packages loaded.`。
+UPM 侧 `project:resolve-packages --> 500` 仅约 4–6 ms；**不是** C# 编译失败，`executeMethod` 根本没跑到。
+
+**根因**（用打过堆栈补丁的 UPM 副本 + `-upmIpcPath` 取到）：
+
+```
+TypeError: The "path" argument must be of type string. Received undefined
+  at getDeprecatedGlobalConfigRoot   → path.join(process.env.ALLUSERSPROFILE, "Unity/config")
+  at getDeprecatedGlobalConfigFilePath → getUpmConfig → initContext → resolve-packages
+```
+
+UPM 的 `getDeprecatedGlobalConfigRoot()` 在 Windows 上**只**用 `ALLUSERSPROFILE`，无 `PROGRAMDATA` 兜底。
+若 shell/会话里该变量被剥掉（本机即只剩 `PROGRAMDATA=C:\ProgramData`），`path.join(undefined, …)` 必炸。
+
+**为何「有的工程能开」**：缓存健康（`Library/PackageManager/ProjectCache` + `projectResolution.json` 输入哈希一致）的工程走
+`Restoring resolved packages state from cache`，**不调用** `resolve-packages`，因此不踩坑；
+新建工程 / 删除过 `Library/PackageManager` / lock 变更后的工程必须 resolve，于是必挂。
+
+**修复**：`unity_import_smoke.py` 启动 Unity 前补齐环境变量：
+
+```python
+env = dict(os.environ)
+if not env.get("ALLUSERSPROFILE"):
+    env["ALLUSERSPROFILE"] = env.get("PROGRAMDATA") or r"C:\ProgramData"
+```
+
+**复验（2026-10-12）**：`SMOKE_OK: 6/6 verified, Unity exit 0`。
+
+**同日修复过程中的连带操作**（勿当回归）：
+
+- 误删的 `Library/PackageManager/projectResolution.json` 已按当时内容重建（Library 不进 git）。
+- 排查时改过的 `Packages/manifest.json` / `packages-lock.json` 已 `git checkout` 恢复，与仓库一致。
+- 验收前请确认本会话 `ALLUSERSPROFILE` 已设置；脚本内已兜底，但手动开 Unity 时仍可能踩同一坑。
 
 
 ## 2. 阶段 1：让 Unity 端表现好（🟡 部分完成）

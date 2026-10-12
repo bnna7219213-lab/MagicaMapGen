@@ -1,4 +1,5 @@
-﻿import shutil, subprocess, sys, time
+﻿import os
+import shutil, subprocess, sys, time
 from pathlib import Path
 ROOT = Path(r"c:\Users\bnna7\workspace\Houdini")
 PROJECT = ROOT / "LowPolyCity"
@@ -33,8 +34,14 @@ def main():
     args = [UNITY, "-batchmode", "-nographics", "-quit",
             "-projectPath", str(PROJECT), "-executeMethod", ENTRY,
             "-mapDir", str(DOCS), "-logFile", str(LOG)]
+    # UPM's getDeprecatedGlobalConfigRoot() does path.join(ALLUSERSPROFILE, ...)
+    # with no fallback. Some shells strip ALLUSERSPROFILE; without it
+    # resolve-packages dies in ~5ms with a TypeError and never loads packages.
+    env = dict(os.environ)
+    if not env.get("ALLUSERSPROFILE"):
+        env["ALLUSERSPROFILE"] = env.get("PROGRAMDATA") or r"C:\ProgramData"
     t0 = time.time()
-    proc = subprocess.run(args, capture_output=True, text=True, errors="replace")
+    proc = subprocess.run(args, capture_output=True, text=True, errors="replace", env=env)
     secs = time.time() - t0
     log = LOG.read_text(encoding="utf-8", errors="replace") if LOG.exists() else ""
     lines = log.splitlines()
