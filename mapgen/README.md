@@ -207,6 +207,19 @@ python -m mapgen --version
 
 > 该字段曾因一次半完成的合并而被构建后丢弃（局部 `grid` 字典建好却未用于 `return`，`return` 里另有一份不含该字段的内联副本），导致 P0 目标静默失效。`test_heightmap_raw_url_is_present_and_resolvable` 专门锁死这个坑，并校验 PGM 峰值 > 255 以证明是真 16-bit 而非被截断的 8-bit。
 
+### schema v4：编辑溯源（加性切片）
+
+`SCHEMA_VERSION = 4`，仍为**加性变更**——消费者按 `schema_version >= 4` 分支，新字段对旧消费者可选。这是阶段 3（Unity 编辑回环）的硬前置：消费端必须能区分「可重建的自动物体」与「人工锁定/手工挪动的物体」，否则重建时会覆盖设计者的改动。
+
+| 字段 | 内容 | 用途 |
+|------|------|------|
+| `instances[].source` | `auto` / `user-added` / `user-moved` | 标记物体来历；overlay 把 `add`/`move` 的实例改标为 user-*，其余保持 auto。引擎据此在 rebuild 时保留人工成果。 |
+| 顶层 `lineage` | 普通生成 `{"mode":"generate"}`；overlay `{"mode":"overlay", base_map_sha256, edits_sha256, op_count}` | 让增量产物可追溯到「基于哪张图、哪次编辑」。 |
+
+`lineage` 的哈希是对**输入文件字节**求 sha256，纯函数 → 同 base + 同 edits 重跑逐字节一致（确定性不破）。`validate.py` 的语义检查在 `schema_version>=4` 时**强制**每个实例带合法 `source`、文档带 `lineage.mode`，缺一个就 `--validate` 失败——不会静默放行。
+
+> 已知边界（本切片不含）：overlay 从 base 的 `request` 重新生成，只复现 **auto** 实例；经「设为新基线」再 overlay 时，上一轮 user-added 实例不在 request 里，需由消费端凭 `source` 自行保留。把「overlay 保用户实例」做成 Python 侧一等公民是后续项。
+
 ---
 
 ## 确定性保证

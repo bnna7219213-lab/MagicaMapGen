@@ -297,6 +297,11 @@
           "id": { "type": "integer", "minimum": 0 },
           "cat": { "type": "string" },
           "type": { "type": "string" },
+          "source": {
+            "type": "string",
+            "enum": ["auto", "user-added", "user-moved"],
+            "description": "v4 provenance of this object. auto = generator-scattered; user-* = hand-created via the overlay, which consumers must preserve across a rebuild. Present on every instance from schema v4."
+          },
           "x": { "type": "integer", "minimum": 0 },
           "y": { "type": "integer", "minimum": 0 },
           "world": {
@@ -328,6 +333,18 @@
         "water_cells": { "type": "integer", "minimum": 0 },
         "land_fraction": { "type": "number" },
         "instance_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+
+    "lineage": {
+      "type": "object",
+      "description": "v4 artifact provenance. mode=generate for a plain run; mode=overlay carries the sha256 of the base map.json and edits.json plus the op count, so an incremental product traces back to exactly what produced it. Optional for pre-v4 consumers.",
+      "required": ["mode"],
+      "properties": {
+        "mode": { "type": "string", "enum": ["generate", "overlay"] },
+        "base_map_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "edits_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "op_count": { "type": "integer", "minimum": 0 }
       }
     }
   },

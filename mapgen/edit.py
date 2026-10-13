@@ -159,10 +159,12 @@ def _apply_edits(world: Any, parsed: Dict[str, Any]) -> None:
                 if not (0 <= nx < world.width and 0 <= ny < world.height):
                     raise EditError(f"move target ({nx}, {ny}) is out of bounds")
                 inst["x"], inst["y"] = nx, ny
+                inst["source"] = "user-moved"
                 _finalize_instance(world, inst)
                 protected.append(inst)
     for a in added:
         inst = dict(a)
+        inst["source"] = "user-added"
         _finalize_instance(world, inst)
         world.instances.append(inst)
         protected.append(inst)
@@ -173,6 +175,21 @@ def _apply_edits(world: Any, parsed: Dict[str, Any]) -> None:
         world.instances = [i for i in world.instances
                           if (i in protected)
                           or (int(i["x"]), int(i["y"])) not in occupied]
+
+
+def build_lineage(base_bytes: bytes, edits_bytes: bytes, op_count: int) -> Dict[str, Any]:
+    """v4 provenance block for an overlay product.
+
+    Pure function of the input file bytes, so re-running the same base + edits
+    yields byte-identical lineage -- and therefore a byte-identical artifact.
+    """
+    import hashlib
+    return {
+        "mode": "overlay",
+        "base_map_sha256": hashlib.sha256(base_bytes).hexdigest(),
+        "edits_sha256": hashlib.sha256(edits_bytes).hexdigest(),
+        "op_count": int(op_count),
+    }
 
 
 def overlay_world(base_doc: Dict[str, Any], parsed: Dict[str, Any],

@@ -182,4 +182,18 @@ def _semantic_checks(document: Dict[str, Any]) -> List[str]:
                 errors.append(f"instances[{rec.get('id')}]: cell ({x},{y}) "
                               f"outside {w}x{h} grid")
                 break
+
+    # v4 completeness: enforce the additive provenance fields when present, so a
+    # v4 artifact that forgot them fails --validate rather than shipping silently.
+    ver = document.get("schema_version")
+    if isinstance(ver, int) and ver >= 4:
+        lin = document.get("lineage")
+        if not isinstance(lin, dict) or lin.get("mode") not in ("generate", "overlay"):
+            errors.append("schema v4: top-level lineage.mode must be 'generate' or 'overlay'")
+        for rec in insts or []:
+            if isinstance(rec, dict) and rec.get("source") not in (
+                    "auto", "user-added", "user-moved"):
+                errors.append(f"schema v4: instances[{rec.get('id')}] missing 'source' "
+                              f"(got {rec.get('source')!r})")
+                break
     return errors

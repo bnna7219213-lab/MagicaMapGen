@@ -206,7 +206,7 @@ if not env.get("ALLUSERSPROFILE"):
 
 v4 的完整字段应在阶段 3 / 4 暴露真实需求后再冻结，避免过早固化。但有一个**当前已存在的真实缺口**可以先做：
 
-**0 号切片（建议插队，成本极小、收益明确）**
+**0 号切片（✅ 已完成 2026-10-13；`SCHEMA_VERSION` 3→4）**
 
 | 字段 | 目的 |
 |---|---|
@@ -250,7 +250,7 @@ v4 的完整字段应在阶段 3 / 4 暴露真实需求后再冻结，避免过�
 
 1. ✅ **[P0 · GUI]** 预览点选实例 → 自动回填 Edit 面板的 id（`preview.py` hit-test + 面板联动）。见 §4.1-1。**已完成**，验收 `python tools/smoke_gui.py` → PASS。
 2. ✅ **[P0 · GUI]** "设为新基线"动作，允许以 overlay 产物继续累积编辑。见 §4.1-3。**已完成**（并修复 overlay 优先级 round-trip + stats 两个真实缺陷），验收 `python tools/smoke_gui.py` → PASS。
-3. **[P0 · schema]** 5-0 号切片：`instances[].source` + 顶层 `lineage`（加性、v3 兼容），带回归测试。见 §4.2。
+3. ✅ **[P0 · schema]** 5-0 号切片：`instances[].source` + 顶层 `lineage`（加性、v3 兼容），带回归测试。见 §4.2。**已完成**（`SCHEMA_VERSION` 3→4，`map.schema.json` + `validate` 语义强制，`TestSchemaV4` 回归覆盖，overlay 产物带 user-* 标记与 base/edits 哈希）。
 4. **[P1 · Unity]** `SceneDiffer`：先用手工 `edits.json` 喂 `--overlay` 的端到端脚本打通回路（不改 C# 即可验证），再上编辑器事务监听。见 §4.3。
 5. **[P1 · Unity]** `OverlayReceiver`：调 CLI + 退出码映射 + 场景刷新。见 §4.3。
 6. **[P1 · schema]** 冻结 v4 其余字段（`cluster_hierarchy` / `scatter_density` / `mask_rle`），依据阶段 3 / 4 的真实反馈。见 §4.2。

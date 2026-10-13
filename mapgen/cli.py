@@ -339,7 +339,7 @@ def _run_overlay(args: argparse.Namespace) -> int:
     byte-for-byte, so the diff is exactly the edited region.
     """
     from dataclasses import replace
-    from .edit import EditError, load_base_request, overlay_world, parse_edits
+    from .edit import EditError, build_lineage, load_base_request, overlay_world, parse_edits
     from .export import FORMATS, write_outputs
 
     try:
@@ -397,6 +397,17 @@ def _run_overlay(args: argparse.Namespace) -> int:
         if progress_file is not None and not progress_file.closed:
             progress_file.close()
     elapsed = (time.time() - t0) * 1000.0
+
+    # v4 lineage: record exactly which base map.json and which edits.json produced
+    # this overlay, so the artifact is traceable and byte-reproducible (the hashes
+    # are of the input files, which are themselves deterministic for a given run).
+    try:
+        world.lineage = build_lineage(
+            Path(args.overlay).read_bytes(), Path(args.edits).read_bytes(),
+            len(edits_doc.get("ops") or []))
+    except OSError as e:
+        print(f"[mapgen] 无法计算 lineage: {e}", file=sys.stderr)
+        return 3
 
     if args.formats:
         resolved = replace(resolved,

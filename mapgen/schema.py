@@ -33,7 +33,13 @@ from typing import Any, Dict, Mapping, Optional, Sequence, Tuple
 #: touches, so overlapping regions no longer double-count; ``cells_raw`` carries the
 #: un-owned extent and ``overlaps`` flags it. Consumers should branch on
 #: ``schema_version >= 3``.
-SCHEMA_VERSION = 3
+#: v3 -> v4 (additive): ``instances[].source`` (auto | user-added | user-moved) marks
+#: hand-created objects so a consumer preserves them across a rebuild; top-level
+#: ``lineage`` records the origin of the artifact -- ``{"mode":"generate"}`` for a plain
+#: run, or ``{"mode":"overlay", base_map_sha256, edits_sha256, op_count}`` for an
+#: incremental-edit product. Both are optional for older consumers. Branch on
+#: ``schema_version >= 4``.
+SCHEMA_VERSION = 4
 
 
 # --------------------------------------------------------------------------

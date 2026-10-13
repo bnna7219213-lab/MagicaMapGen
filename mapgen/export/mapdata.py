@@ -125,6 +125,10 @@ def build_map_data(world: World, req: ResolvedRequest,
             "id": i,
             "cat": inst["category"],
             "type": inst["type"],
+            # v4: provenance of this object. Generator-scattered objects are "auto";
+            # the overlay pass relabels hand-created ones to "user-added" /
+            # "user-moved" so a consumer can preserve them across a rebuild.
+            "source": inst.get("source", "auto"),
             "x": ix,
             "y": iy,
             "world": [
@@ -296,6 +300,10 @@ def build_map_data(world: World, req: ResolvedRequest,
         "categories": categories,
         "instances": instances,
         "stats": world.stats,
+        # v4: provenance. A plain generation has mode="generate"; the overlay pass
+        # attaches the base map.json / edits.json hashes and op count so the product
+        # traces back to exactly which base and which edits produced it.
+        "lineage": getattr(world, "lineage", None) or {"mode": "generate"},
     }
 
 

@@ -1566,5 +1566,69 @@ class TestOverlayRoundTrip(unittest.TestCase):
                          "stats.instance_count must match len(instances) after edit")
 
 
+class TestSchemaV4(unittest.TestCase):
+    """schema v4-0 additive slice: instances[].source + top-level lineage."""
+
+    def _doc(self, theme_id="snow", size=None, seed=SEED):
+        from mapgen.config import request_to_dict
+        from mapgen.export.mapdata import build_map_data
+        req, world = make(theme_id, seed=seed, size=size)
+        return build_map_data(world, req, request_to_dict(req.request))
+
+    def test_plain_artifact_is_v4(self):
+        from mapgen.validate import load_schema, validate, _semantic_checks
+        doc = self._doc(size=SMALL)
+        self.assertEqual(doc["schema_version"], 4)
+        self.assertEqual(doc["lineage"], {"mode": "generate"})
+        self.assertTrue(doc["instances"])
+        self.assertTrue(all(i["source"] == "auto" for i in doc["instances"]))
+        self.assertEqual(validate(doc, load_schema()), [])
+        self.assertEqual(_semantic_checks(doc), [])
+
+    def test_overlay_marks_user_sources(self):
+        from mapgen.config import request_to_dict
+        from mapgen.edit import overlay_world, parse_edits
+        from mapgen.export.mapdata import build_map_data
+        base_doc = self._doc(size=SMALL)
+        cells = base_doc["instances"]
+        ops = [
+            {"op": "delete", "id": 0},
+            {"op": "move", "id": 1, "x": cells[2]["x"], "y": cells[2]["y"]},
+            {"op": "add", "cat": cells[3]["cat"], "type": cells[3]["type"],
+             "x": cells[3]["x"], "y": cells[3]["y"]},
+        ]
+        world, resolved = overlay_world(
+            base_doc, parse_edits({"schema_version": 1, "ops": ops}))
+        doc = build_map_data(world, resolved, request_to_dict(resolved.request))
+        srcs = [i["source"] for i in doc["instances"]]
+        self.assertEqual(srcs.count("user-moved"), 1)
+        self.assertEqual(srcs.count("user-added"), 1)
+        self.assertTrue(all(s in ("auto", "user-added", "user-moved") for s in srcs))
+
+    def test_build_lineage_is_deterministic_and_shaped(self):
+        from mapgen.edit import build_lineage
+        a = build_lineage(b"BASE-BYTES", b"EDITS-BYTES", 3)
+        b = build_lineage(b"BASE-BYTES", b"EDITS-BYTES", 3)
+        self.assertEqual(a, b, "lineage must be a pure function of input bytes")
+        self.assertEqual(a["mode"], "overlay")
+        self.assertEqual(a["op_count"], 3)
+        self.assertEqual(len(a["base_map_sha256"]), 64)
+        self.assertEqual(len(a["edits_sha256"]), 64)
+        other = build_lineage(b"DIFFERENT", b"EDITS-BYTES", 3)
+        self.assertNotEqual(other["base_map_sha256"], a["base_map_sha256"])
+
+    def test_v4_semantic_check_has_teeth(self):
+        from mapgen.validate import _semantic_checks
+        doc = self._doc(size=SMALL)
+        self.assertEqual(_semantic_checks(doc), [])
+        doc["instances"][0].pop("source")
+        self.assertTrue(any("source" in e for e in _semantic_checks(doc)),
+                        "v4 validator must reject an instance missing 'source'")
+        doc2 = self._doc(size=SMALL)
+        del doc2["lineage"]
+        self.assertTrue(any("lineage" in e for e in _semantic_checks(doc2)),
+                        "v4 validator must reject a document missing lineage")
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
