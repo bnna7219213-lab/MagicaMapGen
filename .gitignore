@@ -19,14 +19,16 @@ __pycache__/
 *.sln
 *.user
 
-# MagicaMapGen runtime workdir and the Unity batch log
+# MagicaMapGen runtime workdir and the Unity batch logs
 tools/MagicaMapGen/_mmg_work/
 unity_import.log
+unity_roundtrip.log
 
 # Scratch output from ad-hoc verification runs
 _pg/
 _pg.jsonl
 map_import_smoke/
+map_roundtrip_smoke/
 _tmp_*/
 
 # Debug dump written when eyeballing a generated frame

@@ -141,6 +141,7 @@ namespace LowPolyWorldBuilder.Editor.Scene
         {
             var go = new GameObject($"{inst.Category}_{inst.Id}_{inst.Type}");
             go.transform.SetParent(parent, false);
+            go.AddComponent<MapInstanceId>().Configure(inst);
             go.transform.position = new Vector3(
                 (float)inst.World[0], (float)inst.World[1], (float)inst.World[2]);
             go.transform.rotation = Quaternion.Euler(0f, (float)inst.RotationDegrees, 0f);

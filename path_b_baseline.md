@@ -1,7 +1,7 @@
 # 路径 B 执行基线：mapgen → Unity 引擎消费
 
 > 本文是路径 B（mapgen 产出通用契约，Unity 只做消费端）的执行基线。
-> 状态：**阶段 0 完成（双端跑通）；阶段 1 部分完成（`regions[].priority` 已落地）；阶段 2 的 Python 半边完成（`--overlay` 增量重生成 + GUI Edit 面板），Unity 半边待做；阶段 4 GUI 深化已落地两项（预览点选回填 id、设为新基线），并修复 overlay 优先级 round-trip 与 stats 两个真实缺陷。**
+> 状态：**阶段 0 完成（双端跑通）；阶段 1 部分完成（`regions[].priority` 已落地）；阶段 2 的 Python 半边完成（`--overlay` 增量重生成 + GUI Edit 面板）；阶段 3（Unity 编辑回环）首切片完成（`MapInstanceId`+`SceneDiffer`+`OverlayReceiver`+无头往返 ROUNDTRIP_OK）；阶段 4 GUI 深化已落地两项（预览点选回填 id、设为新基线），并修复 overlay 优先级 round-trip 与 stats 两个真实缺陷；schema 现为 v4（`instances[].source` + `lineage`）。**
 > schema：当前 **v3**（v2 → v3 是 `regions[].priority` 的加性变更）。
 > **阶段 2 之后的路线（阶段 3 / 4 / 5，含依赖关系、优先级与下一步可执行事项）见 §4。**
 > 最后更新：2026-10-12
@@ -232,6 +232,10 @@ v4 的完整字段应在阶段 3 / 4 暴露真实需求后再冻结，避免过�
 
 ### 4.3 阶段 3：Unity 编辑回环贯通（P1）
 
+> ✅ **首切片已完成（2026-10-13）**：`MapInstanceId`（装配期写入 ↔ `instances[].id`）+ `SceneDiffer` + `OverlayReceiver` + 无头往返入口。验收：`python unity_roundtrip_smoke.py` → `ROUNDTRIP_OK`（Unity 内 build→删/移/加→diff→`mapgen --overlay`→reload，断言 `lineage.op_count=3`、1 user-added + 1 user-moved）。`unity_import_smoke.py` 仍 6/6（含编译门）。
+>
+> **与下方原设想的差异**：本版 `SceneDiffer` 采用**快照 diff**（比对场景活对象 vs 源 doc：doc 有、场景无 → delete；tagged 对象位置偏离出生点 → move；带 `Id<0` 且 `Source=user-added` 的手工对象 → add），比编辑器事务监听（`Undo.postprocessModifications`）简单且可无头测试；**实时事务捕获**、以及旋转/缩放 op 留作后续。`OverlayReceiver` 已按设计用退出码语义驱动（本次只跑 overlay 产物存在性 + reload 断言，退出码→UI 提示的完整映射在交互窗口阶段补）。
+
 **`SceneDiffer`（编辑采集端）**
 
 - **只对带 `MapInstanceId` 标记的 GameObject 生效**：`MapSceneBuilder` 装配时写入它 ↔ `map.json` `instances[].id` 的稳定映射；不碰用户自建的其它对象。
@@ -251,8 +255,8 @@ v4 的完整字段应在阶段 3 / 4 暴露真实需求后再冻结，避免过�
 1. ✅ **[P0 · GUI]** 预览点选实例 → 自动回填 Edit 面板的 id（`preview.py` hit-test + 面板联动）。见 §4.1-1。**已完成**，验收 `python tools/smoke_gui.py` → PASS。
 2. ✅ **[P0 · GUI]** "设为新基线"动作，允许以 overlay 产物继续累积编辑。见 §4.1-3。**已完成**（并修复 overlay 优先级 round-trip + stats 两个真实缺陷），验收 `python tools/smoke_gui.py` → PASS。
 3. ✅ **[P0 · schema]** 5-0 号切片：`instances[].source` + 顶层 `lineage`（加性、v3 兼容），带回归测试。见 §4.2。**已完成**（`SCHEMA_VERSION` 3→4，`map.schema.json` + `validate` 语义强制，`TestSchemaV4` 回归覆盖，overlay 产物带 user-* 标记与 base/edits 哈希）。
-4. **[P1 · Unity]** `SceneDiffer`：先用手工 `edits.json` 喂 `--overlay` 的端到端脚本打通回路（不改 C# 即可验证），再上编辑器事务监听。见 §4.3。
-5. **[P1 · Unity]** `OverlayReceiver`：调 CLI + 退出码映射 + 场景刷新。见 §4.3。
+4. ✅ **[P1 · Unity]** `SceneDiffer`：先用手工 `edits.json` 喂 `--overlay` 的端到端脚本打通回路（不改 C# 即可验证），再上编辑器事务监听。见 §4.3。**已完成首切片**（快照 diff + 无头往返 `unity_roundtrip_smoke.py` → ROUNDTRIP_OK）；事务监听为后续项。
+5. ✅ **[P1 · Unity]** `OverlayReceiver`：调 CLI + 退出码映射 + 场景刷新。见 §4.3。**已完成**（`Process` 调 `mapgen --overlay --validate`，MAPGEN_PYTHON 复用同解释器；reload 断言通过）。
 6. **[P1 · schema]** 冻结 v4 其余字段（`cluster_hierarchy` / `scatter_density` / `mask_rle`），依据阶段 3 / 4 的真实反馈。见 §4.2。
 7. **[P2]** 阶段 1 余项并入阶段 3 一并处理：triplanar 湿度混合、`cluster_hierarchy` 跨类父子、`MapImportWindow`、`scatter_density`。
 

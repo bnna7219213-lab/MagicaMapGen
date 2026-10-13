@@ -35,6 +35,9 @@ namespace LowPolyWorldBuilder.Data
         public double WaterDepth;
         public string Region = "";
         public int Cluster = -1;
+        /// <summary>schema v4 provenance: "auto", "user-added" or "user-moved".
+        /// The edit round-trip preserves user objects and rebuilds only auto ones.</summary>
+        public string Source = "auto";
     }
 
     /// <summary>A river polyline in grid cells.</summary>
@@ -44,6 +47,15 @@ namespace LowPolyWorldBuilder.Data
         public int Length;
         public bool ReachedWater;
         public List<int[]> Path = new List<int[]>();
+    }
+
+    /// <summary>schema v4 top-level lineage: origin of the artifact.</summary>
+    public sealed class MapLineage
+    {
+        public string Mode = "generate";
+        public string BaseMapSha256 = "";
+        public string EditsSha256 = "";
+        public int OpCount;
     }
 
     /// <summary>
@@ -60,7 +72,13 @@ namespace LowPolyWorldBuilder.Data
     public sealed class MapDocument
     {
         public const int MinSupportedSchema = 1;
-        public const int MaxKnownSchema = 2;
+        // v2 added heightmap/moisture; v3 added region priority; v4 added
+        // instances[].source and top-level lineage -- all decoded or safely
+        // ignorable here, so 4 is now the highest version this reader understands.
+        public const int MaxKnownSchema = 4;
+
+        /// <summary>schema v4 provenance of this artifact (null when absent / pre-v4).</summary>
+        public MapLineage Lineage;
 
         public int SchemaVersion;
         public string GeneratorVersion = "";
@@ -237,6 +255,7 @@ namespace LowPolyWorldBuilder.Data
                     WaterDepth = Json.AsNumber(entry, "water_depth", 0.0),
                     Region = Json.AsString(entry, "region", ""),
                     Cluster = Json.AsInt(entry, "cluster", -1),
+                    Source = Json.AsString(entry, "source", "auto"),
                 };
                 if (inst.X < 0 || inst.Y < 0 || inst.X >= doc.Width || inst.Y >= doc.Height)
                     throw new MapDecodeException("instances",
@@ -252,6 +271,18 @@ namespace LowPolyWorldBuilder.Data
             var stats = Json.AsObject(root, "stats");
             foreach (var kv in stats)
                 if (kv.Value is double d) doc.Stats[kv.Key] = d;
+
+            var lineage = Json.AsObject(root, "lineage");
+            if (lineage.Count > 0)
+            {
+                doc.Lineage = new MapLineage
+                {
+                    Mode = Json.AsString(lineage, "mode", ""),
+                    BaseMapSha256 = Json.AsString(lineage, "base_map_sha256", ""),
+                    EditsSha256 = Json.AsString(lineage, "edits_sha256", ""),
+                    OpCount = Json.AsInt(lineage, "op_count", 0),
+                };
+            }
 
             Validate(doc);
             return doc;
