@@ -223,6 +223,47 @@ def main() -> int:
             if win.lbl_preview.pixmap().isNull():
                 failures.append("preview pixmap not set")
 
+            # --- click-to-select (P0-2): preview hit-test -> Edit panel id ---
+            from PyQt6.QtCore import QEvent, QPointF, Qt
+            from app.preview import _projection, pick_instance
+            inst0 = (s.instances or [None])[0]
+            if inst0 is None:
+                failures.append("no instances to click-select")
+            else:
+                _w, _h, _tile, ox, oy, px_per_m = _projection(s.grid, 900, 700)
+                wpos = inst0["world"]
+                sx = int(round(ox + float(wpos[0]) * px_per_m))
+                sy = int(round(oy + float(wpos[2]) * px_per_m))
+                picked = pick_instance(s, 900, 700, sx, sy)
+                if picked is None or picked.get("id") != inst0.get("id"):
+                    failures.append("pick_instance missed: got %r want id=%r"
+                                    % (picked and picked.get("id"), inst0.get("id")))
+                else:
+                    print("pick_instance OK: id=%s at screen (%d,%d)"
+                          % (picked.get("id"), sx, sy))
+                # End-to-end through a REAL mouse event so the eventFilter path
+                # (event.position().toPoint()) is covered, not just the handler.
+                from PyQt6.QtGui import QMouseEvent
+                pix = win.lbl_preview.pixmap()
+                off_x = (win.lbl_preview.width() - pix.width()) // 2
+                off_y = (win.lbl_preview.height() - pix.height()) // 2
+                local = QPointF(float(sx + off_x), float(sy + off_y))
+                ev = QMouseEvent(QEvent.Type.MouseButtonPress, local,
+                                 Qt.MouseButton.LeftButton, Qt.MouseButton.LeftButton,
+                                 Qt.KeyboardModifier.NoModifier)
+                QApplication.sendEvent(win.lbl_preview, ev)
+                want_id = int(inst0.get("id", -1))
+                if win.edits_panel.del_id.value() != want_id:
+                    failures.append("click did not fill del_id (got %d want %d)"
+                                    % (win.edits_panel.del_id.value(), want_id))
+                if win.edits_panel.move_id.value() != want_id:
+                    failures.append("click did not fill move_id")
+                if win.edits_panel.move_x.value() != int(inst0.get("x", -1)):
+                    failures.append("click did not fill move_x from the instance cell")
+                if not failures:
+                    print("click-to-select filled Edit panel: id=%d cell=(%s,%s)"
+                          % (want_id, inst0.get("x"), inst0.get("y")))
+
     SHOT.parent.mkdir(parents=True, exist_ok=True)
     win.grab().save(str(SHOT))
     print("screenshot:", SHOT, "exists:", SHOT.exists())

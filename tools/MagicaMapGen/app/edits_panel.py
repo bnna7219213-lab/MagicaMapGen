@@ -208,6 +208,19 @@ class EditsPanel(QWidget):
         self.edit_ops.clear()
         self.op_list.clear()
 
+    def select_instance(self, inst_id: int, x: int, y: int) -> None:
+        """Auto-fill the id (and grid position) fields from a preview click.
+
+        Sets both the delete and move id spinners plus the move target cell, so a
+        designer clicks a marker instead of hunting for its integer id. Clamps to
+        each spinner's range so an out-of-range value can't raise.
+        """
+        iid = int(inst_id)
+        self.del_id.setValue(min(max(iid, self.del_id.minimum()), self.del_id.maximum()))
+        self.move_id.setValue(min(max(iid, self.move_id.minimum()), self.move_id.maximum()))
+        self.move_x.setValue(min(max(int(x), self.move_x.minimum()), self.move_x.maximum()))
+        self.move_y.setValue(min(max(int(y), self.move_y.minimum()), self.move_y.maximum()))
+
     def _refresh_list(self) -> None:
         self.op_list.clear()
         for op in self.edit_ops:

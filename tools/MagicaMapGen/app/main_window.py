@@ -12,7 +12,7 @@ import sys
 from pathlib import Path
 from typing import Optional
 
-from PyQt6.QtCore import Qt, QTimer
+from PyQt6.QtCore import Qt, QTimer, QEvent
 from PyQt6.QtGui import QImage, QPixmap
 from PyQt6.QtWidgets import (
     QApplication, QCheckBox, QComboBox, QFrame, QGridLayout, QGroupBox, QHBoxLayout,
@@ -24,7 +24,7 @@ from . import theme
 from .bridge import EXIT_MEANING, EXIT_OK, MapgenBridge, MapSummary
 from .edits_panel import EditsPanel
 from .param_form import ParamForm
-from .preview import render_map
+from .preview import pick_instance, render_map
 from .region_editor import RegionEditor
 from .skin import SkinnedFrame, SkinManager
 
@@ -218,7 +218,8 @@ class MainWindow(QMainWindow):
         self.region_host = QWidget()
         tabs.addTab(self._wrap_scroll(self.region_host), "Regions")
         self.edits_panel = EditsPanel(self.bridge)
-        tabs.addTab(self._wrap_scroll(self.edits_panel), "Edit")
+        self._edit_tab_index = tabs.addTab(self._wrap_scroll(self.edits_panel), "Edit")
+        self.tabs = tabs
         outer.addWidget(tabs)
 
         row = QHBoxLayout()
@@ -302,6 +303,8 @@ class MainWindow(QMainWindow):
         head = QHBoxLayout()
         head.addWidget(_label("Preview", "SectionLabel"))
         head.addStretch(1)
+        self.lbl_pick = _label("点击预览可点选实例", "Hint")
+        head.addWidget(self.lbl_pick)
         self.lbl_legend = _label("", "Hint")
         head.addWidget(self.lbl_legend)
         lay.addLayout(head)
@@ -312,6 +315,9 @@ class MainWindow(QMainWindow):
         self.lbl_preview.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
         self.lbl_preview.setStyleSheet(
             f"background:#0d0b0a; border:1px solid {theme.BORDER}; border-radius:3px;")
+        self.lbl_preview.setCursor(Qt.CursorShape.PointingHandCursor)
+        self.lbl_preview.setToolTip("点击地图上的实例标记，自动把它的 id 与格坐标回填到 Edit 面板")
+        self.lbl_preview.installEventFilter(self)
         lay.addWidget(self.lbl_preview, 1)
 
         row = QHBoxLayout()
@@ -464,6 +470,7 @@ class MainWindow(QMainWindow):
 
         keys = [e.get("key") for e in s.legend if e.get("key")]
         self.lbl_legend.setText("biomes: " + ", ".join(keys))
+        self.lbl_pick.setText("点击预览可点选实例")
         self._refresh_preview()
 
     def _refresh_preview(self) -> None:
@@ -476,6 +483,43 @@ class MainWindow(QMainWindow):
             return
         self.lbl_preview.setPixmap(QPixmap.fromImage(img))
         self.lbl_preview.setText("")
+
+    # ---- preview click-to-select (P0-2) ----------------------------------
+
+    def eventFilter(self, obj, event):
+        if (obj is self.lbl_preview
+                and event.type() == QEvent.Type.MouseButtonPress
+                and event.button() == Qt.MouseButton.LeftButton):
+            self._on_preview_click(event.position().toPoint())
+            return True
+        return super().eventFilter(obj, event)
+
+    def _on_preview_click(self, pt) -> None:
+        """Hit-test the click against instance markers and fill the Edit panel."""
+        if self.summary is None:
+            self.lbl_pick.setText("请先生成地图")
+            return
+        if not self.chk_instances.isChecked():
+            self.lbl_pick.setText("请先勾选 Show instances 再点选")
+            return
+        pix = self.lbl_preview.pixmap()
+        if pix is None or pix.isNull():
+            return
+        pw, ph = pix.width(), pix.height()
+        # The pixmap is centred in the label (AlignCenter); strip that offset to
+        # turn the widget-space click into image-space coordinates.
+        off_x = (self.lbl_preview.width() - pw) // 2
+        off_y = (self.lbl_preview.height() - ph) // 2
+        inst = pick_instance(self.summary, pw, ph, pt.x() - off_x, pt.y() - off_y)
+        if inst is None:
+            self.lbl_pick.setText("点选：此处无实例")
+            return
+        iid = int(inst.get("id", -1))
+        gx, gy = int(inst.get("x", 0)), int(inst.get("y", 0))
+        self.edits_panel.select_instance(iid, gx, gy)
+        self.tabs.setCurrentIndex(self._edit_tab_index)
+        self.lbl_pick.setText(
+            f"已选中 id={iid} · {inst.get('type', '')} · 格({gx},{gy}) → 回填 Edit 面板")
 
     def _fill_contract_text(self, code: int, summary) -> None:
         lines = [f"exit code: {code} - {EXIT_MEANING.get(code, 'unknown')}"]

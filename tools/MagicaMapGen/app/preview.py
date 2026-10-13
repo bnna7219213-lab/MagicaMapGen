@@ -57,21 +57,37 @@ def decode_rle(runs: List[List[int]], total: int) -> List[int]:
     return flat[:total]
 
 
-def render_map(summary, width: int = 720, height: int = 560,
-               show_instances: bool = True, show_grid: bool = False) -> Optional[QImage]:
-    """Render a MapSummary to a QImage. Returns None if the document is unusable."""
-    grid = summary.grid
+def _projection(grid: dict, width: int, height: int) -> Optional[Tuple[int, int, int, int, int, float]]:
+    """Shared map->screen projection for rendering AND hit-testing.
+
+    Returns ``(w, h, tile, ox, oy, px_per_m)`` or None if the grid is unusable.
+    Both ``render_map`` and ``pick_instance`` go through this so a click maps to
+    exactly the pixel an instance was drawn at -- keeping the two in lockstep is
+    the whole reason this helper exists.
+    """
     w = int(grid.get("width", 0) or 0)
     h = int(grid.get("height", 0) or 0)
     if w < 1 or h < 1:
         return None
-
-    img = QImage(width, height, QImage.Format.Format_ARGB32)
-    img.fill(_hex_to_qcolor("#0d0b0a"))
-
     tile = max(1, int(min(width / w, height / h)))
     ox = (width - tile * w) // 2
     oy = (height - tile * h) // 2
+    cell_m = float(grid.get("tile_size_meters", 8.0) or 8.0)
+    px_per_m = tile / cell_m
+    return w, h, tile, ox, oy, px_per_m
+
+
+def render_map(summary, width: int = 720, height: int = 560,
+               show_instances: bool = True, show_grid: bool = False) -> Optional[QImage]:
+    """Render a MapSummary to a QImage. Returns None if the document is unusable."""
+    grid = summary.grid
+    proj = _projection(grid, width, height)
+    if proj is None:
+        return None
+    w, h, tile, ox, oy, px_per_m = proj
+
+    img = QImage(width, height, QImage.Format.Format_ARGB32)
+    img.fill(_hex_to_qcolor("#0d0b0a"))
 
     painter = QPainter(img)
     painter.setRenderHint(QPainter.RenderHint.Antialiasing, False)
@@ -103,8 +119,6 @@ def render_map(summary, width: int = 720, height: int = 560,
         painter.setPen(Qt.PenStyle.NoPen)
 
     if show_instances:
-        cell_m = float(grid.get("tile_size_meters", 8.0) or 8.0)
-        px_per_m = tile / cell_m
         painter.setRenderHint(QPainter.RenderHint.Antialiasing, True)
         for inst in summary.instances or []:
             world = inst.get("world") or [0, 0, 0]
@@ -130,3 +144,34 @@ def render_map(summary, width: int = 720, height: int = 560,
 
     painter.end()
     return img
+
+
+def pick_instance(summary, width: int, height: int, ix: int, iy: int,
+                  min_radius: float = 7.0) -> Optional[dict]:
+    """Hit-test: return the instance whose marker is nearest to image point (ix, iy).
+
+    Uses the same ``_projection`` as ``render_map``, so the marker centre computed
+    here is pixel-identical to where it was drawn. The pick radius is at least
+    ``min_radius`` px (or half a tile for coarse zooms) so small markers are still
+    comfortably clickable. Returns None when nothing is within reach.
+    """
+    proj = _projection(summary.grid, width, height)
+    if proj is None:
+        return None
+    _w, _h, tile, ox, oy, px_per_m = proj
+    pick_r = max(min_radius, tile * 0.5)
+    pick_r2 = pick_r * pick_r
+
+    best: Optional[dict] = None
+    best_d2 = pick_r2
+    for inst in summary.instances or []:
+        world = inst.get("world") or [0, 0, 0]
+        if len(world) < 3:
+            continue
+        sx = ox + float(world[0]) * px_per_m
+        sy = oy + float(world[2]) * px_per_m
+        d2 = (sx - ix) * (sx - ix) + (sy - iy) * (sy - iy)
+        if d2 <= best_d2:
+            best_d2 = d2
+            best = inst
+    return best
