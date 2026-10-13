@@ -264,6 +264,45 @@ def main() -> int:
                     print("click-to-select filled Edit panel: id=%d cell=(%s,%s)"
                           % (want_id, inst0.get("x"), inst0.get("y")))
 
+            # --- overlay closed loop + 设为新基线 (P0-3) ---
+            base_count = s.instance_count
+            win.edits_panel.clear_ops()
+            win.edits_panel.del_id.setValue(0)
+            win.edits_panel._add_delete()          # delete one instance
+            state["code"] = None
+            state["summary"] = None
+            win.edits_panel._run_overlay()
+            waited = 0
+            while win.bridge.busy and waited < 120000:
+                pump(app, 200)
+                waited += 200
+            ov = state["summary"]
+            print("overlay exit:", state["code"], "label:", getattr(ov, "label", None),
+                  "instances:", getattr(ov, "instance_count", None))
+            if state["code"] != EXIT_OK:
+                failures.append("overlay run failed, exit %s" % state["code"])
+            elif ov is None or ov.label != "overlay":
+                # Reload must pick overlay_map.json, not the alphabetically-later base.
+                failures.append("overlay reload did not select the overlay output "
+                                "(label=%r)" % (getattr(ov, "label", None),))
+            elif ov.instance_count >= base_count:
+                failures.append("overlay did not reduce instances: %d -> %d"
+                                % (base_count, ov.instance_count))
+            else:
+                print("overlay loop OK: %d -> %d instances, reloaded overlay_map.json"
+                      % (base_count, ov.instance_count))
+                if not win.edits_panel.rebase_btn.isEnabled():
+                    failures.append("rebase button should be enabled after an overlay")
+                win._on_rebase()
+                if win.edits_panel.edit_ops:
+                    failures.append("rebase should clear edit_ops")
+                base = win.edits_panel._base_map
+                if not (base and base.name == "overlay_map.json"):
+                    failures.append("rebase did not point base at overlay_map.json (got %r)"
+                                    % (base.name if base else None,))
+                elif not failures:
+                    print("设为新基线 OK: base now overlay_map.json, ops cleared")
+
     SHOT.parent.mkdir(parents=True, exist_ok=True)
     win.grab().save(str(SHOT))
     print("screenshot:", SHOT, "exists:", SHOT.exists())

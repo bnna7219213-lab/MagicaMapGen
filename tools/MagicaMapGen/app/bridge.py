@@ -280,11 +280,16 @@ class MapgenBridge(QObject):
         self.finished.emit(code, summary)
 
     def _load_summary(self) -> Optional[MapSummary]:
-        maps = sorted(self._out_dir.glob("*_map.json"))
+        maps = list(self._out_dir.glob("*_map.json"))
         if not maps:
             self.log.emit("No map.json was produced.")
             return None
-        path = maps[-1]
+        # Pick the file THIS run wrote, by most-recent mtime -- not sorted()[-1].
+        # An overlay run writes `overlay_map.json`, which sorts alphabetically
+        # BEFORE a `snow_..._map.json` base, so a name sort would reload the stale
+        # base instead of the overlay just produced. mtime is the run's own output
+        # regardless of stem (fresh, overlay, or a re-baselined overlay).
+        path = max(maps, key=lambda p: p.stat().st_mtime_ns)
         try:
             doc = json.loads(path.read_text(encoding="utf-8"))
         except Exception as exc:

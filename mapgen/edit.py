@@ -18,7 +18,7 @@ from __future__ import annotations
 from typing import Any, Callable, Dict, List, Optional, Tuple
 
 from .config import request_from_dict
-from .pipeline import generate
+from .pipeline import generate, _compute_stats
 from .schema import ResolvedRequest
 from .themes import get_theme
 
@@ -196,4 +196,8 @@ def overlay_world(base_doc: Dict[str, Any], parsed: Dict[str, Any],
 
     world = generate(resolved, progress=progress)
     _apply_edits(world, parsed)
+    # generate() computed stats over the pre-edit instance list; recompute so
+    # instance_count / by_category in the exported map.json match the edited world
+    # (otherwise stats claim 191 instances while only 190 survive a delete).
+    _compute_stats(world, resolved, world.region_masks)
     return world, resolved

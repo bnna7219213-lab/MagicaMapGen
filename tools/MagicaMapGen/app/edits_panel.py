@@ -52,6 +52,7 @@ class EditsPanel(QWidget):
     """Collect instance-level ops and trigger an overlay regeneration."""
 
     regenerate = pyqtSignal()
+    rebase = pyqtSignal()
 
     def __init__(self, bridge: MapgenBridge, parent: QWidget | None = None):
         super().__init__(parent)
@@ -167,10 +168,21 @@ class EditsPanel(QWidget):
         self.regen_btn.clicked.connect(self._run_overlay)
         self.clear_btn = QPushButton("清空操作")
         self.clear_btn.clicked.connect(self.clear_ops)
+        # "设为新基线" is only meaningful right after an overlay run produced a new
+        # map; the window enables it then. Promoting bakes the edits into the base so
+        # further edits accumulate on top instead of re-applying against the original.
+        self.rebase_btn = QPushButton("设为新基线")
+        self.rebase_btn.setEnabled(False)
+        self.rebase_btn.setToolTip("把最近一次增量重生成的结果设为新基准，继续累积编辑")
+        self.rebase_btn.clicked.connect(self.rebase.emit)
         h.addWidget(self.write_btn)
         h.addWidget(self.regen_btn)
+        h.addWidget(self.rebase_btn)
         h.addWidget(self.clear_btn)
         return box
+
+    def set_rebase_enabled(self, enabled: bool) -> None:
+        self.rebase_btn.setEnabled(bool(enabled))
 
     # ---- data -------------------------------------------------------------
     def set_base(self, map_json: Path, out_dir: Path) -> None:

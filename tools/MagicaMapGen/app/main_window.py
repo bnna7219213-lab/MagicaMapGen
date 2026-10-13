@@ -218,6 +218,7 @@ class MainWindow(QMainWindow):
         self.region_host = QWidget()
         tabs.addTab(self._wrap_scroll(self.region_host), "Regions")
         self.edits_panel = EditsPanel(self.bridge)
+        self.edits_panel.rebase.connect(self._on_rebase)
         self._edit_tab_index = tabs.addTab(self._wrap_scroll(self.edits_panel), "Edit")
         self.tabs = tabs
         outer.addWidget(tabs)
@@ -454,8 +455,22 @@ class MainWindow(QMainWindow):
             # (otherwise each incremental run would chain onto the previous one).
             if summary.path is not None and summary.label != "overlay":
                 self.edits_panel.set_base(summary.path, self.out_dir)
+            # Offer "设为新基线" only right after an overlay produced a new map.
+            self.edits_panel.set_rebase_enabled(
+                code == EXIT_OK and summary.label == "overlay" and summary.path is not None)
         self.edits_panel.on_finished()
         self._fill_contract_text(code, summary)
+
+    def _on_rebase(self) -> None:
+        """Promote the just-produced overlay to the new edit base (P0 · 设为新基线)."""
+        s = self.summary
+        if not (s is not None and s.path is not None and s.path.exists()):
+            return
+        self.edits_panel.set_base(s.path, self.out_dir)
+        self.edits_panel.clear_ops()
+        self.edits_panel.set_rebase_enabled(False)
+        self._append_log(
+            f"新基线 = {s.path.name}（{s.instance_count} 实例），编辑操作已清空，可继续累积编辑")
 
     def _apply_summary(self, s: MapSummary) -> None:
         stats = s.stats

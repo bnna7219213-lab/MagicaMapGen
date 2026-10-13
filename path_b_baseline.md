@@ -1,7 +1,7 @@
 # 路径 B 执行基线：mapgen → Unity 引擎消费
 
 > 本文是路径 B（mapgen 产出通用契约，Unity 只做消费端）的执行基线。
-> 状态：**阶段 0 完成（双端跑通）；阶段 1 部分完成（`regions[].priority` 已落地）；阶段 2 的 Python 半边完成（`--overlay` 增量重生成 + GUI Edit 面板），Unity 半边待做；阶段 4 GUI 深化首项（预览点选回填 id）已完成。**
+> 状态：**阶段 0 完成（双端跑通）；阶段 1 部分完成（`regions[].priority` 已落地）；阶段 2 的 Python 半边完成（`--overlay` 增量重生成 + GUI Edit 面板），Unity 半边待做；阶段 4 GUI 深化已落地两项（预览点选回填 id、设为新基线），并修复 overlay 优先级 round-trip 与 stats 两个真实缺陷。**
 > schema：当前 **v3**（v2 → v3 是 `regions[].priority` 的加性变更）。
 > **阶段 2 之后的路线（阶段 3 / 4 / 5，含依赖关系、优先级与下一步可执行事项）见 §4。**
 > 最后更新：2026-10-12
@@ -194,7 +194,7 @@ if not env.get("ALLUSERSPROFILE"):
 
 1. ✅ **预览点选实例** → 自动回填 delete / move 的 id（**已完成 2026-10-13**）：`preview.py` 提取共享投影 `_projection`（渲染与命中检测同一套数学，杜绝漂移）+ 新增 `pick_instance`；`main_window` 给预览装事件过滤器，左键点选→`EditsPanel.select_instance` 回填 `del_id`/`move_id`/`move_x`/`move_y` 并切到 Edit 页；`edits_panel` 新增 `select_instance`。**验收（可重跑）**：`cd tools/MagicaMapGen && python tools/smoke_gui.py` → `RESULT: PASS`，含断言 `pick_instance OK` 与 `click-to-select filled Edit panel`。
 2. **预览上拖拽移动**：拖动实例直接生成 `move` op（复用现有语义）。
-3. **"设为新基线"**：允许以 overlay 产物继续累积编辑。当前刻意不 chaining（见 `main_window` 对 `label != "overlay"` 的判断），应给用户一个显式动作。
+3. ✅ **"设为新基线"**（**已完成 2026-10-13**）：Edit 面板新增按钮，overlay 产物生成后启用，点击即把最近一次增量重生成的结果（`overlay_map.json`）提升为新基准并清空 ops，从此可继续累积编辑（chaining 仍是显式动作，不自动串联）。`bridge._load_summary` 改为按 **mtime** 选取本次运行产物（原 `sorted()[-1]` 会在 overlay 后误选字母序靠后的 base，导致 overlay 结果从不显示）。**顺带修了两个 phase-2 overlay 真实缺陷**（均由新加的 GUI 冒烟暴露，非本次功能引入）：① `config.request_to_dict` 丢 `region.priority` → 任何多区域 base 的 overlay 重载后优先级全归 0、触发碰撞报错；② `edit.overlay_world` 未在 `_apply_edits` 后重算 `stats` → `map.json` 的 `stats.instance_count` 与删改后的实例数不符。两处均有 `tests/test_mapgen.py::TestOverlayRoundTrip` 回归覆盖。**验收**：`python tools/smoke_gui.py` → `RESULT: PASS`（含 `overlay loop OK: 191 -> 190` 与 `设为新基线 OK`）。
 4. **脏区高亮**：叠加显示本次编辑影响的区域，直观解释"为什么只有这几处变了"。
 5. **多方案并排对比**：同一 seed + 不同 `edits.json` 生成并排缩略图，用于评审。
 6. **区域可视化编辑**：把 `bounds` 数值变成可拖拽的矩形 / 圆。
@@ -249,7 +249,7 @@ v4 的完整字段应在阶段 3 / 4 暴露真实需求后再冻结，避免过�
 ### 4.4 下一步可执行事项（有序）
 
 1. ✅ **[P0 · GUI]** 预览点选实例 → 自动回填 Edit 面板的 id（`preview.py` hit-test + 面板联动）。见 §4.1-1。**已完成**，验收 `python tools/smoke_gui.py` → PASS。
-2. **[P0 · GUI]** "设为新基线"动作，允许以 overlay 产物继续累积编辑。见 §4.1-3。
+2. ✅ **[P0 · GUI]** "设为新基线"动作，允许以 overlay 产物继续累积编辑。见 §4.1-3。**已完成**（并修复 overlay 优先级 round-trip + stats 两个真实缺陷），验收 `python tools/smoke_gui.py` → PASS。
 3. **[P0 · schema]** 5-0 号切片：`instances[].source` + 顶层 `lineage`（加性、v3 兼容），带回归测试。见 §4.2。
 4. **[P1 · Unity]** `SceneDiffer`：先用手工 `edits.json` 喂 `--overlay` 的端到端脚本打通回路（不改 C# 即可验证），再上编辑器事务监听。见 §4.3。
 5. **[P1 · Unity]** `OverlayReceiver`：调 CLI + 退出码映射 + 场景刷新。见 §4.3。

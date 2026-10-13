@@ -113,7 +113,8 @@ def request_to_dict(req: MapRequest) -> Dict[str, Any]:
         "disable_categories": list(req.disabled_categories),
         "formats": list(req.formats),
         "regions": [
-            {"id": r.id, "shape": r.shape, "bounds": dict(r.bounds),
+            {"id": r.id, "shape": r.shape, "priority": r.priority,
+             "bounds": dict(r.bounds),
              "overrides": {k: dict(v) for k, v in r.overrides.items()}}
             for r in req.regions
         ],

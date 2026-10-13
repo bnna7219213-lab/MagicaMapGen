@@ -1529,5 +1529,42 @@ class TestCLIExitCodes(unittest.TestCase):
         finally:
             shutil.rmtree(base_dir, ignore_errors=True)
 
+class TestOverlayRoundTrip(unittest.TestCase):
+    """Phase-2 overlay round-trip: the two bugs the GUI smoke exposed."""
+
+    def test_request_roundtrip_preserves_region_priority(self):
+        # Overlay reload reads base_doc["request"]; if request_to_dict drops region
+        # priority, every region comes back as 0 and overlapping regions collide,
+        # so overlaying any multi-region base raised. Priority must round-trip.
+        from mapgen.config import request_from_dict, request_to_dict
+        from mapgen.schema import RegionSpec
+        req = MapRequest(theme_id="snow", seed=7, regions=(
+            RegionSpec(id="a", shape="rect",
+                       bounds={"x0": 0, "y0": 0, "x1": 1, "y1": 0.4}, priority=7),
+            RegionSpec(id="b", shape="circle",
+                       bounds={"cx": 0.5, "cy": 0.5, "r": 0.2}, priority=2)))
+        back = request_from_dict(request_to_dict(req))
+        got = {r.id: r.priority for r in back.regions}
+        self.assertEqual(got, {"a": 7, "b": 2},
+                         "region priority must survive the map.json request round-trip")
+
+    def test_overlay_stats_match_edited_instances(self):
+        # generate() computes stats over the pre-edit world; overlay must recompute
+        # after applying ops or stats.instance_count contradicts len(instances).
+        from mapgen.config import request_to_dict
+        from mapgen.edit import overlay_world, parse_edits
+        from mapgen.export.mapdata import build_map_data
+        req, base_world = make("snow", size=SMALL)
+        base_doc = build_map_data(base_world, req, request_to_dict(req.request))
+        base_n = len(base_doc["instances"])
+        self.assertGreater(base_n, 1)
+        world, _ = overlay_world(base_doc, parse_edits(
+            {"schema_version": 1, "ops": [{"op": "delete", "id": 0}]}))
+        n = len(world.instances)
+        self.assertEqual(n, base_n - 1, "delete should remove exactly one instance")
+        self.assertEqual(world.stats["instance_count"], n,
+                         "stats.instance_count must match len(instances) after edit")
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
