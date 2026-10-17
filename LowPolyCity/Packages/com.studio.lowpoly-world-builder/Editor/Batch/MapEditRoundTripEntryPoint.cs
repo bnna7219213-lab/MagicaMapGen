@@ -58,8 +58,8 @@ namespace LowPolyWorldBuilder.Editor.Batch
             Directory.CreateDirectory(workDir);
 
             var doc = MapDocument.Load(baseMap);
-            if (doc.Instances.Count < 3)
-            { Debug.LogError("[LPW] base needs >= 3 instances to exercise the loop"); return ExitFailed; }
+            if (doc.Instances.Count < 4)
+            { Debug.LogError("[LPW] base needs >= 4 instances to exercise the loop"); return ExitFailed; }
             double tile = doc.TileSizeMeters;
             int baseCount = doc.Instances.Count;
 
@@ -119,12 +119,24 @@ namespace LowPolyWorldBuilder.Editor.Batch
                 addTag.Category = addRef.Category;
                 addTag.Type = addRef.Type;
 
+                // 4) reorient doc.Instances[3]: rotate 45 deg in place (no move).
+                //    The differ must express it as delete + add (mapgen has no set op).
+                int rotId = doc.Instances[3].Id;
+                if (byId.TryGetValue(rotId, out var rotTag))
+                    rotTag.transform.rotation =
+                        Quaternion.Euler(0f, (float)rotTag.RotationDegrees + 45f, 0f);
+                else failures.Add("no scene object for rotate target id=" + rotId);
+
                 // Diff -> edits.json
                 var differ = new SceneDiffer();
                 string editsJson = differ.BuildEditsJson(doc, root);
-                Debug.Log($"[LPW] differ ops: delete={differ.DeleteCount} move={differ.MoveCount} add={differ.AddCount}");
-                if (differ.DeleteCount != 1 || differ.MoveCount != 1 || differ.AddCount != 1)
-                    failures.Add($"differ expected (1,1,1) got ({differ.DeleteCount},{differ.MoveCount},{differ.AddCount})");
+                Debug.Log($"[LPW] differ ops: delete={differ.DeleteCount} move={differ.MoveCount} "
+                          + $"add={differ.AddCount} rotate={differ.RotateCount}");
+                if (differ.DeleteCount != 2 || differ.MoveCount != 1
+                    || differ.AddCount != 2 || differ.RotateCount != 1)
+                    failures.Add($"differ expected (del2,move1,add2,rot1) got "
+                                 + $"(del{differ.DeleteCount},move{differ.MoveCount},"
+                                 + $"add{differ.AddCount},rot{differ.RotateCount})");
                 string editsPath = Path.Combine(workDir, "scene_edits.json");
                 File.WriteAllText(editsPath, editsJson);
 
@@ -138,19 +150,19 @@ namespace LowPolyWorldBuilder.Editor.Batch
                 else
                 {
                     var d2 = MapDocument.Load(res.MapJsonPath);
-                    if (d2.Lineage == null || d2.Lineage.Mode != "overlay" || d2.Lineage.OpCount != 3)
-                        failures.Add($"lineage wrong: mode={(d2.Lineage?.Mode)} op_count={(d2.Lineage?.OpCount ?? -1)}");
+                    if (d2.Lineage == null || d2.Lineage.Mode != "overlay" || d2.Lineage.OpCount != 5)
+                        failures.Add($"lineage wrong: mode={(d2.Lineage?.Mode)} op_count={(d2.Lineage?.OpCount ?? -1)} (expected overlay/5)");
                     int added = 0, moved = 0;
                     foreach (var i in d2.Instances)
                     {
                         if (i.Source == "user-added") added++;
                         else if (i.Source == "user-moved") moved++;
                     }
-                    if (added != 1) failures.Add("expected 1 user-added in reloaded doc, got " + added);
+                    if (added != 2) failures.Add("expected 2 user-added in reloaded doc (hand-add + rotation-add), got " + added);
                     if (moved != 1) failures.Add("expected 1 user-moved in reloaded doc, got " + moved);
-                    int expect = baseCount - 1 + 1;   // one delete, one add
+                    int expect = baseCount;   // two deletes (id0 + rotated) + two adds (net zero)
                     if (d2.Instances.Count != expect)
-                        failures.Add($"instance count: base {baseCount} -delete +add should be {expect}, got {d2.Instances.Count}");
+                        failures.Add($"instance count: base {baseCount} with 2 delete + 2 add should stay {expect}, got {d2.Instances.Count}");
                 }
             }
             finally

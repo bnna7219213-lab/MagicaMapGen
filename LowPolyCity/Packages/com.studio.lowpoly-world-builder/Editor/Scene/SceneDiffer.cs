@@ -32,15 +32,21 @@ namespace LowPolyWorldBuilder.Editor.Scene
         public int DeleteCount { get; private set; }
         public int MoveCount { get; private set; }
         public int AddCount { get; private set; }
+        /// <summary>Edits reoriented/re-scaled, each expressed as one delete + one add.</summary>
+        public int RotateCount { get; private set; }
 
         /// <summary>
         /// Produce the edits.json document for the diff. <paramref name="moveEpsilonMeters"/>
-        /// is the world-space distance beyond which a repositioned object counts as a move.
+        /// is the world-space distance beyond which a repositioned object counts as a move;
+        /// <paramref name="rotEpsilonDegrees"/> / <paramref name="scaleEpsilon"/> do the same
+        /// for rotation / scale (which have no dedicated mapgen op, so they become delete+add).
         /// </summary>
         public string BuildEditsJson(MapDocument doc, GameObject mapRoot,
-                                     float moveEpsilonMeters = 0.01f)
+                                     float moveEpsilonMeters = 0.01f,
+                                     float rotEpsilonDegrees = 0.5f,
+                                     float scaleEpsilon = 0.01f)
         {
-            DeleteCount = MoveCount = AddCount = 0;
+            DeleteCount = MoveCount = AddCount = RotateCount = 0;
             double tile = doc.TileSizeMeters;
 
             // Map scene objects back to their artifact ids; anything with Id < 0 that is
@@ -59,6 +65,12 @@ namespace LowPolyWorldBuilder.Editor.Scene
             var sb = new StringBuilder();
             sb.Append("{\"schema_version\": 1, \"ops\": [");
             bool first = true;
+            void Emit(string op)
+            {
+                if (!first) sb.Append(',');
+                first = false;
+                sb.Append(op);
+            }
 
             foreach (var inst in doc.Instances)
             {
@@ -66,17 +78,34 @@ namespace LowPolyWorldBuilder.Editor.Scene
                     continue;   // hand-created objects are not diffed for delete here
                 if (!byId.TryGetValue(inst.Id, out var tag))
                 {
-                    if (!first) sb.Append(','); first = false;
-                    sb.Append("{\"op\":\"delete\",\"id\":").Append(inst.Id).Append('}');
+                    Emit("{\"op\":\"delete\",\"id\":" + inst.Id + "}");
                     DeleteCount++;
                     continue;
                 }
-                if (Vector3.Distance(tag.transform.position, tag.SpawnedWorld) > moveEpsilonMeters)
+                Vector3 tpos = tag.transform.position;
+                WorldToCell(tpos, tile, out int cx, out int cy);
+                bool moved = Vector3.Distance(tpos, tag.SpawnedWorld) > moveEpsilonMeters;
+                float curRotY = tag.transform.rotation.eulerAngles.y;
+                float rotDelta = Mathf.Abs(Mathf.DeltaAngle((float)tag.RotationDegrees, curRotY));
+                float curScale = tag.transform.localScale.x;
+                bool reoriented = Mathf.Abs(rotDelta) > rotEpsilonDegrees
+                                  || Mathf.Abs(curScale - (float)tag.Scale) > scaleEpsilon;
+                if (reoriented)
                 {
-                    WorldToCell(tag.transform.position, tile, out int cx, out int cy);
-                    if (!first) sb.Append(','); first = false;
-                    sb.Append("{\"op\":\"move\",\"id\":").Append(inst.Id)
-                      .Append(",\"x\":").Append(cx).Append(",\"y\":").Append(cy).Append('}');
+                    // mapgen has no "set rotation/scale" op; express it as delete + add
+                    // (documented in path_b_baseline.md 4.3), preserving the cell and the
+                    // new orientation/scale. Takes precedence over a bare move.
+                    Emit("{\"op\":\"delete\",\"id\":" + inst.Id + "}");
+                    Emit("{\"op\":\"add\",\"cat\":\"" + JsonEscape(tag.Category) + "\",\"type\":\""
+                         + JsonEscape(tag.Type) + "\",\"x\":" + cx + ",\"y\":" + cy
+                         + ",\"scale\":" + curScale.ToString("0.####", _inv)
+                         + ",\"rot\":" + curRotY.ToString("0.####", _inv) + "}");
+                    DeleteCount++; AddCount++; RotateCount++;
+                }
+                else if (moved)
+                {
+                    Emit("{\"op\":\"move\",\"id\":" + inst.Id
+                         + ",\"x\":" + cx + ",\"y\":" + cy + "}");
                     MoveCount++;
                 }
             }
@@ -84,13 +113,10 @@ namespace LowPolyWorldBuilder.Editor.Scene
             foreach (var t in manual)
             {
                 WorldToCell(t.transform.position, tile, out int cx, out int cy);
-                if (!first) sb.Append(','); first = false;
-                sb.Append("{\"op\":\"add\",\"cat\":\"").Append(JsonEscape(t.Category))
-                  .Append("\",\"type\":\"").Append(JsonEscape(t.Type))
-                  .Append("\",\"x\":").Append(cx).Append(",\"y\":").Append(cy)
-                  .Append(",\"scale\":").Append(t.Scale.ToString("0.####", _inv))
-                  .Append(",\"rot\":").Append(t.RotationDegrees.ToString("0.####", _inv))
-                  .Append('}');
+                Emit("{\"op\":\"add\",\"cat\":\"" + JsonEscape(t.Category) + "\",\"type\":\""
+                     + JsonEscape(t.Type) + "\",\"x\":" + cx + ",\"y\":" + cy
+                     + ",\"scale\":" + t.Scale.ToString("0.####", _inv)
+                     + ",\"rot\":" + t.RotationDegrees.ToString("0.####", _inv) + "}");
                 AddCount++;
             }
 

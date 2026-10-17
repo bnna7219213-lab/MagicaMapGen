@@ -232,16 +232,16 @@ v4 的完整字段应在阶段 3 / 4 暴露真实需求后再冻结，避免过�
 
 ### 4.3 阶段 3：Unity 编辑回环贯通（P1）
 
-> ✅ **首切片已完成（2026-10-13）**：`MapInstanceId`（装配期写入 ↔ `instances[].id`）+ `SceneDiffer` + `OverlayReceiver` + 无头往返入口。验收：`python unity_roundtrip_smoke.py` → `ROUNDTRIP_OK`（Unity 内 build→删/移/加→diff→`mapgen --overlay`→reload，断言 `lineage.op_count=3`、1 user-added + 1 user-moved）。`unity_import_smoke.py` 仍 6/6（含编译门）。
+> ✅ **首切片已完成（2026-10-13）**：`MapInstanceId`（装配期写入 ↔ `instances[].id`）+ `SceneDiffer` + `OverlayReceiver` + 无头往返入口 + 交互式 `MapImportWindow`（Tools > Low Poly World Builder > Import Map (JSON)：载入/预览 contract+lineage+source 计数、Build、Diff→edits.json、Apply overlay→reload、退出码语义映射）。**旋转/缩放**变更现由 `SceneDiffer` 表达为 delete+add（mapgen 无 set op），已纳入无头往返（`rotate=1`→overlay `op_count=5`）。`MapDocument.MaxKnownSchema` 2→4。验收：`python unity_roundtrip_smoke.py` → `ROUNDTRIP_OK`；`unity_import_smoke.py` → 6/6。
 >
-> **与下方原设想的差异**：本版 `SceneDiffer` 采用**快照 diff**（比对场景活对象 vs 源 doc：doc 有、场景无 → delete；tagged 对象位置偏离出生点 → move；带 `Id<0` 且 `Source=user-added` 的手工对象 → add），比编辑器事务监听（`Undo.postprocessModifications`）简单且可无头测试；**实时事务捕获**、以及旋转/缩放 op 留作后续。`OverlayReceiver` 已按设计用退出码语义驱动（本次只跑 overlay 产物存在性 + reload 断言，退出码→UI 提示的完整映射在交互窗口阶段补）。
+> **仍留后续**：编辑器**实时事务监听**（当前是快照 diff，非 `Undo.postprocessModifications` 自动捕获）、以及"overlay 保住上一轮 user 实例"的 Python 侧一等公民化（见 §4.2 边界注记）。
 
 **`SceneDiffer`（编辑采集端）**
 
 - **只对带 `MapInstanceId` 标记的 GameObject 生效**：`MapSceneBuilder` 装配时写入它 ↔ `map.json` `instances[].id` 的稳定映射；不碰用户自建的其它对象。
 - **机制**：Unity 编辑器事务（`ObjectChangeEvents` / `Undo.postprocessModifications`）监听增 / 删 / 移，累积为 `edits.json`。
-- **坐标换算**：`move` 需把世界坐标反算回格坐标（`x = floor(world_x / tile_size_meters)`），复用 `grid.cell_to_world` 的逆运算。
-- **范围限制**：当前 op 只覆盖平移。Unity 里的旋转 / 缩放变更暂以"删除 + 新增"表达，或留到 v4 扩展对应 op。
+- **坐标换算**：`move` 需把世界坐标反算回格坐标，复用 `grid.cell_to_world` 的逆运算：`cell = round(world / tile_size_meters - 0.5)`（产物约定 `world = (cell + 0.5) * tile`，故不能直接用 `floor(world/tile)`）。
+- **范围限制**：mapgen 暂无"设置旋转/缩放"的 op；`SceneDiffer` 把旋转/缩放变更表达为 **delete + add**（携带新 rot/scale 与当前格），已在无头往返中覆盖（`rotate=1` 时 differ 报 delete=2/move=1/add=2）。
 
 **`OverlayReceiver`（回灌端）**
 
